@@ -58,7 +58,7 @@ window.DEVLOG = [
     project: "bookpulse",
     projectLabel: "BookPulse",
     headline: "Pricing &amp; chapter-gating model finalized",
-    body: "$9/month or $79/year. Chapter-gating model in place, teachers can lock chapter access until comprehension thresholds clear, so the class moves through a novel together instead of fragmenting."
+    body: "$9/month or $69/year. Chapter-gating model in place, teachers can lock chapter access until comprehension thresholds clear, so the class moves through a novel together instead of fragmenting."
   },
   {
     date: "2026-05-10",

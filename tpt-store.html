@@ -54,7 +54,7 @@
       <span class="p-pill status">Live</span>
       <span class="p-pill">Since 2018</span>
       <span class="sep">·</span>
-      <span>Shipped &amp; Running</span>
+      <span>Live &amp; Running</span>
     </div>
     <h1>Annotation packets <span class="accent">from</span><br>a teacher who taught these books.</h1>
     <p class="p-lede">My TpT storefront, @csbaarstad, guided annotation packets for middle and high-school novels, written and designed by a working ELA teacher. Cover, annotation, vocab, comprehension, quiz, and short-response pages, every chapter, every novel.</p>
@@ -169,7 +169,7 @@
     <div class="fact">
       <div class="k">Catalog</div>
       <div class="v">12 products</div>
-      <div class="sub">4.58★ · 53 reviews</div>
+      <div class="sub">4.6★ · 54 reviews · 43 followers</div>
     </div>
     <div class="fact">
       <div class="k">Coverage</div>
@@ -265,16 +265,20 @@
 <script src="devlog/devlog.js"></script>
 <script>
   // Catalog rendering (lightweight, lives only on this page)
+  // Live catalog from teacherspayteachers.com/Store/Csbaarstad
   var CATALOG = [
-    { book:"The Hobbit", chunk:"Ch. 1–3", price:"$3.50", grade:"5–8", note:"New SVG format" },
-    { book:"The Hobbit", chunk:"Ch. 4–6", price:"$3.50", grade:"5–8", note:"New SVG format" },
-    { book:"The Giver", chunk:"Ch. 1", price:"FREE", grade:"5–8", note:"Lead packet · 4.8★" },
+    { book:"The Hobbit", chunk:"Ch. 1–3", price:"$3.50", grade:"5–10", note:"Annotation guide · CCSS-aligned" },
+    { book:"The Hobbit", chunk:"Ch. 4–6", price:"$3.50", grade:"5–10", note:"Annotation guide · CCSS-aligned" },
+    { book:"The Giver", chunk:"Ch. 1", price:"FREE", grade:"5–7", note:"Lead packet · 4.7★ · 7 reviews" },
     { book:"The Giver", chunk:"Ch. 1–3", price:"$2.50", grade:"5–8", note:"4.6★ · 11 reviews" },
-    { book:"The Giver", chunk:"Ch. 4–6", price:"$3.00", grade:"5–8", note:"4.6★ · 5 reviews" },
-    { book:"The Giver", chunk:"Ch. 19–23", price:"$4.00", grade:"5–8", note:"4.7★ · 5 reviews" },
-    { book:"Of Mice and Men", chunk:"Ch. 1–3", price:"$3.50", grade:"8–10", note:"Newest · SVG format" },
-    { book:"Poetic Elements", chunk:"Intro", price:"$1.00", grade:"6–10", note:"Standalone" },
-    { book:"Character Analysis", chunk:"Organizer", price:"FREE", grade:"5–10", note:"5.0★" }
+    { book:"The Giver", chunk:"Ch. 4–6", price:"$3.00", grade:"6–8", note:"4.6★ · 5 reviews" },
+    { book:"The Giver", chunk:"Ch. 7–9", price:"$3.00", grade:"6–8", note:"4.4★ · 5 reviews" },
+    { book:"The Giver", chunk:"Ch. 10–12", price:"$3.00", grade:"6–8", note:"4.3★ · 6 reviews" },
+    { book:"The Giver", chunk:"Ch. 13–15", price:"$3.00", grade:"6–8", note:"4.8★ · 4 reviews" },
+    { book:"The Giver", chunk:"Ch. 16–18", price:"$3.00", grade:"6–8", note:"4.4★ · 7 reviews" },
+    { book:"The Giver", chunk:"Ch. 19–23", price:"$4.00", grade:"6–8", note:"4.7★ · 5 reviews" },
+    { book:"Poetic Elements", chunk:"Intro", price:"$1.00", grade:"4–6", note:"PowerPoint, modifiable" },
+    { book:"Character Analysis", chunk:"Organizer", price:"FREE", grade:"All", note:"5.0★ · 2 reviews" }
   ];
   (function(){
     var el = document.getElementById('catalog');
