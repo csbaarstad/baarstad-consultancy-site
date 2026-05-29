@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e3e0c8"/>
+      <stop offset="100%" stop-color="#d4d0b8"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2"/>
+      <feColorMatrix values="0 0 0 0 0.3 0 0 0 0 0.25 0 0 0 0 0.15 0 0 0 0.08 0"/>
+    </filter>
+  </defs>
+  <rect width="400" height="500" fill="url(#bg)"/>
+  <rect width="400" height="500" filter="url(#grain)" opacity="0.6"/>
+  <g transform="translate(200,210)">
+    <circle r="58" fill="none" stroke="#8a8472" stroke-width="2.5"/>
+    <path d="M -88,140 Q -88,55 0,55 Q 88,55 88,140 Z" fill="none" stroke="#8a8472" stroke-width="2.5"/>
+  </g>
+  <text x="200" y="408" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="36" fill="#5a5648" letter-spacing="-1">CB</text>
+  <text x="200" y="442" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#8a8472" letter-spacing="2">DROP HEADSHOT HERE</text>
+  <text x="200" y="460" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#a39e8a" letter-spacing="1.5">images/chris-headshot.jpg</text>
+</svg>

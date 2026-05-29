@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baarstad Consultancy — Chris Baarstad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ BAARSTAD CONSULTANCY — workshop brand ============ */
+:root{
+  /* base — paper + ink */
+  --paper:#ecead9;
+  --paper-2:#e3e0c8;
+  --ink:#0e0d0a;
+  --ink-2:#2a2820;
+  --ink-3:#5a5648;
+  --ink-4:#8a8472;
+  --line:#c8c4ad;
+  --line-soft:#d4d0b8;
+
+  /* dark surfaces */
+  --night:#0e0d0a;
+  --night-2:#161410;
+  --night-3:#22201a;
+  --night-line:#2e2a22;
+  --night-ink:#ecead9;
+  --night-ink-2:#b8b5a0;
+  --night-ink-3:#76725f;
+
+  /* signature colors — per pillar / per project */
+  --amber:#e89a3c;    /* education / pages */
+  --fired:#d94e22;    /* events / fabrication / signature */
+  --crt:#8acf6e;      /* games / terminal */
+  --signal:#5e9cff;   /* automation / ops */
+  --ink-mark:#3e5e4a; /* print / packets */
+  --magenta:#c66099;  /* commandcenter / signal */
+  --ai:#a78bff;       /* ai training / intelligence */
+  --plum:#8a4a73;     /* commandcenter */
+  --moss:#3a8a5a;
+
+  --sans:'Archivo',-apple-system,sans-serif;
+  --body:'Inter Tight',-apple-system,sans-serif;
+  --display:'Archivo Black',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);color:var(--ink);font-family:var(--body);
+  line-height:1.55;-webkit-font-smoothing:antialiased;
+  background-image:
+    radial-gradient(ellipse at top right, rgba(217,78,34,.04), transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.25 0 0 0 0 0.15 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.wrap{max-width:1200px;margin:0 auto;padding:0 36px;position:relative}
+@media(max-width:640px){.wrap{padding:0 22px}}
+
+/* ============ corner registration marks ============ */
+.reg{position:absolute;width:18px;height:18px;pointer-events:none;color:var(--ink-3);opacity:.45}
+.reg::before,.reg::after{content:"";position:absolute;background:currentColor}
+.reg::before{width:18px;height:1px;top:9px;left:0}
+.reg::after{width:1px;height:18px;top:0;left:9px}
+.reg.tl{top:14px;left:14px}.reg.tr{top:14px;right:14px}
+.reg.bl{bottom:14px;left:14px}.reg.br{bottom:14px;right:14px}
+
+/* ============ nav ============ */
+nav{position:sticky;top:0;z-index:50;background:rgba(236,234,217,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1200px;margin:0 auto;padding:14px 36px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:var(--display);font-size:14px;color:var(--ink);text-decoration:none;letter-spacing:.5px;text-transform:uppercase;line-height:1;display:flex;align-items:baseline;gap:10px}
+.brand .b1{font-size:14px}
+.brand .b-sep{color:var(--fired);font-size:8px;letter-spacing:1px}
+.brand .b2{font-size:11px;color:var(--ink-3);font-family:var(--mono);font-weight:600;letter-spacing:1px}
+.nav-links{display:flex;gap:28px;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.5px;text-transform:uppercase}
+.nav-links a{color:var(--ink-3);text-decoration:none;transition:color .15s}
+.nav-links a:hover{color:var(--fired)}
+.nav-back{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--ink-3);text-decoration:none;letter-spacing:1px;text-transform:uppercase}
+.nav-back:hover{color:var(--fired)}
+@media(max-width:680px){.nav-links{display:none}}
+
+/* ============ dark hero ============ */
+.hero{background:var(--night);color:var(--night-ink);padding:90px 0 100px;position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:
+    radial-gradient(ellipse 60% 50% at 15% 100%,rgba(217,78,34,.18),transparent 60%),
+    radial-gradient(ellipse 40% 60% at 85% 0%,rgba(94,156,255,.08),transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 0.85 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(255,250,235,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,250,235,.025) 1px,transparent 1px);
+  background-size:80px 80px;
+  mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,#000,transparent 90%);
+}
+.hero .wrap{z-index:2}
+.hero .reg{color:var(--night-ink-3);opacity:.5}
+
+.file-tag{display:inline-flex;align-items:center;gap:14px;margin-bottom:42px;font-family:var(--mono);font-size:11px;color:var(--night-ink-2);letter-spacing:1.5px;text-transform:uppercase;padding:7px 14px;border:1px solid var(--night-line);border-radius:3px;background:rgba(255,250,235,.02)}
+.file-tag .dot{width:8px;height:8px;background:var(--fired);border-radius:50%;box-shadow:0 0 12px var(--fired);animation:pulse 2.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.55}}
+.file-tag b{color:var(--night-ink);font-weight:600}
+
+.hero h1{font-family:var(--display);font-size:clamp(54px,9vw,128px);line-height:.92;letter-spacing:-3.5px;color:var(--night-ink);text-transform:uppercase;max-width:14ch}
+.hero h1 .accent{color:var(--fired);display:inline-block;position:relative}
+.hero h1 .strike{position:relative;display:inline-block}
+.hero h1 .strike::after{content:"";position:absolute;left:-2%;right:-2%;top:52%;height:.12em;background:var(--fired);transform:rotate(-1.5deg)}
+
+.hero .sub{font-family:var(--body);font-size:20px;font-weight:400;color:var(--night-ink-2);line-height:1.55;max-width:58ch;margin-top:34px}
+.hero .sub b{color:var(--night-ink);font-weight:600}
+
+.hero-row{display:flex;gap:14px;margin-top:42px;flex-wrap:wrap}
+.btn{font-family:var(--mono);font-size:12px;font-weight:600;text-decoration:none;padding:14px 22px;border-radius:3px;transition:.15s;display:inline-flex;align-items:center;gap:10px;letter-spacing:1.5px;text-transform:uppercase}
+.btn-pri{background:var(--fired);color:#fff}
+.btn-pri:hover{background:#ff5e2c;transform:translateY(-1px);box-shadow:0 12px 30px -10px rgba(217,78,34,.5)}
+.btn-sec{border:1px solid var(--night-line);color:var(--night-ink);background:transparent}
+.btn-sec:hover{border-color:var(--fired);color:var(--fired)}
+.btn-light{background:var(--ink);color:var(--paper)}
+.btn-light:hover{background:var(--fired)}
+.btn-light-sec{border:1px solid var(--line-soft);color:var(--ink);background:transparent}
+.btn-light-sec:hover{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+
+/* ============ pillars row (dark band) ============ */
+.pillars{background:var(--night-2);border-top:1px solid var(--night-line);border-bottom:1px solid var(--night-line);padding:48px 0;color:var(--night-ink-2)}
+.pillars-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:36px 0;max-width:920px;margin:0 auto}
+.pillar{padding:0 36px}
+.pillar:nth-child(odd){border-right:1px solid var(--night-line)}
+.pillar-num{font-family:var(--mono);font-size:11px;color:var(--fired);letter-spacing:1.5px;font-weight:700;margin-bottom:12px}
+.pillar-name{font-family:var(--display);font-size:20px;color:var(--night-ink);text-transform:uppercase;letter-spacing:-.4px;line-height:1.05;margin-bottom:12px}
+.pillar-desc{font-size:14px;color:var(--night-ink-3);line-height:1.55;max-width:38ch}
+@media(max-width:680px){.pillars-grid{grid-template-columns:1fr;gap:28px 0}.pillar{padding:0 28px;border-right:none!important}.pillar+.pillar{padding-top:24px;border-top:1px solid var(--night-line)}}
+
+/* ============ sections ============ */
+section.lite{padding:88px 0 20px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:38px;gap:24px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:24px}
+.sec-tag{font-family:var(--mono);font-size:11px;color:var(--fired);letter-spacing:2px;font-weight:700;text-transform:uppercase;margin-bottom:10px}
+.sec-title{font-family:var(--display);font-size:clamp(34px,5vw,56px);line-height:.95;letter-spacing:-1.8px;text-transform:uppercase;color:var(--ink);max-width:18ch}
+.sec-meta{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:1px;text-transform:uppercase;text-align:right}
+
+/* ============ project grid ============ */
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.card{
+  --c:var(--ink);
+  background:var(--paper-2);
+  border:1px solid var(--line);
+  border-radius:6px;
+  padding:26px 24px;
+  text-decoration:none;color:inherit;
+  transition:.22s;
+  display:flex;flex-direction:column;
+  min-height:240px;
+  position:relative;overflow:hidden;
+  grid-column:span 3;
+}
+.card:hover{transform:translateY(-3px);border-color:var(--c);box-shadow:0 18px 40px -22px rgba(20,18,12,.25)}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--c)}
+.card.feat{grid-column:span 6;min-height:280px;background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.card.feat .ct-num,.card.feat .ct-tag{color:var(--night-ink-3)}
+.card.feat .ct-desc{color:var(--night-ink-2)}
+.card.feat .tagline{background:rgba(236,234,217,.06);border-color:var(--night-line);color:var(--night-ink-2)}
+.card.feat .arrow{color:var(--night-ink-2)}
+.card.feat:hover .arrow{color:var(--c)}
+.card.half{grid-column:span 3}
+.card.third{grid-column:span 2}
+@media(max-width:900px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .card,.card.feat,.card.half,.card.third{grid-column:span 2}
+}
+@media(max-width:560px){
+  .grid{grid-template-columns:1fr}
+  .card,.card.feat,.card.half,.card.third{grid-column:span 1}
+}
+
+.ct-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.ct-num{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:1.2px;font-weight:600}
+.ct-tag{font-family:var(--mono);font-size:10px;color:var(--c);letter-spacing:1px;font-weight:700;text-transform:uppercase;padding:3px 8px;border:1px solid var(--c);border-radius:3px;background:rgba(255,255,255,.04)}
+.ct-title{font-family:var(--display);font-size:30px;color:var(--ink);text-transform:uppercase;letter-spacing:-.8px;line-height:1;margin-bottom:14px}
+.card.feat .ct-title{font-size:48px;color:var(--paper);max-width:14ch}
+.card.feat .ct-title em{font-style:normal;color:var(--c)}
+.ct-desc{font-size:14px;color:var(--ink-2);line-height:1.55;flex:1}
+.card.feat .ct-desc{font-size:16px;max-width:46ch}
+.ct-foot{display:flex;align-items:center;gap:8px;margin-top:22px;flex-wrap:wrap}
+.tagline{font-family:var(--mono);font-size:10px;color:var(--ink-3);background:var(--paper);border:1px solid var(--line);padding:3px 8px;border-radius:3px;letter-spacing:.5px;text-transform:uppercase;font-weight:500}
+.arrow{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--ink-3);transition:.2s;letter-spacing:1px;font-weight:600;text-transform:uppercase}
+.card:hover .arrow{color:var(--c);transform:translateX(3px)}
+
+/* per-project signature colors */
+.card.bookpulse{--c:var(--amber)}
+.card.unknown{--c:var(--crt)}
+.card.lastbell{--c:var(--magenta)}
+.card.leaguebot{--c:var(--signal)}
+.card.commandcenter{--c:var(--plum)}
+.card.packets{--c:var(--ink-mark)}
+.card.events{--c:var(--fired)}
+.card.peopleops{--c:var(--moss)}
+.card.aipd{--c:var(--ai)}
+
+/* uniform 2-col grid (cards wider, less vertical) */
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:760px){.grid-2{grid-template-columns:1fr}}
+.grid-2 .card{grid-column:auto;min-height:auto;padding:22px 24px}
+
+/* status sections */
+.status-block{margin-bottom:42px}
+.status-block:last-child{margin-bottom:0}
+.status-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding-bottom:14px;margin-bottom:18px;border-bottom:2px solid var(--band);position:relative}
+.status-name{font-family:var(--display);font-size:clamp(34px,5.8vw,68px);line-height:.9;letter-spacing:-2px;color:var(--ink);text-transform:uppercase}
+.status-name .amp{color:var(--band)}
+.status-meta{text-align:right;font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-3);padding-bottom:8px;display:flex;flex-direction:column;gap:5px;align-items:flex-end}
+.status-meta .count{font-family:var(--display);font-size:22px;color:var(--ink);letter-spacing:-.5px;line-height:1}
+.status-meta .label{color:var(--band);font-weight:700;display:inline-flex;align-items:center;gap:7px}
+.status-meta .label::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--band)}
+.status-head::before{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:var(--line)}
+.status-block.s-roles{--band:var(--moss)}
+.status-block.s-shipped{--band:var(--amber)}
+.status-block.s-bench{--band:var(--fired)}
+@media(max-width:540px){.status-name{font-size:34px;letter-spacing:-1px}.status-meta .count{font-size:18px}}
+
+/* card date + bullets */
+.ct-date{font-family:var(--mono);font-size:10.5px;color:var(--c);letter-spacing:1.2px;font-weight:600;padding:3px 8px;border:1px solid var(--c);border-radius:3px;background:rgba(255,255,255,.04)}
+.ct-bullets{margin:12px 0 14px;padding:0;list-style:none;flex:1}
+.ct-bullets li{font-size:13.5px;color:var(--ink-2);line-height:1.5;padding:6px 0 6px 22px;position:relative;border-bottom:1px dashed var(--line-soft)}
+.ct-bullets li:last-child{border-bottom:none}
+.ct-bullets li::before{content:"";position:absolute;left:0;top:14px;width:12px;height:2px;background:var(--c);border-radius:1px}
+
+/* ============ bio block ============ */
+.bio-grid{display:grid;grid-template-columns:230px 1.4fr 1fr;gap:36px;align-items:start}
+.bio-photo{position:relative}
+.bio-photo .ph-frame{position:relative;border-radius:6px;overflow:hidden;border:1px solid var(--line);box-shadow:0 14px 32px -16px rgba(20,18,12,.32)}
+.bio-photo .ph-frame::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--fired);z-index:2}
+.bio-photo .ph-frame img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.bio-photo .cap{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line-soft)}
+.bio-photo .cap .nm{font-family:var(--display);font-size:18px;letter-spacing:-.5px;text-transform:uppercase;color:var(--ink);line-height:1;margin-bottom:5px;display:block}
+.bio-photo .cap .rl{font-family:var(--mono);font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink-3);font-weight:600;display:block}
+.bio-prose{font-size:17px;line-height:1.65;color:var(--ink-2);max-width:60ch}
+.bio-prose p+p{margin-top:16px}
+.bio-prose b{color:var(--ink);font-weight:600}
+.bio-prose .arr{color:var(--fired);font-family:var(--mono);font-weight:700;padding:0 4px}
+.bio-meta{display:flex;flex-direction:column;gap:12px}
+.bio-fact{background:var(--paper-2);border:1px solid var(--line);border-radius:6px;padding:18px 20px;position:relative;overflow:hidden}
+.bio-fact::before{content:"";position:absolute;top:0;bottom:0;left:0;width:3px;background:var(--fired)}
+.bio-fact .k{font-family:var(--mono);font-size:10px;color:var(--ink-3);letter-spacing:1.8px;text-transform:uppercase;font-weight:700;margin-bottom:6px}
+.bio-fact .v{font-family:var(--display);font-size:22px;color:var(--ink);letter-spacing:-.5px;line-height:1;text-transform:uppercase}
+.bio-fact .d{font-family:var(--body);font-size:13px;color:var(--ink-3);line-height:1.45;margin-top:6px}
+@media(max-width:980px){.bio-grid{grid-template-columns:210px 1fr;gap:30px}.bio-meta{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}}
+@media(max-width:680px){.bio-grid{grid-template-columns:1fr;gap:26px}.bio-photo{max-width:230px}.bio-meta{grid-template-columns:1fr}}
+
+/* ============ build log ============ */
+.log{margin-top:8px;border-top:1px solid var(--line)}
+.log-row{display:grid;grid-template-columns:80px 1fr auto;gap:24px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.log-date{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:1.2px;font-weight:600;text-transform:uppercase}
+.log-txt{font-size:15.5px;color:var(--ink-2);line-height:1.5}
+.log-txt b{color:var(--ink);font-weight:600}
+.log-proj{font-family:var(--mono);font-size:10.5px;color:var(--fired);letter-spacing:1.2px;text-transform:uppercase;font-weight:600;text-align:right}
+@media(max-width:600px){.log-row{grid-template-columns:1fr;gap:6px}.log-proj{text-align:left}}
+
+/* ============ engage CTA — workshop "intake" form vibe ============ */
+.engage{background:var(--ink);color:var(--paper);border-radius:8px;padding:56px 48px;position:relative;overflow:hidden;margin-top:18px}
+.engage::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--fired),var(--amber),var(--crt),var(--signal),var(--magenta))}
+.engage-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;position:relative;z-index:2}
+.engage-tag{font-family:var(--mono);font-size:11px;color:var(--fired);letter-spacing:2px;font-weight:700;text-transform:uppercase;margin-bottom:18px}
+.engage h3{font-family:var(--display);font-size:clamp(32px,4.5vw,52px);line-height:.95;letter-spacing:-1.6px;text-transform:uppercase;color:var(--paper);max-width:14ch}
+.engage h3 em{font-style:normal;color:var(--fired)}
+.engage p{font-size:16px;color:var(--night-ink-2);line-height:1.55;max-width:48ch;margin-top:20px}
+.engage-cta{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.engage-meta{font-family:var(--mono);font-size:12px;color:var(--night-ink-2);line-height:2;border-left:1px solid var(--night-line);padding-left:36px}
+.engage-meta .k{font-size:10px;color:var(--night-ink-3);letter-spacing:1.5px;text-transform:uppercase;display:block;line-height:1.4}
+.engage-meta .v{color:var(--paper);font-weight:600;letter-spacing:.3px}
+.engage-meta .v.fired{color:var(--fired)}
+@media(max-width:760px){.engage{padding:36px 28px}.engage-grid{grid-template-columns:1fr;gap:28px}.engage-meta{border-left:none;border-top:1px solid var(--night-line);padding:24px 0 0}}
+
+/* ============ footer ============ */
+footer{margin-top:90px;background:var(--night);color:var(--night-ink-2);padding:54px 0 28px;position:relative}
+footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--fired),transparent)}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;margin-bottom:32px}
+.foot-brand .brand{color:var(--night-ink);margin-bottom:16px;font-size:20px}
+.foot-brand .brand .b2{color:var(--night-ink-3)}
+.foot-brand p{font-size:13.5px;line-height:1.6;color:var(--night-ink-2);max-width:36ch}
+.foot-h{font-family:var(--mono);font-size:10px;color:var(--night-ink-3);letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:14px}
+.foot-list{display:flex;flex-direction:column;gap:8px}
+.foot-list a{color:var(--night-ink-2);text-decoration:none;font-size:13.5px;transition:.15s}
+.foot-list a:hover{color:var(--fired)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding-top:24px;border-top:1px solid var(--night-line)}
+.foot-legal{font-family:var(--mono);font-size:11px;color:var(--night-ink-3);letter-spacing:.4px;line-height:1.7}
+.foot-legal b{color:var(--night-ink-2)}
+.foot-note{font-family:var(--mono);font-size:10.5px;color:var(--night-ink-3);letter-spacing:1px;text-transform:uppercase}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr 1fr;gap:32px 24px}.foot-brand{grid-column:1/-1}}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="index.html">
+      <span class="b1">Baarstad Consultancy</span>
+      <span class="b-sep">◆</span>
+      <span class="b2">est. 2024</span>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#work">Projects</a>
+      <a href="#log">Dev Log</a>
+      <a href="#engage">Engage</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="reg tl"></span><span class="reg tr"></span>
+  <span class="reg bl"></span><span class="reg br"></span>
+  <div class="wrap">
+    <h1>Multi-discipline<br><span class="accent">operations</span><br>&amp; product work.</h1>
+    <p class="sub">Chris Baarstad runs <b>events at national scale</b>, ships <b>EdTech for ELA teachers</b>, trains <b>Fortune 50 staff on AI</b>, and builds the tools that hold it all together. Baarstad Consultancy is the workshop &mdash; based in Yorba Linda, California.</p>
+    <div class="hero-row">
+      <a href="#work" class="btn btn-pri">See the work →</a>
+      <a href="#engage" class="btn btn-sec">Request an engagement</a>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS (dark band) -->
+<section class="pillars">
+  <div class="wrap">
+    <div class="pillars-grid">
+      <div class="pillar">
+        <div class="pillar-num">PILLAR 01</div>
+        <div class="pillar-name">Events &amp; Esports Operations</div>
+        <p class="pillar-desc">Live LAN events, league operations, tournament structure — from the schedule grid to the floor on game day.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">PILLAR 02</div>
+        <div class="pillar-name">People Ops</div>
+        <p class="pillar-desc">Multi-location hiring, scoring systems, compliance-aware terminations, employee management at SMB scale.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">PILLAR 03</div>
+        <div class="pillar-name">EdTech &amp; Education</div>
+        <p class="pillar-desc">Classroom ELA teacher first, then Director of Innovation for three years, then operator. Currently shipping BookPulse (live reading platform), TpT annotation packets, and an LMS for multi-unit operators.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">PILLAR 04</div>
+        <div class="pillar-name">Tools, Automation &amp; AI</div>
+        <p class="pillar-desc">Custom Next.js / Supabase builds, Claude-powered internal tools, Discord automation &mdash; plus AI professional development delivered to enterprise teams.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / MINI BIO -->
+<section class="lite wrap" id="about">
+  <span class="reg tl"></span><span class="reg tr"></span>
+  <div class="sec-head">
+    <div>
+      <div class="sec-tag">Behind the workshop</div>
+      <h2 class="sec-title">A short bio.</h2>
+    </div>
+    <div class="sec-meta">Ops &middot; BizDev &middot; Sales<br>EdTech &middot; AI<br><b style="color:var(--ink)">Yorba Linda, CA</b></div>
+  </div>
+  <div class="bio-grid">
+    <div class="bio-photo">
+      <div class="ph-frame">
+        <img src="images/chris-headshot.jpg" alt="Chris Baarstad — Principal, Baarstad Consultancy" loading="lazy"
+             onerror="this.onerror=null;this.src='images/chris-headshot-placeholder.svg';">
+      </div>
+      <div class="cap">
+        <span class="nm">Chris Baarstad</span>
+        <span class="rl">Principal &middot; BCS</span>
+      </div>
+    </div>
+    <div class="bio-prose">
+      <p>Five disciplines, one principal. <b>Operations, business development, sales, EdTech, and AI</b> &mdash; built across a fifteen-year arc that started in an ELA classroom and kept widening.</p>
+      <p>From teacher to <b>Director of Innovation</b> for three years, shipping EdTech at scale. The last six years are the headline: <b>business development, event management, and tournament operations</b> at the national level &mdash; closing partner deals, locking venues, and putting national LANs on the floor.</p>
+      <p>Now: three engagements running in parallel, plus the slower builds on the bench. National esports operations. Embedded HR and a custom LMS for a multi-unit operator in Orange County. EdTech I own and ship.</p>
+    </div>
+    <div class="bio-meta">
+      <div class="bio-fact">
+        <div class="k">Disciplines</div>
+        <div class="v">5 lanes</div>
+        <div class="d">Ops &middot; BizDev &middot; Sales &middot; EdTech &middot; AI</div>
+      </div>
+      <div class="bio-fact">
+        <div class="k">Last 6 years</div>
+        <div class="v">National events</div>
+        <div class="d">Biz dev, partner deals, tournament ops at national scale</div>
+      </div>
+      <div class="bio-fact">
+        <div class="k">Based</div>
+        <div class="v">Yorba Linda</div>
+        <div class="d">Orange County, California</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS (by lane) -->
+<section class="lite wrap" id="work">
+  <span class="reg tl"></span><span class="reg tr"></span>
+  <div class="sec-head">
+    <div>
+      <div class="sec-tag">8 projects · 3 lanes</div>
+      <h2 class="sec-title">The Work.</h2>
+    </div>
+    <div class="sec-meta">Roles I hold,<br>products in the world,<br>builds on the bench<br><b style="color:var(--ink)">All under one roof</b></div>
+  </div>
+
+  <!-- CURRENT ROLES -->
+  <div class="status-block s-roles">
+    <div class="status-head">
+      <div class="status-name">Current Roles</div>
+      <div class="status-meta">
+        <div class="count">2 engagements</div>
+        <div class="label">Active contractor work</div>
+      </div>
+    </div>
+    <div class="grid-2">
+
+      <a class="card events" href="events.html">
+        <div class="ct-top"><span class="ct-num">№ 01 · ACTIVE</span><span class="ct-date">Since 2020</span></div>
+        <div class="ct-title">National Esports Ops</div>
+        <p class="ct-desc">Operations lead for the largest youth esports organization in the country.</p>
+        <ul class="ct-bullets">
+          <li>League play across 36 states &mdash; 10,000+ annual participants</li>
+          <li>Point person for the national LAN championship</li>
+          <li>Tournament structure, dispute resolution, floor lead on event days</li>
+        </ul>
+        <div class="ct-foot">
+          <span class="tagline">Events</span>
+          <span class="tagline">LAN Ops</span>
+          <span class="arrow">Read →</span>
+        </div>
+      </a>
+
+      <a class="card peopleops" href="peopleops.html">
+        <div class="ct-top"><span class="ct-num">№ 02 · ACTIVE</span><span class="ct-date">Since 2026</span></div>
+        <div class="ct-title">People-Ops and HR Services</div>
+        <p class="ct-desc">People-ops infrastructure for a multi-unit boba shop company in Orange County.</p>
+        <ul class="ct-bullets">
+          <li>Multi-store hiring pipelines &mdash; CSV scoring + ranked shortlists</li>
+          <li>Compliance-aware terminations &amp; employee management</li>
+          <li>HR infrastructure at SMB scale, multi-unit Orange County footprint</li>
+        </ul>
+        <div class="ct-foot">
+          <span class="tagline">People Ops</span>
+          <span class="tagline">F&amp;B</span>
+          <span class="arrow">Read →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- SHIPPED & RUNNING -->
+  <div class="status-block s-shipped">
+    <div class="status-head">
+      <div class="status-name">Shipped <span class="amp">&amp;</span> Running</div>
+      <div class="status-meta">
+        <div class="count">4 projects</div>
+        <div class="label">Out in the world</div>
+      </div>
+    </div>
+    <div class="grid-2">
+
+      <a class="card leaguebot" href="discord-bot.html">
+        <div class="ct-top"><span class="ct-num">№ 03 · LIVE</span><span class="ct-date">Since April 2026</span></div>
+        <div class="ct-title">Gamer-centric Discord Bot</div>
+        <p class="ct-desc">A Discord bot built for gaming communities &mdash; moderation, engagement, and ops automation in one extensible package.</p>
+        <ul class="ct-bullets">
+          <li>Robust ticketing system with AI conversation summaries &amp; cross-server admin dashboard</li>
+          <li>"Legends" engagement game &mdash; XP, leveling, progression for community members</li>
+          <li>Counting channels, NSFW filters, and full moderation toolkit baked in</li>
+        </ul>
+        <div class="ct-foot">
+          <span class="tagline">Discord</span>
+          <span class="tagline">AI</span>
+          <span class="arrow">Read →</span>
+        </div>
+      </a>
+
+      <a class="card packets" href="tpt-store.html">
+        <div class="ct-top"><span class="ct-num">№ 04 · LIVE</span><span class="ct-date">Since 2018</span></div>
+        <div class="ct-title">TpT Store</div>
+        <p class="ct-desc">My Teachers Pay Teachers storefront &mdash; <b>@csbaarstad</b> &mdash; print-ready ELA chapter guides for middle &amp; high-school novels, with more educator resources on the way.</p>
+        <ul class="ct-bullets">
+          <li>Written by a working ELA teacher &mdash; designed in the classroom, sold to other teachers</li>
+          <li>Cover, annotation, vocab, comprehension, and short-response pages per chapter</li>
+          <li>Grades 4&ndash;12 novel coverage, expanding catalog</li>
+        </ul>
+        <div class="ct-foot">
+          <span class="tagline">EdTech</span>
+          <span class="tagline">Print</span>
+          <span class="arrow">Read →</span>
+        </div>
+      </a>
+
+      <a class="card aipd" href="ai-jnj.html">
+        <div class="ct-top"><span class="ct-num">№ 05 · DELIVERED</span><span class="ct-date">2025</span></div>
+        <div class="ct-title">AI for J&amp;J</div>
+        <p class="ct-desc">AI professional-development program delivered to Johnson &amp; Johnson staff, partnered through <b>COAST Tactical Training</b>.</p>
+        <ul class="ct-bullets">
+          <li>AI fundamentals &amp; practical workflows for knowledge workers</li>
+          <li>Fortune 50 audience, in-person delivery</li>
+          <li>Topics: where AI saves time, day-to-day integration</li>
+        </ul>
+        <div class="ct-foot">
+          <span class="tagline">AI Training</span>
+          <span class="tagline">Fortune 50</span>
+          <span class="arrow">Read →</span>
+        </div>
+      </a>
+
+      <a class="card bookpulse" href="bookpulse.html">
+        <div class="ct-top"><span class="ct-num">№ 06 · LIVE</span><span class="ct-date">Since 2025</span></div>
+        <div class="ct-title">BookPulse</div>
+        <p class="ct-desc">An interactive ELA reading platform for grades 4&ndash;12 &mdash; my own EdTech IP. Live and shipping continuous updates.</p>
+        <ul class="ct-bullets">
+          <li>Join-code student auth, teacher dashboards</li>
+          <li>Chapter-gated tasks, comprehension checks, short response</li>
+          <li>7 launch novels &mdash; expanding catalog, weekly releases</li>
+        </ul>
+        <div class="ct-foot">
+          <span class="tagline">EdTech</span>
+          <span class="tagline">Next.js</span>
+          <span class="arrow">Read →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ON THE BENCH -->
+  <div class="status-block s-bench">
+    <div class="status-head">
+      <div class="status-name">On the Bench</div>
+      <div class="status-meta">
+        <div class="count">2 projects</div>
+        <div class="label">Currently building</div>
+      </div>
+    </div>
+    <div class="grid-2">
+
+      <a class="card lastbell" href="lastbell.html">
+        <div class="ct-top"><span class="ct-num">№ 07 · IN BUILD</span><span class="ct-date">2025 →</span></div>
+        <div class="ct-title">Last Bell</div>
+        <p class="ct-desc">A 3&ndash;4 player mobile co-op horror game set in a haunted elementary school. Built in <b>Roblox</b>, ages 9+.</p>
+        <ul class="ct-bullets">
+          <li>School rebuilds each run &mdash; new rooms, routes, hiding spots</li>
+          <li>"Heat" mechanic: noise + speed + light invite the Listener</li>
+          <li>Currently grey-boxing the core loop &mdash; decaying-safety Generator</li>
+        </ul>
+        <div class="ct-foot">
+          <span class="tagline">Roblox</span>
+          <span class="tagline">Mobile co-op</span>
+          <span class="arrow">Devlog →</span>
+        </div>
+      </a>
+
+      <a class="card unknown" href="mudgame.html">
+        <div class="ct-top"><span class="ct-num">№ 08 · IN BUILD</span><span class="ct-date">2024 →</span></div>
+        <div class="ct-title">TBD MUD-Style Game</div>
+        <p class="ct-desc">A text-based multi-user dungeon &mdash; old-school multiplayer RPG, built from scratch.</p>
+        <ul class="ct-bullets">
+          <li>Persistent world, real-time multiplayer over websockets</li>
+          <li>Python backend, scriptable rooms and NPCs</li>
+          <li>Room-by-room devlog, content pipeline like shipping blog posts</li>
+        </ul>
+        <div class="ct-foot">
+          <span class="tagline">Game</span>
+          <span class="tagline">Python</span>
+          <span class="arrow">Devlog →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- DEV/BUILD LOG -->
+<section class="lite wrap" id="log">
+  <div class="sec-head">
+    <div>
+      <div class="sec-tag">Field notes from every project</div>
+      <h2 class="sec-title">Dev / Build Log</h2>
+    </div>
+    <div class="sec-meta">All lanes feed in &mdash;<br>tap a project to filter<br><b style="color:var(--ink)">Updated weekly</b></div>
+  </div>
+  <div class="log" id="devlog-target">
+    <!-- Populated at runtime from /devlog/devlog.js (mirrors /devlog/*.md). -->
+  </div>
+</section>
+
+<!-- ENGAGE -->
+<section class="lite wrap" id="engage">
+  <div class="engage">
+    <div class="engage-grid">
+      <div>
+        <div class="engage-tag">▸ Currently accepting work</div>
+        <h3>Got a project that <em>doesn't fit one lane?</em></h3>
+        <p>Baarstad Consultancy accepts engagements across the four pillars — embedded operations, product builds, advisory. Discovery calls are free, scope is fixed up front, and every engagement runs through BCS.</p>
+        <div class="engage-cta">
+          <a href="mailto:csbaarstad@gmail.com" class="btn btn-pri">Start a conversation →</a>
+          <a href="#" class="btn btn-sec">LinkedIn</a>
+        </div>
+      </div>
+      <div class="engage-meta">
+        <span class="k">Status</span>
+        <span class="v fired">▸ Open for engagements</span><br>
+        <span class="k">Based</span>
+        <span class="v">Yorba Linda, CA</span><br>
+        <span class="k">Engagement size</span>
+        <span class="v">Project · Retainer · Embed</span><br>
+        <span class="k">Reply time</span>
+        <span class="v">Within 24 hours</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html" style="font-size:18px">
+          <span class="b1">Baarstad Consultancy</span>
+          <span class="b-sep">◆</span>
+        </a>
+        <p>A one-principal workshop for cross-disciplinary operations and product work — events, people, education, automation.</p>
+      </div>
+      <div>
+        <div class="foot-h">Practice</div>
+        <div class="foot-list">
+          <a href="#work">Projects</a>
+          <a href="#log">Dev Log</a>
+          <a href="#engage">Engage</a>
+          <a href="mailto:csbaarstad@gmail.com">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-h">Elsewhere</div>
+        <div class="foot-list">
+          <a href="mailto:csbaarstad@gmail.com">Email</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">GitHub</a>
+          <a href="bookpulse.html">BookPulse</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-h">Also</div>
+        <div class="foot-list">
+          <a href="#">Awards by Rubi</a>
+          <span style="font-family:var(--mono);font-size:11px;color:var(--night-ink-3);line-height:1.5;margin-top:6px;display:block">Separate fabrication shop · Yorba Linda</span>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-legal">Operating as <b>Baarstad Consulting Services (BCS)</b>, a California S-Corp.<br>© 2026 Chris Baarstad · All work shown is real and current.</div>
+      <div class="foot-note">{ mockup · v04 }</div>
+    </div>
+  </div>
+</footer>
+
+<script src="devlog/devlog.js"></script>
+<script>
+  // Render the most recent 10 entries from /devlog/.
+  if (window.renderDevlog) window.renderDevlog('#devlog-target', { limit: 10 });
+</script>
+
+</body>
+</html>
