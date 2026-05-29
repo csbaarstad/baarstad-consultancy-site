@@ -1,8 +1,8 @@
 /*
- * devlog.js — generated devlog manifest
+ * devlog.js, generated devlog manifest
  *
  * This file is the runtime view of the markdown files in /devlog/.
- * Each .md file is the authoritative source — this JS is regenerated
+ * Each .md file is the authoritative source, this JS is regenerated
  * (or hand-updated) when a new entry is written. Keeps the site
  * functional under file:// and any static host without a build step.
  *
@@ -23,7 +23,7 @@ window.DEVLOG = [
     project: "baarstad-consultancy",
     projectLabel: "Baarstad Consultancy",
     headline: "Hub site v1 shipped",
-    body: "One front door for the whole workshop — design system locked, eight project lanes, dev/build log wired in as a content folder."
+    body: "One front door for the whole workshop, design system locked, eight project lanes, dev/build log wired in as a content folder."
   },
   {
     date: "2026-05-24",
@@ -44,7 +44,7 @@ window.DEVLOG = [
     project: "last-bell",
     projectLabel: "Last Bell",
     headline: "First playable test",
-    body: "Stripped the mechanics down to bones to ask one question: is pushing your luck actually fun and a little terrifying? Test surfaced a fix we're rebuilding around — a decaying-safety Generator that forces players into the dark to keep the lights on."
+    body: "Stripped the mechanics down to bones to ask one question: is pushing your luck actually fun and a little terrifying? Test surfaced a fix we're rebuilding around, a decaying-safety Generator that forces players into the dark to keep the lights on."
   },
   {
     date: "2026-05-16",
@@ -58,14 +58,14 @@ window.DEVLOG = [
     project: "bookpulse",
     projectLabel: "BookPulse",
     headline: "Pricing &amp; chapter-gating model finalized",
-    body: "$9/month or $79/year. Chapter-gating model in place — teachers can lock chapter access until comprehension thresholds clear, so the class moves through a novel together instead of fragmenting."
+    body: "$9/month or $79/year. Chapter-gating model in place, teachers can lock chapter access until comprehension thresholds clear, so the class moves through a novel together instead of fragmenting."
   },
   {
     date: "2026-05-10",
     project: "mud-game",
     projectLabel: "MUD Game",
     headline: "Room system &amp; combat loop prototype",
-    body: "First combat loop wired into the room system. Stamina debt mechanic added — you can over-exert on a turn, but you pay it back across the next two. Needs playtest before it becomes load-bearing."
+    body: "First combat loop wired into the room system. Stamina debt mechanic added, you can over-exert on a turn, but you pay it back across the next two. Needs playtest before it becomes load-bearing."
   },
   {
     date: "2026-05-04",
@@ -79,12 +79,12 @@ window.DEVLOG = [
     project: "tpt-store",
     projectLabel: "TpT Store",
     headline: "<em>Of Mice and Men</em> packet shipped",
-    body: "First packet generated end-to-end with the new SVG template — cover, annotation pages, vocab, comprehension, and short response, all from a single source file. Ship time per novel just dropped by an order of magnitude."
+    body: "First packet generated end-to-end with the new SVG template, cover, annotation pages, vocab, comprehension, and short response, all from a single source file. Ship time per novel just dropped by an order of magnitude."
   }
 ];
 
 /* ============================================================
- * Render helpers — used by the hub and every project subpage.
+ * Render helpers, used by the hub and every project subpage.
  * ============================================================ */
 window.renderDevlog = function(targetSelector, opts) {
   opts = opts || {};
@@ -107,7 +107,7 @@ window.renderDevlog = function(targetSelector, opts) {
     return ''
       + '<div class="log-row">'
       +   '<span class="log-date">' + dateLabel + '</span>'
-      +   '<span class="log-txt"><b>' + e.headline + '</b> &mdash; ' + e.body + '</span>'
+      +   '<span class="log-txt">' + e.headline + ', ' + e.body + '</span>'
       +   '<span class="log-proj">' + e.projectLabel + '</span>'
       + '</div>';
   }).join('');
