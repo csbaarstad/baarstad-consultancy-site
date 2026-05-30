@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TBD MUD-Style Game — Baarstad Consultancy</title>
+<title>Thirty Nights at Blackwell — Baarstad Consultancy</title>
 <!-- SEO + share preview -->
-<meta name="description" content="Text-based multi-user dungeon, built from scratch, persistent world, real-time multiplayer, scriptable rooms and NPCs. Python backend, public devlog.">
+<meta name="description" content="A literary gothic-horror text RPG. Welsh borderlands, 1880. Eleanor Hartwell inherits a cursed manor and has thirty nights to resolve a 200-year-old bargain. Single-player. ASCII + ANSI. In the spirit of Disco Elysium, Roadwarden, Sunless Sea.">
 <meta property="og:url" content="https://baarstadconsultancy.com/mudgame">
-<meta property="og:title" content="TBD MUD-Style Game">
-<meta property="og:description" content="Text-based multi-user dungeon, built from scratch, persistent world, real-time multiplayer, scriptable rooms and NPCs. Python backend, public devlog.">
-<meta name="twitter:title" content="TBD MUD-Style Game">
-<meta name="twitter:description" content="Text-based multi-user dungeon, built from scratch, persistent world, real-time multiplayer, scriptable rooms and NPCs. Python backend, public devlog.">
+<meta property="og:title" content="Thirty Nights at Blackwell — a literary gothic-horror text RPG">
+<meta property="og:description" content="A literary gothic-horror text RPG. Welsh borderlands, 1880. Eleanor Hartwell inherits a cursed manor and has thirty nights to resolve a 200-year-old bargain.">
+<meta name="twitter:title" content="Thirty Nights at Blackwell — a literary gothic-horror text RPG">
+<meta name="twitter:description" content="A literary gothic-horror text RPG. Welsh borderlands, 1880. Eleanor Hartwell inherits a cursed manor and has thirty nights to resolve a 200-year-old bargain.">
 <meta name="author" content="Chris Baarstad">
 <meta name="theme-color" content="#0e0d0a">
 <meta property="og:type" content="website">
@@ -26,7 +26,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=Inter+Tight:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="subpage.css">
 <style>:root{--c:var(--crt);--c-rgb:138,207,110}</style>
 </head>
@@ -56,8 +56,8 @@
       <span class="sep">·</span>
       <span>On the Bench</span>
     </div>
-    <h1>An old-school MUD, <span class="accent">built from scratch.</span></h1>
-    <p class="p-lede">A text-based multi-user dungeon, persistent world, real-time multiplayer over WebSockets, scriptable rooms and NPCs, content shipped like blog posts. You play this in a terminal. The point is rooms that feel hand-written, fights that feel weighty, and a world that grows in public.</p>
+    <h1>Thirty Nights <span class="accent">at Blackwell.</span></h1>
+    <p class="p-lede">A literary gothic-horror text RPG in the spirit of <b>Disco Elysium</b>, <b>Roadwarden</b>, and <b>Sunless Sea</b>. Welsh borderlands, 1880. Eleanor Hartwell inherits a cursed manor and has thirty nights to resolve a 200-year-old bargain her family forced on a murdered cunning-woman. ASCII + ANSI aesthetic, single player, no combat.</p>
     <div class="p-cta">
       <a href="#log" class="btn btn-c">Read the devlog →</a>
       <a href="#approach" class="btn btn-sec">How it's built</a>
@@ -71,29 +71,26 @@
     <div class="mud-mock">
       <div class="mud-bar">
         <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-        <span class="ttl">session · <b>chris@mud:~</b></span>
-        <span class="conn">connected · 38ms</span>
+        <span class="ttl"><b>Thirty Nights at Blackwell</b> &middot; night 14 / 30</span>
+        <span class="conn">composure: strained</span>
       </div>
       <div class="mud-screen">
-        <div class="room-h">The Stonecutter's Yard</div>
-        <div class="room-sub">▸ outer ward · district 02</div>
-        <div class="desc">A low-walled yard of cut granite, half-finished pillars leaning against the eastern fence. The chisel marks on the nearest block look fresh. Smoke from a forge hangs in the cold morning air.</div>
-        <div class="exits"><b>Exits:</b> north (gate), east (forge), south (alley)</div>
-        <div class="npc">A <span class="v">stout dwarf in a leather apron</span> tests the edge of a chisel here.</div>
-        <div class="npc">A <span class="v">grey cat</span> watches you from the wall.</div>
+        <div class="room-h">The Cellar &mdash; Below the Manor</div>
+        <div class="room-sub">▸ rosemary growing on bricked stone &middot; faint Welsh lullaby</div>
+        <div class="desc">The bricks Maud laid last spring are still pale against the older courses, seven generations of seal beneath them. You put your ear to the wall, the way the journal says. Water moves on the other side. Not flowing. <span class="v">Speaking.</span></div>
+        <div class="exits"><b>Exits:</b> up (kitchen stair), through (sealed &mdash; you have no tools)</div>
+        <div class="npc">A name has been <span class="v">scratched into the brick</span> overnight, in a hand that is not yours: <i>Anwen</i>.</div>
         <div class="sep"></div>
-        <div class="prompt-line"><span class="ps">&gt;</span> <span class="cmd">look dwarf</span></div>
-        <div class="resp">She is short, broad, and unimpressed. Her hands are scarred from decades of stone. A <span class="v">brass token</span> hangs on a thong around her neck.</div>
-        <div class="prompt-line"><span class="ps">&gt;</span> <span class="cmd">ask dwarf about the token</span></div>
-        <div class="resp">"You've got an eye, traveler." She lifts the token. "Guild mark. You wanted to know that, or you wanted to know <span class="v">why I'm wearing it openly today?</span>"</div>
-        <div class="prompt-line"><span class="ps">&gt;</span> <span class="cmd">attack goblin</span></div>
-        <div class="resp">You drive your blade in low. <span class="crit">CRITICAL · 14 damage.</span> The goblin reels. <b>Stamina:</b> 18/30 (debt: 4).</div>
+        <div class="prompt-line"><span class="ps">&gt;</span> <span class="cmd">[ examine the scratched name ]</span></div>
+        <div class="resp">You trace it with a fingertip. It is fresh enough that grit comes away on your skin. Carys named her for you on the second night, before you had agreed to listen. <b>Folk-knowledge +1.</b> <span class="crit">Composure -1.</span></div>
+        <div class="prompt-line"><span class="ps">&gt;</span> <span class="cmd">[ write in your journal — Night 14 ]</span></div>
+        <div class="resp"><i>What you type here will be quoted back to you later, in Eleanor's voice, when it matters.</i></div>
         <div class="prompt-line"><span class="ps">&gt;</span> <span class="cursor"></span></div>
       </div>
     </div>
     <div class="mockup-cap">
-      <span>Terminal session · room · NPC · combat</span>
-      <span class="ck">Python backend · WebSocket · stamina debt mechanic</span>
+      <span>Cellar scene &middot; night 14 of 30 &middot; one of four typed-input "literary moments"</span>
+      <span class="ck">Composure variants &middot; per-NPC trust &middot; click-choice menu &middot; zero runtime AI</span>
     </div>
   </div>
 </div>
@@ -103,26 +100,35 @@
   <div class="story-row">
     <div class="label">The premise</div>
     <div class="prose">
-      <p>A MUD is a text-based RPG you play in a terminal. The genre is older than the modern web, and most of what's still online today is held together by VOLUNTEERS and an LPC interpreter from 1996. The premise here is to build one from scratch, with a modern stack, and treat the world like a publication: rooms get shipped, NPCs get written, regions go live the way blog posts go live.</p>
+      <p>You are Eleanor Hartwell. You live in Edinburgh. A solicitor's letter arrives: a great-aunt you never met has died, and you are the last surviving claimant to her manor in the Welsh Marches. The will gives you everything on one condition. You have to spend thirty consecutive nights in the house.</p>
+      <p>You arrive in pouring rain. The driver refuses to take you past the gate. Three servants are waiting in the entrance hall. None of them speak first. The housekeeper has been waiting for you since before your mother was born.</p>
+      <p>The thirty-night clock is not a legal stipulation. It is the renewal cycle of a covenant your family forced on a Welsh cunning-woman they murdered in 1672. Seven generations of Blackwells have kept the bargain alive in the cellar beneath this house. You walk in knowing nothing. There is no one left to keep it after you.</p>
+    </div>
+  </div>
+  <div class="story-row">
+    <div class="label">The mechanics</div>
+    <div class="prose">
+      <p>No combat. Skill-by-use progression across four categories &mdash; Body, Mind, Voice, Hand. A crafting system built on Anwen's cunning-craft: gather, brew, use, with six brew families that swap in where combat would normally be. Per-NPC trust, both positive and negative. A five-tier <b>Composure</b> meter that degrades Eleanor's first-person perception across an authored variant tree at every tier. A daily structure of acts across thirty nights: discovery (1&ndash;10), commitment (11&ndash;25), execution (26&ndash;30).</p>
+      <ul>
+        <li>Five origins (Scholar / Journalist / Nurse / Governess / Clerk), each with a different starting loadout</li>
+        <li>Four endings (Sacrifice / Avoidance / Bind / Redemption) plus a Public Justice variant, each requiring a different play pattern</li>
+        <li>Click-choice menu for primary input, plus <b>four locked "literary moments"</b> where you type your own words and the narration quotes them back later</li>
+        <li>Zero runtime AI &mdash; the prose is authored, the variants are pre-written, the engine is a pure lookup</li>
+        <li>The bricked spring beneath the cellar is the central artifact; the bargain reaches its final renewal on night thirty</li>
+      </ul>
     </div>
   </div>
   <div class="story-row">
     <div class="label">The build</div>
     <div class="prose">
-      <p>A Python backend running real-time over WebSockets. Persistent world state in a database. Rooms and NPCs are scriptable in their own small DSL so writing a room feels closer to writing a post than to writing a class.</p>
-      <ul>
-        <li>Persistent world, the place is still there when you log out</li>
-        <li>Real-time multiplayer. WebSocket transport, low latency, presence</li>
-        <li>Scriptable rooms &amp; NPCs, small DSL, content pipeline like a CMS</li>
-        <li>Stamina debt combat, over-exert on a turn, pay it back across the next two</li>
-        <li>Room-by-room devlog, each region ships in public</li>
-      </ul>
+      <p>Electron + TypeScript on Node, with an xterm.js terminal inside the window. ASCII + ANSI color art for every room and scene &mdash; the visual lineage is Caves of Qud and SanctuaryRPG. Save anywhere. Local first, optional cloud sync later. Windows, macOS, Linux.</p>
+      <p>The literary voice is the moat. Every line of prose is gated by a written style sheet that documents Eleanor's first-person rules, NPC dialogue voices, a Welsh-restraint discipline, and an anti-AI-smell catalog. If the prose smells like a model wrote it, the entire positioning collapses. So nothing ships that hasn't been authored and edited against the sheet.</p>
     </div>
   </div>
   <div class="story-row">
     <div class="label">Why it matters</div>
     <div class="prose">
-      <p>Most contemporary RPGs are obsessed with rendering. MUDs are obsessed with writing. There's still room for a game that asks you to read carefully, talk to the dwarf, decide whether to ask the second question, and live with the answer. This one is mine to build, slowly, on the bench.</p>
+      <p>The Welsh-borderlands gothic is an underbuilt niche in indie text-RPG. The literary game audience is small but devoted &mdash; <i>Roadwarden</i> sold 100k as a solo dev, <i>Citizen Sleeper</i> crossed a million, <i>Disco Elysium</i> redefined what a CRPG could be. There is room for a quiet, slow, written game with real systems and one woman's voice carrying it. This is the slow build I keep coming back to.</p>
     </div>
   </div>
 </section>
@@ -132,18 +138,18 @@
   <div class="facts-grid">
     <div class="fact">
       <div class="k">Stack</div>
-      <div class="v">Python · WS</div>
-      <div class="sub">Postgres · scriptable content</div>
+      <div class="v">Electron &middot; xterm</div>
+      <div class="sub">TypeScript &middot; Node &middot; ASCII + ANSI</div>
     </div>
     <div class="fact">
       <div class="k">Genre</div>
-      <div class="v">Text-based RPG</div>
-      <div class="sub">Persistent world · multi-user</div>
+      <div class="v">Literary gothic</div>
+      <div class="sub">No combat &middot; single-player &middot; 50&ndash;100k words</div>
     </div>
     <div class="fact">
-      <div class="k">Cadence</div>
-      <div class="v">Public devlog</div>
-      <div class="sub">Region-by-region · content pipeline</div>
+      <div class="k">Release</div>
+      <div class="v">itch &middot; Steam</div>
+      <div class="sub">$9.99 base + 4 paid DLCs planned</div>
     </div>
   </div>
 </section>
@@ -152,10 +158,10 @@
 <section class="lite wrap p-devlog" id="log">
   <div class="sec-head">
     <div>
-      <div class="sec-tag">MUD Game · devlog</div>
+      <div class="sec-tag">Blackwell &middot; devlog</div>
       <h2 class="sec-title">Dev / Build Log</h2>
     </div>
-    <div class="sec-meta">Filtered to MUD —<br><a href="index.html#log" style="color:var(--c);text-decoration:none">all lanes →</a></div>
+    <div class="sec-meta">Filtered to this build &mdash;<br><a href="index.html#log" style="color:var(--c);text-decoration:none">all lanes →</a></div>
   </div>
   <div class="log" id="devlog-target"></div>
 </section>
@@ -212,7 +218,7 @@
     </div>
     <div class="foot-bottom">
       <div class="foot-legal">Operating as <b>Baarstad Consulting Services (BCS)</b>, a California S-Corp.<br>© 2026 Chris Baarstad · All work shown is real and current.</div>
-      <div class="foot-note">{ mudgame · v01 }</div>
+      <div class="foot-note">{ blackwell &middot; v02 }</div>
     </div>
   </div>
 </footer>

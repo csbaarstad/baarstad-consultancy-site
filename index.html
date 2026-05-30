@@ -26,7 +26,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=Inter+Tight:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ============ BAARSTAD CONSULTANCY — workshop brand ============ */
 :root{
@@ -63,7 +63,7 @@
   --sans:'Archivo',-apple-system,sans-serif;
   --body:'Inter Tight',-apple-system,sans-serif;
   --display:'Archivo Black',sans-serif;
-  --mono:'JetBrains Mono',monospace;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -100,37 +100,108 @@ nav{position:sticky;top:0;z-index:50;background:rgba(236,234,217,.88);backdrop-f
 @media(max-width:680px){.nav-links{display:none}}
 
 /* ============ dark hero ============ */
-.hero{background:var(--night);color:var(--night-ink);padding:74px 0 84px;position:relative;overflow:hidden}
+.hero{background:var(--night);color:var(--night-ink);padding:64px 0 0;position:relative;overflow:hidden}
 .hero::before{
   content:"";position:absolute;inset:0;pointer-events:none;
   background-image:
-    radial-gradient(ellipse 60% 50% at 15% 100%,rgba(156,55,18,.18),transparent 60%),
-    radial-gradient(ellipse 40% 60% at 85% 0%,rgba(94,156,255,.08),transparent 60%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 0.85 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    radial-gradient(ellipse 60% 50% at 15% 100%,rgba(156,55,18,.22),transparent 60%),
+    radial-gradient(ellipse 40% 60% at 85% 0%,rgba(94,156,255,.10),transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 0.85 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 .hero::after{
   content:"";position:absolute;inset:0;pointer-events:none;
-  background-image:linear-gradient(rgba(255,250,235,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,250,235,.025) 1px,transparent 1px);
+  background-image:linear-gradient(rgba(255,250,235,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,250,235,.03) 1px,transparent 1px);
   background-size:80px 80px;
   mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,#000,transparent 90%);
 }
-.hero .wrap{z-index:2}
-.hero .reg{color:var(--night-ink-3);opacity:.5}
+.hero .wrap{z-index:2;position:relative}
+.hero .reg{color:var(--night-ink-3);opacity:.6;width:26px;height:26px}
+.hero .reg::before{width:26px}.hero .reg::after{height:26px}
+.hero .reg.tl{top:18px;left:18px}.hero .reg.tr{top:18px;right:18px}
+.hero .reg.bl{bottom:78px;left:18px}.hero .reg.br{bottom:78px;right:18px}
 
-.file-tag{display:inline-flex;align-items:center;gap:14px;margin-bottom:42px;font-family:var(--mono);font-size:11px;color:var(--night-ink-2);letter-spacing:1.5px;text-transform:uppercase;padding:7px 14px;border:1px solid var(--night-line);border-radius:3px;background:rgba(255,250,235,.02)}
-.file-tag .dot{width:8px;height:8px;background:var(--fired);border-radius:50%;box-shadow:0 0 12px var(--fired);animation:pulse 2.5s infinite}
+/* job stamp — top right corner */
+.hero-stamp{
+  position:absolute;top:54px;right:60px;z-index:3;
+  font-family:var(--mono);text-align:right;color:var(--night-ink-3);
+  letter-spacing:1.6px;line-height:1.2;text-transform:uppercase;
+  pointer-events:none;
+}
+.hero-stamp .hs-l1{display:block;font-size:10px;color:var(--fired);font-weight:700}
+.hero-stamp .hs-l2{display:block;font-family:var(--display);font-size:22px;color:var(--night-ink);letter-spacing:-.4px;line-height:1;margin:4px 0}
+.hero-stamp .hs-l3{display:block;font-size:9.5px;color:var(--night-ink-3);font-weight:600;letter-spacing:2px}
+@media(max-width:880px){.hero-stamp{display:none}}
+
+.hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:54px;align-items:start;padding-bottom:72px}
+@media(max-width:980px){.hero-grid{grid-template-columns:1fr;gap:34px}}
+
+.hero-main{display:flex;flex-direction:column}
+
+.hero-eyebrow{display:inline-flex;align-items:center;gap:12px;margin-bottom:32px;font-family:var(--mono);font-size:11px;color:var(--night-ink-2);letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px;border:1px solid var(--night-line);border-radius:3px;background:rgba(255,250,235,.025);align-self:flex-start;max-width:100%}
+.hero-eyebrow .he-dot{width:8px;height:8px;background:var(--fired);border-radius:50%;box-shadow:0 0 12px var(--fired);animation:pulse 2.5s infinite;flex-shrink:0}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.55}}
-.file-tag b{color:var(--night-ink);font-weight:600}
+.hero-eyebrow b{color:var(--night-ink);font-weight:600}
 
 .hero h1{font-family:var(--display);font-size:clamp(34px,4.6vw,66px);line-height:1;letter-spacing:-1.8px;color:var(--night-ink);text-transform:uppercase;max-width:14ch}
 .hero h1 .accent{color:var(--fired);display:inline-block;position:relative}
 .hero h1 .strike{position:relative;display:inline-block}
 .hero h1 .strike::after{content:"";position:absolute;left:-2%;right:-2%;top:52%;height:.12em;background:var(--fired);transform:rotate(-1.5deg)}
 
-.hero .sub{font-family:var(--body);font-size:20px;font-weight:400;color:var(--night-ink-2);line-height:1.55;max-width:58ch;margin-top:34px}
+.hero .sub{font-family:var(--body);font-size:19px;font-weight:400;color:var(--night-ink-2);line-height:1.55;max-width:58ch;margin-top:30px}
 .hero .sub b{color:var(--night-ink);font-weight:600}
 
-.hero-row{display:flex;gap:14px;margin-top:42px;flex-wrap:wrap}
+.hero-row{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
+
+/* hero stat strip */
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;padding-top:28px;border-top:1px solid var(--night-line);max-width:680px}
+.hero-stats .hs{display:flex;flex-direction:column;gap:6px;padding-right:18px;border-right:1px solid var(--night-line)}
+.hero-stats .hs:last-child{border-right:none;padding-right:0}
+.hero-stats .hs .n{font-family:var(--display);font-size:clamp(22px,2.6vw,30px);color:var(--night-ink);letter-spacing:-.8px;line-height:1}
+.hero-stats .hs .n i{font-style:normal;color:var(--fired);font-size:.65em;margin-left:1px}
+.hero-stats .hs .l{font-family:var(--mono);font-size:10px;color:var(--night-ink-3);letter-spacing:1.2px;text-transform:uppercase;font-weight:600;line-height:1.4}
+@media(max-width:680px){.hero-stats{grid-template-columns:repeat(2,1fr);gap:18px 0;max-width:none}.hero-stats .hs{padding:0 14px 0 0}.hero-stats .hs:nth-child(2n){border-right:none;padding-right:0}}
+
+/* intake card — right side of hero */
+.hero-card{
+  background:linear-gradient(180deg,var(--night-2),var(--night-3));
+  border:1px solid var(--night-line);
+  border-radius:6px;padding:22px 22px 18px;
+  position:relative;overflow:hidden;
+  font-family:var(--body);color:var(--night-ink);
+  box-shadow:0 30px 60px -30px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,250,235,.04);
+}
+.hero-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--fired),var(--amber),var(--crt),var(--signal));opacity:.85}
+.hero-card .hc-h{display:flex;justify-content:space-between;align-items:center;gap:14px;padding-bottom:14px;border-bottom:1px dashed var(--night-line);margin-bottom:14px}
+.hero-card .hc-tag{font-family:var(--mono);font-size:10.5px;color:var(--fired);letter-spacing:1.8px;text-transform:uppercase;font-weight:700}
+.hero-card .hc-sn{font-family:var(--mono);font-size:10px;color:var(--night-ink-3);letter-spacing:1.4px;text-transform:uppercase;font-weight:600}
+.hero-card .hc-rows{display:flex;flex-direction:column}
+.hero-card .hc-row{display:grid;grid-template-columns:auto 1fr;column-gap:14px;row-gap:2px;padding:11px 0;border-bottom:1px solid var(--night-line)}
+.hero-card .hc-row.last{border-bottom:none;padding-bottom:0}
+.hero-card .hc-k{font-family:var(--mono);font-size:10px;color:var(--night-ink-3);letter-spacing:1.5px;text-transform:uppercase;font-weight:700;grid-row:1/3;align-self:center;min-width:64px}
+.hero-card .hc-v{font-family:var(--display);font-size:15px;color:var(--night-ink);letter-spacing:-.3px;line-height:1.1;text-transform:uppercase}
+.hero-card .hc-m{font-family:var(--mono);font-size:10.5px;color:var(--night-ink-3);letter-spacing:.3px;text-transform:none;font-weight:500}
+.hero-card .hc-foot{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:10px;color:var(--night-ink-3);letter-spacing:1.4px;text-transform:uppercase;font-weight:600;padding-top:12px;margin-top:12px;border-top:1px solid var(--night-line)}
+.hero-card .hc-foot-r{color:var(--night-ink-2)}
+
+/* bottom ticker — runs full-bleed under hero */
+.hero-ticker{
+  position:relative;z-index:2;
+  border-top:1px solid var(--night-line);
+  border-bottom:1px solid var(--night-line);
+  background:rgba(255,250,235,.015);
+  overflow:hidden;
+  padding:12px 0;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+}
+.ticker-track{
+  display:flex;gap:32px;white-space:nowrap;width:max-content;
+  animation:tickerScroll 60s linear infinite;
+  font-family:var(--mono);font-size:11px;color:var(--night-ink-2);letter-spacing:1.5px;text-transform:uppercase;font-weight:500;
+}
+.ticker-track .sep{color:var(--fired);font-size:8px;letter-spacing:0;align-self:center}
+@keyframes tickerScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.ticker-track{animation:none}}
 .btn{font-family:var(--mono);font-size:12px;font-weight:600;text-decoration:none;padding:14px 22px;border-radius:3px;transition:.15s;display:inline-flex;align-items:center;gap:10px;letter-spacing:1.5px;text-transform:uppercase}
 .btn-pri{background:var(--fired);color:#fff}
 .btn-pri:hover{background:#ff5e2c;transform:translateY(-1px);box-shadow:0 12px 30px -10px rgba(156,55,18,.5)}
@@ -331,12 +402,82 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
 <section class="hero">
   <span class="reg tl"></span><span class="reg tr"></span>
   <span class="reg bl"></span><span class="reg br"></span>
+  <span class="hero-stamp" aria-hidden="true">
+    <span class="hs-l1">Job №</span>
+    <span class="hs-l2">2026 &middot; 04</span>
+    <span class="hs-l3">Workshop intake</span>
+  </span>
   <div class="wrap">
-    <h1>Multi-discipline<br><span class="accent">operations</span><br>&amp; product work.</h1>
-    <p class="sub">Chris Baarstad runs events at national scale, ships EdTech for ELA teachers, trains Fortune 50 staff on AI, and builds the tools that hold it all together. Baarstad Consultancy is the workshop, based in Yorba Linda, California.</p>
-    <div class="hero-row">
-      <a href="#work" class="btn btn-pri">See the work →</a>
-      <a href="#engage" class="btn btn-sec">Request an engagement</a>
+    <div class="hero-grid">
+      <div class="hero-main">
+        <span class="hero-eyebrow">
+          <span class="he-dot"></span>
+          <span><b>Open for engagements</b> &middot; multi-discipline workshop &middot; est. 2024</span>
+        </span>
+        <h1>Multi-discipline<br><span class="accent">operations</span><br>&amp; product work.</h1>
+        <p class="sub">Chris Baarstad runs events at national scale, ships EdTech for ELA teachers, trains Fortune 50 staff on AI, and builds the tools that hold it all together. Baarstad Consultancy is the workshop, based in Yorba Linda, California.</p>
+        <div class="hero-row">
+          <a href="#work" class="btn btn-pri">See the work →</a>
+          <a href="#engage" class="btn btn-sec">Request an engagement</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hs"><span class="n">15<i>y</i></span><span class="l">in education, edtech &amp; ops</span></div>
+          <div class="hs"><span class="n">5</span><span class="l">disciplines under one roof</span></div>
+          <div class="hs"><span class="n">36</span><span class="l">states reached in current ops role</span></div>
+          <div class="hs"><span class="n">10k+</span><span class="l">annual participants in league play</span></div>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="currently in the workshop">
+        <div class="hc-h">
+          <span class="hc-tag">▸ Currently in the workshop</span>
+          <span class="hc-sn">SN&middot;04&nbsp;/&nbsp;2026</span>
+        </div>
+        <div class="hc-rows">
+          <div class="hc-row">
+            <span class="hc-k">01 &middot; Live</span>
+            <span class="hc-v">National LAN, June</span>
+            <span class="hc-m">Run-of-show finalized &middot; teams confirmed</span>
+          </div>
+          <div class="hc-row">
+            <span class="hc-k">02 &middot; Shipping</span>
+            <span class="hc-v">BookPulse weekly</span>
+            <span class="hc-m">Twenty texts &middot; fourteen task types</span>
+          </div>
+          <div class="hc-row">
+            <span class="hc-k">03 &middot; Build</span>
+            <span class="hc-v">Multi-store LMS</span>
+            <span class="hc-m">Boba operator &middot; OC &middot; six employees</span>
+          </div>
+          <div class="hc-row last">
+            <span class="hc-k">04 &middot; Bench</span>
+            <span class="hc-v">Blackwell &middot; Last Bell</span>
+            <span class="hc-m">Slow-burn product builds</span>
+          </div>
+        </div>
+        <div class="hc-foot">
+          <span>Reply &lt; 24h</span>
+          <span class="hc-foot-r">Yorba Linda &middot; CA</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+  <div class="hero-ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>▸ Events &amp; Esports Operations</span><span class="sep">◆</span>
+      <span>▸ People Ops &amp; Multi-unit HR</span><span class="sep">◆</span>
+      <span>▸ EdTech &amp; Curriculum</span><span class="sep">◆</span>
+      <span>▸ AI Professional Development</span><span class="sep">◆</span>
+      <span>▸ Internal Tools &amp; Automation</span><span class="sep">◆</span>
+      <span>▸ Discord Ops &amp; Community Tools</span><span class="sep">◆</span>
+      <span>▸ Print &amp; Annotation Packets</span><span class="sep">◆</span>
+      <!-- duplicate run for seamless loop -->
+      <span>▸ Events &amp; Esports Operations</span><span class="sep">◆</span>
+      <span>▸ People Ops &amp; Multi-unit HR</span><span class="sep">◆</span>
+      <span>▸ EdTech &amp; Curriculum</span><span class="sep">◆</span>
+      <span>▸ AI Professional Development</span><span class="sep">◆</span>
+      <span>▸ Internal Tools &amp; Automation</span><span class="sep">◆</span>
+      <span>▸ Discord Ops &amp; Community Tools</span><span class="sep">◆</span>
+      <span>▸ Print &amp; Annotation Packets</span><span class="sep">◆</span>
     </div>
   </div>
 </section>
@@ -565,12 +706,12 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
 
       <a class="card unknown" href="mudgame.html">
         <div class="ct-top"><span class="ct-num">№ 08 · IN BUILD</span><span class="ct-date">2024 →</span></div>
-        <div class="ct-title">TBD MUD-Style Game</div>
-        <p class="ct-desc">A text-based multi-user dungeon, old-school multiplayer RPG, built from scratch.</p>
+        <div class="ct-title">Thirty Nights at Blackwell</div>
+        <p class="ct-desc">A literary gothic-horror text RPG in the spirit of Disco Elysium and Roadwarden. Welsh borderlands, 1880.</p>
         <ul class="ct-bullets">
-          <li>Persistent world, real-time multiplayer over websockets</li>
-          <li>Python backend, scriptable rooms and NPCs</li>
-          <li>Room-by-room devlog, content pipeline like shipping blog posts</li>
+          <li>Single-player, Electron + xterm.js, ASCII + ANSI aesthetic</li>
+          <li>No combat. Skill-by-use, crafting, per-NPC trust, Composure variants</li>
+          <li>Eleanor Hartwell, 30 nights, a 200-year-old bargain to resolve</li>
         </ul>
         <div class="ct-foot">
           <span class="arrow">Devlog →</span>
@@ -599,4 +740,79 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
 <!-- ENGAGE -->
 <section class="lite wrap" id="engage">
   <div class="engage">
-    <
+    <div class="engage-grid">
+      <div>
+        <div class="engage-tag">▸ Currently accepting work</div>
+        <h3>Got a project that <em>doesn't fit one lane?</em></h3>
+        <p>Baarstad Consultancy accepts engagements across the four pillars &mdash; embedded operations, product builds, advisory. Discovery calls are free, scope is fixed up front, and every engagement runs through BCS.</p>
+        <div class="engage-cta">
+          <a href="mailto:csbaarstad@gmail.com" class="btn btn-pri">Start a conversation →</a>
+          <a href="https://www.linkedin.com/in/csbaarstad" class="btn btn-sec">LinkedIn</a>
+        </div>
+      </div>
+      <div class="engage-meta">
+        <span class="k">Status</span>
+        <span class="v fired">▸ Open for engagements</span><br>
+        <span class="k">Based</span>
+        <span class="v">Yorba Linda, CA</span><br>
+        <span class="k">Engagement size</span>
+        <span class="v">Project &middot; Retainer &middot; Embed</span><br>
+        <span class="k">Reply time</span>
+        <span class="v">Within 24 hours</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html" style="font-size:18px">
+          <span class="b1">Baarstad Consultancy</span>
+          <span class="b-sep">◆</span>
+        </a>
+        <p>A one-principal workshop for cross-disciplinary operations and product work &mdash; events, people, education, automation.</p>
+      </div>
+      <div>
+        <div class="foot-h">Practice</div>
+        <div class="foot-list">
+          <a href="#work">Projects</a>
+          <a href="#log">Dev Log</a>
+          <a href="#engage">Engage</a>
+          <a href="mailto:csbaarstad@gmail.com">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-h">Elsewhere</div>
+        <div class="foot-list">
+          <a href="mailto:csbaarstad@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/csbaarstad">LinkedIn</a>
+          <a href="https://github.com/csbaarstad">GitHub</a>
+          <a href="bookpulse.html">BookPulse</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-h">Also</div>
+        <div class="foot-list">
+          <a href="https://awardsbyrubi.com">Awards by Rubi</a>
+          <span style="font-family:var(--mono);font-size:11px;color:var(--night-ink-3);line-height:1.5;margin-top:6px;display:block">Separate fabrication shop &middot; Yorba Linda</span>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-legal">Operating as <b>Baarstad Consulting Services (BCS)</b>, a California S-Corp.<br>&copy; 2026 Chris Baarstad &middot; All work shown is real and current.</div>
+      <div class="foot-note">{ workshop &middot; v1 }</div>
+    </div>
+  </div>
+</footer>
+
+<script src="devlog/devlog.js"></script>
+<script>
+  // Render the most recent 10 entries from /devlog/.
+  if (window.renderDevlog) window.renderDevlog('#devlog-target', { limit: 10 });
+</script>
+
+</body>
+</html>
