@@ -297,14 +297,7 @@ section.lite{padding:96px 0 20px}
 .ct-bullets li::before{content:"";position:absolute;left:0;top:14px;width:10px;height:2px;background:var(--ink-4);border-radius:1px;opacity:.7}
 
 /* ============ bio block ============ */
-.bio-grid{display:grid;grid-template-columns:230px 1.4fr 1fr;gap:36px;align-items:start}
-.bio-photo{position:relative}
-.bio-photo .ph-frame{position:relative;border-radius:6px;overflow:hidden;border:1px solid var(--line);box-shadow:0 14px 32px -16px rgba(20,18,12,.32)}
-.bio-photo .ph-frame::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--fired);opacity:.65;z-index:2}
-.bio-photo .ph-frame img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
-.bio-photo .cap{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line-soft)}
-.bio-photo .cap .nm{font-family:var(--display);font-size:18px;letter-spacing:-.5px;text-transform:uppercase;color:var(--ink);line-height:1;margin-bottom:5px;display:block}
-.bio-photo .cap .rl{font-family:var(--mono);font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink-3);font-weight:600;display:block}
+.bio-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:56px;align-items:start}
 .bio-prose{font-size:17px;line-height:1.65;color:var(--ink-2);max-width:60ch}
 .bio-prose p+p{margin-top:16px}
 .bio-prose b{color:var(--ink);font-weight:600}
@@ -315,8 +308,8 @@ section.lite{padding:96px 0 20px}
 .bio-fact .k{font-family:var(--mono);font-size:10px;color:var(--ink-3);letter-spacing:1.8px;text-transform:uppercase;font-weight:700;margin-bottom:6px}
 .bio-fact .v{font-family:var(--display);font-size:22px;color:var(--ink);letter-spacing:-.5px;line-height:1;text-transform:uppercase}
 .bio-fact .d{font-family:var(--body);font-size:13px;color:var(--ink-3);line-height:1.45;margin-top:6px}
-@media(max-width:980px){.bio-grid{grid-template-columns:210px 1fr;gap:30px}.bio-meta{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}}
-@media(max-width:680px){.bio-grid{grid-template-columns:1fr;gap:26px}.bio-photo{max-width:230px}.bio-meta{grid-template-columns:1fr}}
+@media(max-width:980px){.bio-grid{grid-template-columns:1fr;gap:32px}.bio-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}}
+@media(max-width:680px){.bio-grid{gap:26px}.bio-meta{grid-template-columns:1fr}}
 
 /* ============ build log ============ */
 .log{margin-top:8px;border-top:1px solid var(--line)}
@@ -478,16 +471,6 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
     <div class="sec-meta">Ops &middot; BizDev &middot; EdTech &middot; AI<br>Yorba Linda, California</div>
   </div>
   <div class="bio-grid">
-    <div class="bio-photo">
-      <div class="ph-frame">
-        <img src="images/chris-headshot.png" alt="Chris Baarstad — Principal, Baarstad Consultancy" loading="lazy"
-             onerror="this.onerror=null;this.src='images/chris-headshot-placeholder.svg';">
-      </div>
-      <div class="cap">
-        <span class="nm">Chris Baarstad</span>
-        <span class="rl">Principal &middot; BCS</span>
-      </div>
-    </div>
     <div class="bio-prose">
       <p>Five disciplines, one principal. Operations, business development, sales, EdTech, and AI, built across a fifteen-year arc that started in an ELA classroom and kept widening.</p>
       <p>From teacher to Director of Innovation for three years, shipping EdTech at scale. The last six years are the headline: business development, event management, and tournament operations at the national level, closing partner deals, locking venues, and putting national LANs on the floor.</p>
