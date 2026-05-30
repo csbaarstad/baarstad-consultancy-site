@@ -12,7 +12,7 @@
 <meta name="twitter:title" content="Baarstad Consultancy — Multi-discipline operations & product work">
 <meta name="twitter:description" content="Chris Baarstad runs national-scale esports events, ships EdTech for ELA teachers, trains Fortune 50 staff on AI, and operates the infrastructure between them. The workshop is in Yorba Linda, CA.">
 <meta name="author" content="Chris Baarstad">
-<meta name="theme-color" content="#0e0d0a">
+<meta name="theme-color" content="#16242b">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Baarstad Consultancy">
 <meta property="og:image" content="https://baarstadconsultancy.com/images/og-image.png">
@@ -26,53 +26,57 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=Inter+Tight:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=Inter+Tight:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&display=swap" rel="stylesheet">
 <style>
 /* ============ BAARSTAD CONSULTANCY — workshop brand ============ */
 :root{
-  /* base — paper + ink */
-  --paper:#ecead9;
-  --paper-2:#e3e0c8;
-  --ink:#0e0d0a;
-  --ink-2:#2a2820;
-  --ink-3:#5a5648;
-  --ink-4:#8a8472;
-  --line:#c8c4ad;
-  --line-soft:#d4d0b8;
+  /* editorial palette — cream paper, deep ink-teal, sage, bronze */
+  --paper:#f2efe9;
+  --paper-2:#e8e4dc;
+  --ink:#16242b;
+  --ink-2:#243239;
+  --ink-3:#4a5a62;
+  --ink-4:#7c8a90;
+  --line:#d9d3c6;
+  --line-soft:#e3ddcf;
 
   /* dark surfaces */
-  --night:#0e0d0a;
-  --night-2:#161410;
-  --night-3:#22201a;
-  --night-line:#2e2a22;
-  --night-ink:#ecead9;
-  --night-ink-2:#b8b5a0;
-  --night-ink-3:#76725f;
+  --night:#0f1a1f;
+  --night-2:#16242b;
+  --night-3:#1e2f37;
+  --night-line:#2a3d46;
+  --night-ink:#f2efe9;
+  --night-ink-2:#b6b0a3;
+  --night-ink-3:#7e7768;
 
-  /* signature colors — per pillar / per project */
-  --amber:#b87a2d;    /* education / pages */
-  --fired:#9c3712;    /* events / fabrication / signature */
-  --crt:#5a9b46;      /* games / terminal */
-  --signal:#3f6bb0;   /* automation / ops */
-  --ink-mark:#324c3c; /* print / packets */
-  --magenta:#8a4567;  /* commandcenter / signal */
-  --ai:#7461b0;       /* ai training / intelligence */
-  --plum:#7a4368;     /* commandcenter */
-  --moss:#2f7349;
+  /* accents — bronze is the editorial accent */
+  --bronze:#b08d57;
+  --bronze-soft:#c9a778;
+  --sage:#3f5d54;
+  --brick:#a04a30;   /* tweaks-panel alt; not default */
 
-  --sans:'Archivo',-apple-system,sans-serif;
+  /* legacy signature colors — kept for subpage compatibility */
+  --amber:#b08d57;
+  --fired:#b08d57;
+  --crt:#5a9b46;
+  --signal:#3f6bb0;
+  --ink-mark:#3f5d54;
+  --magenta:#8a4567;
+  --ai:#7461b0;
+  --plum:#7a4368;
+  --moss:#3f5d54;
+
+  --sans:'Inter Tight',-apple-system,sans-serif;
   --body:'Inter Tight',-apple-system,sans-serif;
   --display:'Archivo Black',sans-serif;
-  --mono:'Space Mono',ui-monospace,Menlo,monospace;
+  --serif:'Fraunces',Georgia,serif;
+  --mono:'Inter Tight',-apple-system,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   background:var(--paper);color:var(--ink);font-family:var(--body);
   line-height:1.55;-webkit-font-smoothing:antialiased;
-  background-image:
-    radial-gradient(ellipse at top right, rgba(156,55,18,.04), transparent 50%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.25 0 0 0 0 0.15 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 .wrap{max-width:1200px;margin:0 auto;padding:0 36px;position:relative}
 @media(max-width:640px){.wrap{padding:0 22px}}
@@ -90,144 +94,120 @@ nav{position:sticky;top:0;z-index:50;background:rgba(236,234,217,.88);backdrop-f
 .nav-in{max-width:1200px;margin:0 auto;padding:14px 36px;display:flex;align-items:center;justify-content:space-between}
 .brand{font-family:var(--display);font-size:14px;color:var(--ink);text-decoration:none;letter-spacing:.5px;text-transform:uppercase;line-height:1;display:flex;align-items:baseline;gap:10px}
 .brand .b1{font-size:14px}
-.brand .b-sep{color:var(--fired);font-size:8px;letter-spacing:1px}
-.brand .b2{font-size:11px;color:var(--ink-3);font-family:var(--mono);font-weight:600;letter-spacing:1px}
-.nav-links{display:flex;gap:28px;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.5px;text-transform:uppercase}
-.nav-links a{color:var(--ink-3);text-decoration:none;transition:color .15s}
-.nav-links a:hover{color:var(--fired)}
-.nav-back{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--ink-3);text-decoration:none;letter-spacing:1px;text-transform:uppercase}
-.nav-back:hover{color:var(--fired)}
+.brand{font-family:var(--display);font-size:15px;color:var(--ink);text-decoration:none;letter-spacing:-.3px;text-transform:none;line-height:1;display:flex;align-items:baseline;gap:10px}
+.brand .b1{font-size:17px;letter-spacing:-.4px}
+.brand .b-sep{color:var(--bronze);font-size:14px;font-family:var(--serif);font-style:italic}
+.brand .b2{font-size:13px;color:var(--bronze);font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:0}
+.nav-links{display:flex;gap:30px;font-family:var(--body);font-size:14px;font-weight:500;letter-spacing:0}
+.nav-links a{color:var(--ink-2);text-decoration:none;transition:color .15s}
+.nav-links a:hover{color:var(--bronze)}
+.nav-links a.nav-cta{background:var(--ink);color:#fff !important;padding:10px 22px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.1px}
+.nav-links a.nav-cta:hover{background:var(--bronze);color:#fff !important}
+.nav-back{font-family:var(--body);font-size:13px;font-weight:500;color:var(--ink-2);text-decoration:none}
+.nav-back:hover{color:var(--bronze)}
 @media(max-width:680px){.nav-links{display:none}}
 
-/* ============ dark hero ============ */
-.hero{background:var(--night);color:var(--night-ink);padding:64px 0 0;position:relative;overflow:hidden}
-.hero::before{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background-image:
-    radial-gradient(ellipse 60% 50% at 15% 100%,rgba(156,55,18,.22),transparent 60%),
-    radial-gradient(ellipse 40% 60% at 85% 0%,rgba(94,156,255,.10),transparent 60%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 0.85 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-.hero::after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background-image:linear-gradient(rgba(255,250,235,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,250,235,.03) 1px,transparent 1px);
-  background-size:80px 80px;
-  mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,#000,transparent 90%);
-}
+/* ============ editorial hero ============ */
+.hero{background:var(--paper);color:var(--ink);padding:42px 0 64px;position:relative;overflow:hidden}
 .hero .wrap{z-index:2;position:relative}
-.hero .reg{color:var(--night-ink-3);opacity:.6;width:26px;height:26px}
-.hero .reg::before{width:26px}.hero .reg::after{height:26px}
-.hero .reg.tl{top:18px;left:18px}.hero .reg.tr{top:18px;right:18px}
-.hero .reg.bl{bottom:78px;left:18px}.hero .reg.br{bottom:78px;right:18px}
 
-/* job stamp — top right corner */
-.hero-stamp{
-  position:absolute;top:54px;right:60px;z-index:3;
-  font-family:var(--mono);text-align:right;color:var(--night-ink-3);
-  letter-spacing:1.6px;line-height:1.2;text-transform:uppercase;
-  pointer-events:none;
-}
-.hero-stamp .hs-l1{display:block;font-size:10px;color:var(--fired);font-weight:700}
-.hero-stamp .hs-l2{display:block;font-family:var(--display);font-size:22px;color:var(--night-ink);letter-spacing:-.4px;line-height:1;margin:4px 0}
-.hero-stamp .hs-l3{display:block;font-size:9.5px;color:var(--night-ink-3);font-weight:600;letter-spacing:2px}
-@media(max-width:880px){.hero-stamp{display:none}}
+.hero-meta{display:flex;justify-content:space-between;align-items:baseline;gap:24px;font-family:var(--serif);font-size:14px;color:var(--ink-3);font-style:italic;margin-bottom:48px;flex-wrap:wrap}
+.hero-meta .hm-l{display:inline-flex;align-items:center;gap:10px}
+.hero-meta .hm-dot{width:8px;height:8px;border-radius:50%;background:var(--bronze)}
+.hero-meta .hm-r{font-family:var(--serif);font-style:normal;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-3);text-align:right;line-height:1.5}
+.hero-meta .hm-r .sub{display:block;font-style:italic;text-transform:none;letter-spacing:0;font-size:14px;margin-top:2px;color:var(--ink-3)}
 
-.hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:54px;align-items:start;padding-bottom:72px}
-@media(max-width:980px){.hero-grid{grid-template-columns:1fr;gap:34px}}
+.hero-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:56px;align-items:end}
+@media(max-width:980px){.hero-grid{grid-template-columns:1fr;gap:36px}}
 
 .hero-main{display:flex;flex-direction:column}
 
-.hero-eyebrow{display:inline-flex;align-items:center;gap:12px;margin-bottom:32px;font-family:var(--mono);font-size:11px;color:var(--night-ink-2);letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px;border:1px solid var(--night-line);border-radius:3px;background:rgba(255,250,235,.025);align-self:flex-start;max-width:100%}
-.hero-eyebrow .he-dot{width:8px;height:8px;background:var(--fired);border-radius:50%;box-shadow:0 0 12px var(--fired);animation:pulse 2.5s infinite;flex-shrink:0}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.55}}
-.hero-eyebrow b{color:var(--night-ink);font-weight:600}
+.hero h1{font-family:var(--display);font-size:clamp(38px,5.2vw,82px);line-height:.98;letter-spacing:-2px;color:var(--ink);text-transform:none;max-width:14ch}
+.hero h1 .accent{font-family:var(--serif);font-weight:500;font-style:italic;color:var(--bronze);letter-spacing:-1px;display:inline-block;text-transform:none;line-height:.98}
 
-.hero h1{font-family:var(--display);font-size:clamp(34px,4.6vw,66px);line-height:1;letter-spacing:-1.8px;color:var(--night-ink);text-transform:uppercase;max-width:14ch}
-.hero h1 .accent{color:var(--fired);display:inline-block;position:relative}
-.hero h1 .strike{position:relative;display:inline-block}
-.hero h1 .strike::after{content:"";position:absolute;left:-2%;right:-2%;top:52%;height:.12em;background:var(--fired);transform:rotate(-1.5deg)}
+.hero .sub{font-family:var(--body);font-size:18px;font-weight:400;color:var(--ink-2);line-height:1.55;max-width:46ch;margin-top:28px}
+.hero .sub b{color:var(--ink);font-weight:600}
 
-.hero .sub{font-family:var(--body);font-size:19px;font-weight:400;color:var(--night-ink-2);line-height:1.55;max-width:58ch;margin-top:30px}
-.hero .sub b{color:var(--night-ink);font-weight:600}
+.hero-row{display:flex;gap:10px;margin-top:34px;flex-wrap:wrap}
+.hero-pills{display:flex;gap:8px;margin-top:36px;flex-wrap:wrap}
+.hero-pills a{font-family:var(--body);font-size:13px;color:var(--ink-2);text-decoration:none;padding:8px 16px;border:1px solid var(--line);border-radius:999px;background:transparent;transition:.18s;font-weight:500}
+.hero-pills a:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 
-.hero-row{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
+.hero-portrait{position:relative;align-self:end;max-width:300px;justify-self:end;width:100%}
+.hero-portrait .pf{position:relative;background:var(--sage);padding:12px 12px 10px;border-radius:2px;box-shadow:0 18px 44px -22px rgba(22,36,43,.4)}
+.hero-portrait .pf img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:1px}
+.hero-portrait .pf .folio{position:absolute;top:20px;left:20px;font-family:var(--serif);font-style:italic;font-size:12px;color:var(--paper);background:rgba(22,36,43,.65);padding:3px 9px;border-radius:2px;letter-spacing:.3px}
+.hero-portrait .cap{display:flex;justify-content:space-between;align-items:baseline;margin-top:12px;padding-top:10px;border-top:1px solid var(--bronze)}
+.hero-portrait .cap .nm{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--ink);letter-spacing:-.2px}
+.hero-portrait .cap .rl{font-family:var(--body);font-size:10px;color:var(--ink-3);letter-spacing:1.8px;text-transform:uppercase;font-weight:600}
+@media(max-width:980px){.hero-portrait{max-width:260px;justify-self:start}}
 
-/* hero stat strip */
-.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;padding-top:28px;border-top:1px solid var(--night-line);max-width:680px}
-.hero-stats .hs{display:flex;flex-direction:column;gap:6px;padding-right:18px;border-right:1px solid var(--night-line)}
+/* hero stat strip — editorial */
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:52px;padding-top:24px;border-top:1px solid var(--line);max-width:760px}
+.hero-stats .hs{display:flex;flex-direction:column;gap:4px;padding-right:18px;border-right:1px solid var(--line)}
 .hero-stats .hs:last-child{border-right:none;padding-right:0}
-.hero-stats .hs .n{font-family:var(--display);font-size:clamp(22px,2.6vw,30px);color:var(--night-ink);letter-spacing:-.8px;line-height:1}
-.hero-stats .hs .n i{font-style:normal;color:var(--fired);font-size:.65em;margin-left:1px}
-.hero-stats .hs .l{font-family:var(--mono);font-size:10px;color:var(--night-ink-3);letter-spacing:1.2px;text-transform:uppercase;font-weight:600;line-height:1.4}
+.hero-stats .hs .n{font-family:var(--display);font-weight:400;font-size:clamp(22px,2.4vw,28px);color:var(--ink);letter-spacing:-.6px;line-height:1}
+.hero-stats .hs .n i{font-style:normal;color:var(--bronze);font-size:.7em;margin-left:1px;font-weight:400}
+.hero-stats .hs .l{font-family:var(--body);font-size:11.5px;color:var(--ink-3);font-weight:500;line-height:1.4}
 @media(max-width:680px){.hero-stats{grid-template-columns:repeat(2,1fr);gap:18px 0;max-width:none}.hero-stats .hs{padding:0 14px 0 0}.hero-stats .hs:nth-child(2n){border-right:none;padding-right:0}}
 
-/* intake card — right side of hero */
-.hero-card{
-  background:linear-gradient(180deg,var(--night-2),var(--night-3));
-  border:1px solid var(--night-line);
-  border-radius:6px;padding:22px 22px 18px;
-  position:relative;overflow:hidden;
-  font-family:var(--body);color:var(--night-ink);
-  box-shadow:0 30px 60px -30px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,250,235,.04);
-}
-.hero-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--fired),var(--amber),var(--crt),var(--signal));opacity:.85}
-.hero-card .hc-h{display:flex;justify-content:space-between;align-items:center;gap:14px;padding-bottom:14px;border-bottom:1px dashed var(--night-line);margin-bottom:14px}
-.hero-card .hc-tag{font-family:var(--mono);font-size:10.5px;color:var(--fired);letter-spacing:1.8px;text-transform:uppercase;font-weight:700}
-.hero-card .hc-sn{font-family:var(--mono);font-size:10px;color:var(--night-ink-3);letter-spacing:1.4px;text-transform:uppercase;font-weight:600}
-.hero-card .hc-rows{display:flex;flex-direction:column}
-.hero-card .hc-row{display:grid;grid-template-columns:auto 1fr;column-gap:14px;row-gap:2px;padding:11px 0;border-bottom:1px solid var(--night-line)}
-.hero-card .hc-row.last{border-bottom:none;padding-bottom:0}
-.hero-card .hc-k{font-family:var(--mono);font-size:10px;color:var(--night-ink-3);letter-spacing:1.5px;text-transform:uppercase;font-weight:700;grid-row:1/3;align-self:center;min-width:64px}
-.hero-card .hc-v{font-family:var(--display);font-size:15px;color:var(--night-ink);letter-spacing:-.3px;line-height:1.1;text-transform:uppercase}
-.hero-card .hc-m{font-family:var(--mono);font-size:10.5px;color:var(--night-ink-3);letter-spacing:.3px;text-transform:none;font-weight:500}
-.hero-card .hc-foot{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:10px;color:var(--night-ink-3);letter-spacing:1.4px;text-transform:uppercase;font-weight:600;padding-top:12px;margin-top:12px;border-top:1px solid var(--night-line)}
-.hero-card .hc-foot-r{color:var(--night-ink-2)}
+/* disciplines strip */
+.disc-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;background:transparent;font-family:var(--body);font-size:11.5px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:var(--ink-3)}
+.disc-strip .wrap{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:center}
+.disc-strip .ds-l{font-family:var(--serif);font-style:italic;font-weight:400;font-size:14px;letter-spacing:0;text-transform:none;color:var(--ink-3);margin-right:14px}
+.disc-strip .ds-sep{color:var(--bronze);font-size:8px}
 
-/* bottom ticker — runs full-bleed under hero */
-.hero-ticker{
-  position:relative;z-index:2;
-  border-top:1px solid var(--night-line);
-  border-bottom:1px solid var(--night-line);
-  background:rgba(255,250,235,.015);
-  overflow:hidden;
-  padding:12px 0;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
-          mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
-}
-.ticker-track{
-  display:flex;gap:32px;white-space:nowrap;width:max-content;
-  animation:tickerScroll 60s linear infinite;
-  font-family:var(--mono);font-size:11px;color:var(--night-ink-2);letter-spacing:1.5px;text-transform:uppercase;font-weight:500;
-}
-.ticker-track .sep{color:var(--fired);font-size:8px;letter-spacing:0;align-self:center}
-@keyframes tickerScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion: reduce){.ticker-track{animation:none}}
-.btn{font-family:var(--mono);font-size:12px;font-weight:600;text-decoration:none;padding:14px 22px;border-radius:3px;transition:.15s;display:inline-flex;align-items:center;gap:10px;letter-spacing:1.5px;text-transform:uppercase}
-.btn-pri{background:var(--fired);color:#fff}
-.btn-pri:hover{background:#ff5e2c;transform:translateY(-1px);box-shadow:0 12px 30px -10px rgba(156,55,18,.5)}
-.btn-sec{border:1px solid var(--night-line);color:var(--night-ink);background:transparent}
-.btn-sec:hover{border-color:var(--fired);color:var(--fired)}
+.btn{font-family:var(--body);font-size:13px;font-weight:500;text-decoration:none;padding:13px 22px;border-radius:999px;transition:.18s;display:inline-flex;align-items:center;gap:10px;letter-spacing:.2px}
+.btn-pri{background:var(--ink);color:var(--paper)}
+.btn-pri:hover{background:var(--sage);transform:translateY(-1px)}
+.btn-sec{border:1px solid var(--line);color:var(--ink);background:transparent}
+.btn-sec:hover{border-color:var(--ink);background:var(--ink);color:var(--paper)}
 .btn-light{background:var(--ink);color:var(--paper)}
-.btn-light:hover{background:var(--fired)}
+.btn-light:hover{background:var(--bronze)}
 .btn-light-sec{border:1px solid var(--line-soft);color:var(--ink);background:transparent}
 .btn-light-sec:hover{border-color:var(--ink);background:var(--ink);color:var(--paper)}
 
-/* ============ pillars row (dark band) ============ */
-.pillars{background:var(--night-2);border-top:1px solid var(--night-line);border-bottom:1px solid var(--night-line);padding:48px 0;color:var(--night-ink-2)}
-.pillars-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:36px 0;max-width:920px;margin:0 auto}
-.pillar{padding:0 36px}
-.pillar:nth-child(odd){border-right:1px solid var(--night-line)}
-.pillar-num{font-family:var(--mono);font-size:11px;color:var(--fired);letter-spacing:1.5px;font-weight:700;margin-bottom:12px}
-.pillar-name{font-family:var(--display);font-size:20px;color:var(--night-ink);text-transform:uppercase;letter-spacing:-.4px;line-height:1.05;margin-bottom:12px}
-.pillar-desc{font-size:14px;color:var(--night-ink-3);line-height:1.55;max-width:38ch}
-@media(max-width:680px){.pillars-grid{grid-template-columns:1fr;gap:28px 0}.pillar{padding:0 28px;border-right:none!important}.pillar+.pillar{padding-top:24px;border-top:1px solid var(--night-line)}}
+/* ============ disciplines grid (editorial light) ============ */
+.disc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:36px 56px;margin-top:24px}
+.disc-item{display:flex;flex-direction:column;gap:10px;padding-top:22px;border-top:1px solid var(--line)}
+.disc-item .di-n{font-family:var(--display);font-weight:400;font-size:24px;color:var(--bronze);line-height:1;letter-spacing:-.3px}
+.disc-item .di-h{font-family:var(--display);font-size:22px;color:var(--ink);letter-spacing:-.5px;line-height:1.1;margin-top:4px}
+.disc-item .di-p{font-family:var(--body);font-size:15px;color:var(--ink-2);line-height:1.55;max-width:42ch}
+@media(max-width:760px){.disc-grid{grid-template-columns:1fr;gap:26px}}
 
 /* ============ sections ============ */
-section.lite{padding:88px 0 20px}
-.sec-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:38px;gap:24px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:24px}
-.sec-tag{font-family:var(--mono);font-size:11px;color:var(--fired);letter-spacing:2px;font-weight:700;text-transform:uppercase;margin-bottom:10px}
-.sec-title{font-family:var(--display);font-size:clamp(22px,3vw,32px);line-height:1;letter-spacing:-1px;text-transform:uppercase;color:var(--ink);max-width:18ch}
-.sec-meta{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:1px;text-transform:uppercase;text-align:right}
+section.lite{padding:96px 0 20px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:38px;gap:24px;flex-wrap:wrap;padding-bottom:0}
+.sec-tag{font-family:var(--body);font-size:11.5px;color:var(--bronze);letter-spacing:2px;font-weight:600;text-transform:uppercase;margin-bottom:14px}
+.sec-title{font-family:var(--display);font-size:clamp(38px,5.4vw,72px);line-height:.95;letter-spacing:-2px;text-transform:none;color:var(--ink);max-width:none}
+.sec-meta{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--ink-3);letter-spacing:0;text-transform:none;text-align:right;line-height:1.4}
+
+/* ============ editorial work index ============ */
+.work-index{margin-top:18px;border-top:1px solid var(--line)}
+.work-row{display:grid;grid-template-columns:120px 200px 1fr 40px;gap:24px;padding:30px 0 28px;border-bottom:1px solid var(--line);align-items:center;text-decoration:none;color:inherit;position:relative;transition:.22s;cursor:pointer}
+.work-row:hover{background:var(--ink);color:var(--paper);padding-left:18px;padding-right:18px;margin-left:-18px;margin-right:-18px;border-color:var(--ink)}
+.work-row:hover .wr-num{color:var(--bronze-soft)}
+.work-row:hover .wr-cat,.work-row:hover .wr-status,.work-row:hover .wr-desc{color:var(--night-ink-2)}
+.work-row:hover .wr-title{color:var(--paper)}
+.work-row:hover .wr-arrow{color:var(--bronze-soft);transform:translateX(4px)}
+.wr-num{font-family:var(--display);font-weight:400;font-size:clamp(28px,3vw,40px);color:var(--bronze);line-height:1;letter-spacing:-.5px}
+.wr-meta{display:flex;flex-direction:column;gap:6px}
+.wr-cat{font-family:var(--body);font-size:11.5px;color:var(--ink-3);letter-spacing:1.8px;text-transform:uppercase;font-weight:600}
+.wr-status{display:inline-flex;align-items:center;gap:8px;font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink-3)}
+.wr-status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--bronze)}
+.wr-status.live::before{background:#3f8b54}
+.wr-status.bench::before{background:var(--ink-3)}
+.wr-body{display:flex;flex-direction:column;gap:8px}
+.wr-title{font-family:var(--display);font-size:clamp(22px,2.4vw,30px);color:var(--ink);letter-spacing:-.6px;line-height:1.05}
+.wr-desc{font-family:var(--body);font-size:14.5px;color:var(--ink-2);line-height:1.5;max-width:62ch}
+.wr-arrow{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--ink-3);text-align:right;transition:.22s;line-height:1}
+@media(max-width:760px){
+  .work-row{grid-template-columns:60px 1fr;gap:14px;padding:22px 0}
+  .work-row .wr-meta{grid-column:2;order:1}
+  .work-row .wr-body{grid-column:2;order:2}
+  .work-row .wr-arrow{display:none}
+  .wr-num{font-size:36px;align-self:start;padding-top:4px}
+}
 
 /* ============ project grid ============ */
 .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
@@ -346,36 +326,41 @@ section.lite{padding:88px 0 20px}
 .log-proj{font-family:var(--mono);font-size:10.5px;color:var(--fired);letter-spacing:1.2px;text-transform:uppercase;font-weight:600;text-align:right}
 @media(max-width:600px){.log-row{grid-template-columns:1fr;gap:6px}.log-proj{text-align:left}}
 
-/* ============ engage CTA — workshop "intake" form vibe ============ */
-.engage{background:var(--ink);color:var(--paper);border-radius:8px;padding:56px 48px;position:relative;overflow:hidden;margin-top:18px}
-.engage::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--fired),var(--amber),var(--crt),var(--signal),var(--magenta));opacity:.7}
-.engage-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;position:relative;z-index:2}
-.engage-tag{font-family:var(--mono);font-size:11px;color:var(--fired);letter-spacing:2px;font-weight:700;text-transform:uppercase;margin-bottom:18px}
-.engage h3{font-family:var(--display);font-size:clamp(32px,4.5vw,52px);line-height:.95;letter-spacing:-1.6px;text-transform:uppercase;color:var(--paper);max-width:14ch}
-.engage h3 em{font-style:normal;color:var(--fired)}
-.engage p{font-size:16px;color:var(--night-ink-2);line-height:1.55;max-width:48ch;margin-top:20px}
-.engage-cta{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
-.engage-meta{font-family:var(--mono);font-size:12px;color:var(--night-ink-2);line-height:2;border-left:1px solid var(--night-line);padding-left:36px}
-.engage-meta .k{font-size:10px;color:var(--night-ink-3);letter-spacing:1.5px;text-transform:uppercase;display:block;line-height:1.4}
-.engage-meta .v{color:var(--paper);font-weight:600;letter-spacing:.3px}
-.engage-meta .v.fired{color:var(--fired)}
-@media(max-width:760px){.engage{padding:36px 28px}.engage-grid{grid-template-columns:1fr;gap:28px}.engage-meta{border-left:none;border-top:1px solid var(--night-line);padding:24px 0 0}}
+/* ============ engage — editorial dark contact footer ============ */
+.engage-band{background:var(--night-2);color:var(--night-ink);padding:96px 0;margin-top:72px;position:relative;overflow:hidden}
+.engage-band .wrap{position:relative;z-index:2}
+.engage{display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:start}
+.engage h3{font-family:var(--display);font-size:clamp(44px,6vw,82px);line-height:.95;letter-spacing:-2.2px;color:var(--night-ink);max-width:14ch}
+.engage h3 em{font-family:var(--serif);font-weight:500;font-style:italic;color:var(--bronze);letter-spacing:-1px}
+.engage p{font-family:var(--body);font-size:18px;color:var(--night-ink-2);line-height:1.55;max-width:48ch;margin-top:30px}
+.engage-cta{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.engage-cta .btn-pri{background:var(--bronze);color:var(--ink)}
+.engage-cta .btn-pri:hover{background:var(--bronze-soft)}
+.engage-cta .btn-sec{border-color:var(--night-line);color:var(--night-ink)}
+.engage-cta .btn-sec:hover{background:var(--night-ink);color:var(--ink);border-color:var(--night-ink)}
+.engage-meta{display:flex;flex-direction:column;gap:22px;font-family:var(--body)}
+.engage-meta .em{display:flex;flex-direction:column;gap:5px}
+.engage-meta .k{font-family:var(--body);font-size:11px;color:var(--night-ink-3);letter-spacing:2px;text-transform:uppercase;font-weight:600}
+.engage-meta .v{font-family:var(--serif);font-style:italic;font-size:21px;color:var(--night-ink);letter-spacing:-.3px;line-height:1.2}
+.engage-meta .v a{color:var(--night-ink);text-decoration:none}
+.engage-meta .v a:hover{color:var(--bronze)}
+@media(max-width:760px){.engage-band{padding:64px 0}.engage{grid-template-columns:1fr;gap:36px}}
 
 /* ============ footer ============ */
-footer{margin-top:90px;background:var(--night);color:var(--night-ink-2);padding:54px 0 28px;position:relative}
-footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--fired),transparent)}
+footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36px 0 28px;position:relative;border-top:1px solid var(--night-3)}
 .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;margin-bottom:32px}
 .foot-brand .brand{color:var(--night-ink);margin-bottom:16px;font-size:20px}
-.foot-brand .brand .b2{color:var(--night-ink-3)}
-.foot-brand p{font-size:13.5px;line-height:1.6;color:var(--night-ink-2);max-width:36ch}
-.foot-h{font-family:var(--mono);font-size:10px;color:var(--night-ink-3);letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:14px}
+.foot-brand .brand .b1{color:var(--night-ink)}
+.foot-brand .brand .b2{color:var(--bronze)}
+.foot-brand p{font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.55;color:var(--night-ink-2);max-width:36ch}
+.foot-h{font-family:var(--body);font-size:11px;color:var(--night-ink-3);letter-spacing:2px;text-transform:uppercase;font-weight:600;margin-bottom:14px}
 .foot-list{display:flex;flex-direction:column;gap:8px}
-.foot-list a{color:var(--night-ink-2);text-decoration:none;font-size:13.5px;transition:.15s}
-.foot-list a:hover{color:var(--fired)}
+.foot-list a{color:var(--night-ink-2);text-decoration:none;font-size:14px;transition:.15s}
+.foot-list a:hover{color:var(--bronze)}
 .foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding-top:24px;border-top:1px solid var(--night-line)}
-.foot-legal{font-family:var(--mono);font-size:11px;color:var(--night-ink-3);letter-spacing:.4px;line-height:1.7}
+.foot-legal{font-family:var(--body);font-size:13px;color:var(--night-ink-3);letter-spacing:.2px;line-height:1.6}
 .foot-legal b{color:var(--night-ink-2)}
-.foot-note{font-family:var(--mono);font-size:10.5px;color:var(--night-ink-3);letter-spacing:1px;text-transform:uppercase}
+.foot-note{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--night-ink-3);letter-spacing:0}
 @media(max-width:760px){.foot-grid{grid-template-columns:1fr 1fr;gap:32px 24px}.foot-brand{grid-column:1/-1}}
 
 </style>
@@ -386,126 +371,98 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
   <div class="nav-in">
     <a class="brand" href="index.html">
       <span class="b1">Baarstad Consultancy</span>
-      <span class="b-sep">◆</span>
-      <span class="b2">est. 2024</span>
+      <span class="b-sep">|</span>
+      <span class="b2">BCS</span>
     </a>
     <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#disciplines">Disciplines</a>
       <a href="#about">About</a>
-      <a href="#work">Projects</a>
-      <a href="#log">Dev Log</a>
-      <a href="#engage">Engage</a>
+      <a href="#engage" class="nav-cta">Get in touch</a>
     </div>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <span class="reg tl"></span><span class="reg tr"></span>
-  <span class="reg bl"></span><span class="reg br"></span>
-  <span class="hero-stamp" aria-hidden="true">
-    <span class="hs-l1">Job №</span>
-    <span class="hs-l2">2026 &middot; 04</span>
-    <span class="hs-l3">Workshop intake</span>
-  </span>
   <div class="wrap">
+    <div class="hero-meta">
+      <span class="hm-l"><span class="hm-dot"></span>Independent practice &mdash; currently working</span>
+      <span class="hm-r">Yorba Linda, California<span class="sub">Selected work, 2026</span></span>
+    </div>
     <div class="hero-grid">
       <div class="hero-main">
-        <span class="hero-eyebrow">
-          <span class="he-dot"></span>
-          <span><b>Open for engagements</b> &middot; multi-discipline workshop &middot; est. 2024</span>
-        </span>
-        <h1>Multi-discipline<br><span class="accent">operations</span><br>&amp; product work.</h1>
-        <p class="sub">Chris Baarstad runs events at national scale, ships EdTech for ELA teachers, trains Fortune 50 staff on AI, and builds the tools that hold it all together. Baarstad Consultancy is the workshop, based in Yorba Linda, California.</p>
-        <div class="hero-row">
-          <a href="#work" class="btn btn-pri">See the work →</a>
-          <a href="#engage" class="btn btn-sec">Request an engagement</a>
+        <h1>Multi-discipline operations<br>&amp; <span class="accent">product work.</span></h1>
+        <p class="sub">A one-principal practice run by Chris Baarstad &mdash; operations, product and training delivered end to end, across fields that rarely share a desk.</p>
+        <div class="hero-pills">
+          <a href="events.html">Esports operations</a>
+          <a href="peopleops.html">People &amp; HR</a>
+          <a href="ai-jnj.html">AI training</a>
+          <a href="bookpulse.html">EdTech &amp; product</a>
+          <a href="lastbell.html">Games</a>
         </div>
         <div class="hero-stats">
           <div class="hs"><span class="n">15<i>y</i></span><span class="l">in education, edtech &amp; ops</span></div>
           <div class="hs"><span class="n">5</span><span class="l">disciplines under one roof</span></div>
-          <div class="hs"><span class="n">36</span><span class="l">states reached in current ops role</span></div>
-          <div class="hs"><span class="n">10k+</span><span class="l">annual participants in league play</span></div>
+          <div class="hs"><span class="n">36</span><span class="l">states reached, current role</span></div>
+          <div class="hs"><span class="n">10k+</span><span class="l">annual participants in play</span></div>
         </div>
       </div>
-      <aside class="hero-card" aria-label="currently in the workshop">
-        <div class="hc-h">
-          <span class="hc-tag">▸ Currently in the workshop</span>
-          <span class="hc-sn">SN&middot;04&nbsp;/&nbsp;2026</span>
+      <aside class="hero-portrait">
+        <div class="pf">
+          <span class="folio">Fig. 01</span>
+          <img src="images/chris-headshot.png" alt="Chris Baarstad, Principal" loading="eager" onerror="this.onerror=null;this.src='images/chris-headshot-placeholder.svg';">
         </div>
-        <div class="hc-rows">
-          <div class="hc-row">
-            <span class="hc-k">01 &middot; Live</span>
-            <span class="hc-v">National LAN, June</span>
-            <span class="hc-m">Run-of-show finalized &middot; teams confirmed</span>
-          </div>
-          <div class="hc-row">
-            <span class="hc-k">02 &middot; Shipping</span>
-            <span class="hc-v">BookPulse weekly</span>
-            <span class="hc-m">Twenty texts &middot; fourteen task types</span>
-          </div>
-          <div class="hc-row">
-            <span class="hc-k">03 &middot; Build</span>
-            <span class="hc-v">Multi-store LMS</span>
-            <span class="hc-m">Boba operator &middot; OC &middot; six employees</span>
-          </div>
-          <div class="hc-row last">
-            <span class="hc-k">04 &middot; Bench</span>
-            <span class="hc-v">Blackwell &middot; Last Bell</span>
-            <span class="hc-m">Slow-burn product builds</span>
-          </div>
-        </div>
-        <div class="hc-foot">
-          <span>Reply &lt; 24h</span>
-          <span class="hc-foot-r">Yorba Linda &middot; CA</span>
+        <div class="cap">
+          <span class="nm">Chris Baarstad</span>
+          <span class="rl">Principal</span>
         </div>
       </aside>
     </div>
   </div>
-  <div class="hero-ticker" aria-hidden="true">
-    <div class="ticker-track">
-      <span>▸ Events &amp; Esports Operations</span><span class="sep">◆</span>
-      <span>▸ People Ops &amp; Multi-unit HR</span><span class="sep">◆</span>
-      <span>▸ EdTech &amp; Curriculum</span><span class="sep">◆</span>
-      <span>▸ AI Professional Development</span><span class="sep">◆</span>
-      <span>▸ Internal Tools &amp; Automation</span><span class="sep">◆</span>
-      <span>▸ Discord Ops &amp; Community Tools</span><span class="sep">◆</span>
-      <span>▸ Print &amp; Annotation Packets</span><span class="sep">◆</span>
-      <!-- duplicate run for seamless loop -->
-      <span>▸ Events &amp; Esports Operations</span><span class="sep">◆</span>
-      <span>▸ People Ops &amp; Multi-unit HR</span><span class="sep">◆</span>
-      <span>▸ EdTech &amp; Curriculum</span><span class="sep">◆</span>
-      <span>▸ AI Professional Development</span><span class="sep">◆</span>
-      <span>▸ Internal Tools &amp; Automation</span><span class="sep">◆</span>
-      <span>▸ Discord Ops &amp; Community Tools</span><span class="sep">◆</span>
-      <span>▸ Print &amp; Annotation Packets</span><span class="sep">◆</span>
-    </div>
-  </div>
 </section>
 
-<!-- PILLARS (dark band) -->
-<section class="pillars">
+<div class="disc-strip">
   <div class="wrap">
-    <div class="pillars-grid">
-      <div class="pillar">
-        <div class="pillar-num">PILLAR 01</div>
-        <div class="pillar-name">Events &amp; Esports Operations</div>
-        <p class="pillar-desc">Live LAN events, league operations, tournament structure, from the schedule grid to the floor on game day.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">PILLAR 02</div>
-        <div class="pillar-name">People Ops</div>
-        <p class="pillar-desc">Multi-location hiring, scoring systems, compliance-aware terminations, employee management at SMB scale.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">PILLAR 03</div>
-        <div class="pillar-name">EdTech &amp; Education</div>
-        <p class="pillar-desc">Classroom ELA teacher first, then Director of Innovation for three years, then operator. Currently shipping BookPulse (live reading platform), TpT annotation packets, and an LMS for multi-unit operators.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">PILLAR 04</div>
-        <div class="pillar-name">Tools, Automation &amp; AI</div>
-        <p class="pillar-desc">Custom Next.js / Supabase builds, Claude-powered internal tools, Discord automation, plus AI professional development delivered to enterprise teams.</p>
-      </div>
+    <span class="ds-l">The practice spans</span>
+    <span>Esports</span><span class="ds-sep">●</span>
+    <span>People Ops</span><span class="ds-sep">●</span>
+    <span>AI Enablement</span><span class="ds-sep">●</span>
+    <span>EdTech</span><span class="ds-sep">●</span>
+    <span>Product</span><span class="ds-sep">●</span>
+    <span>Games</span>
+  </div>
+</div>
+
+<!-- DISCIPLINES — editorial 4-up under cream paper -->
+<section class="lite wrap" id="disciplines">
+  <div class="sec-head">
+    <div>
+      <div class="sec-tag">▸ Practice</div>
+      <h2 class="sec-title">Four disciplines, one principal.</h2>
+    </div>
+    <div class="sec-meta">Built across a fifteen-year arc &mdash;<br>classroom &rarr; director &rarr; operator.</div>
+  </div>
+  <div class="disc-grid">
+    <div class="disc-item">
+      <span class="di-n">01</span>
+      <h3 class="di-h">Events &amp; Esports Operations</h3>
+      <p class="di-p">Live LAN events, league operations, tournament structure &mdash; from the schedule grid to the floor on game day.</p>
+    </div>
+    <div class="disc-item">
+      <span class="di-n">02</span>
+      <h3 class="di-h">People Ops</h3>
+      <p class="di-p">Multi-location hiring, scoring systems, compliance-aware terminations, employee management at SMB scale.</p>
+    </div>
+    <div class="disc-item">
+      <span class="di-n">03</span>
+      <h3 class="di-h">EdTech &amp; Education</h3>
+      <p class="di-p">Classroom ELA teacher, then Director of Innovation for three years, then operator. Currently shipping BookPulse, TpT annotation packets, and an LMS for multi-unit operators.</p>
+    </div>
+    <div class="disc-item">
+      <span class="di-n">04</span>
+      <h3 class="di-h">Tools, Automation &amp; AI</h3>
+      <p class="di-p">Custom Next.js / Supabase builds, Claude-powered internal tools, Discord automation, plus AI professional development delivered to enterprise teams.</p>
     </div>
   </div>
 </section>
@@ -515,10 +472,10 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
   <span class="reg tl"></span><span class="reg tr"></span>
   <div class="sec-head">
     <div>
-      <div class="sec-tag">Behind the workshop</div>
+      <div class="sec-tag">▸ Behind the practice</div>
       <h2 class="sec-title">A short bio.</h2>
     </div>
-    <div class="sec-meta">Ops &middot; BizDev &middot; Sales<br>EdTech &middot; AI<br><b style="color:var(--ink)">Yorba Linda, CA</b></div>
+    <div class="sec-meta">Ops &middot; BizDev &middot; EdTech &middot; AI<br>Yorba Linda, California</div>
   </div>
   <div class="bio-grid">
     <div class="bio-photo">
@@ -556,209 +513,161 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
   </div>
 </section>
 
-<!-- PROJECTS (by lane) -->
+<!-- SELECTED WORK -->
 <section class="lite wrap" id="work">
-  <span class="reg tl"></span><span class="reg tr"></span>
   <div class="sec-head">
     <div>
-      <div class="sec-tag">8 projects · 3 lanes</div>
-      <h2 class="sec-title">The Work.</h2>
+      <div class="sec-tag">▸ Selected Work</div>
+      <h2 class="sec-title">Selected Work</h2>
     </div>
-    <div class="sec-meta">Roles I hold,<br>products in the world,<br>builds on the bench<br><b style="color:var(--ink)">All under one roof</b></div>
   </div>
 
-  <!-- CURRENT ROLES -->
-  <div class="status-block s-roles">
-    <div class="status-head">
-      <div class="status-name">Current Roles</div>
-      <div class="status-meta">
-        <div class="count">2 engagements</div>
-        <div class="label">Active contractor work</div>
+  <div class="work-index">
+    <a class="work-row" href="events.html">
+      <span class="wr-num">01</span>
+      <div class="wr-meta">
+        <span class="wr-cat">Operations</span>
+        <span class="wr-status">Ongoing</span>
       </div>
-    </div>
-    <div class="grid-2">
-
-      <a class="card events" href="events.html">
-        <div class="ct-top"><span class="ct-num">№ 01 · ACTIVE</span><span class="ct-date">Since 2020</span></div>
-        <div class="ct-title">National Esports Ops</div>
-        <p class="ct-desc">Operations lead for the largest youth esports organization in the country.</p>
-        <ul class="ct-bullets">
-          <li>League play across 36 states, 10,000+ annual participants</li>
-          <li>Point person for the national LAN championship</li>
-          <li>Tournament structure, dispute resolution, floor lead on event days</li>
-        </ul>
-        <div class="ct-foot">
-          <span class="arrow">Read →</span>
-        </div>
-      </a>
-
-      <a class="card peopleops" href="peopleops.html">
-        <div class="ct-top"><span class="ct-num">№ 02 · ACTIVE</span><span class="ct-date">Since 2026</span></div>
-        <div class="ct-title">People-Ops and HR Services</div>
-        <p class="ct-desc">People-ops infrastructure for a multi-unit boba shop company in Orange County.</p>
-        <ul class="ct-bullets">
-          <li>Multi-store hiring pipelines. CSV scoring + ranked shortlists</li>
-          <li>Compliance-aware terminations &amp; employee management</li>
-          <li>HR infrastructure at SMB scale, multi-unit Orange County footprint</li>
-        </ul>
-        <div class="ct-foot">
-          <span class="arrow">Read →</span>
-        </div>
-      </a>
-
-    </div>
-  </div>
-
-  <!-- SHIPPED & RUNNING -->
-  <div class="status-block s-shipped">
-    <div class="status-head">
-      <div class="status-name">Live <span class="amp">&amp;</span> Running</div>
-      <div class="status-meta">
-        <div class="count">4 projects</div>
-        <div class="label">Out in the world</div>
+      <div class="wr-body">
+        <span class="wr-title">National Esports Ops</span>
+        <span class="wr-desc">Operations lead for the largest youth esports org in the country &mdash; league play across 36 states and the national LAN championship.</span>
       </div>
-    </div>
-    <div class="grid-2">
+      <span class="wr-arrow">↗</span>
+    </a>
 
-      <a class="card leaguebot" href="discord-bot.html">
-        <div class="ct-top"><span class="ct-num">№ 03 · LIVE</span><span class="ct-date">Since April 2026</span></div>
-        <div class="ct-title">Gamer-centric Discord Bot</div>
-        <p class="ct-desc">A Discord bot built for gaming communities, moderation, engagement, and ops automation in one extensible package.</p>
-        <ul class="ct-bullets">
-          <li>Robust ticketing system with AI conversation summaries &amp; cross-server admin dashboard</li>
-          <li>"Legends" engagement game. XP, leveling, progression for community members</li>
-          <li>Counting channels, NSFW filters, and full moderation toolkit baked in</li>
-        </ul>
-        <div class="ct-foot">
-          <span class="arrow">Read →</span>
-        </div>
-      </a>
-
-      <a class="card packets" href="tpt-store.html">
-        <div class="ct-top"><span class="ct-num">№ 04 · LIVE</span><span class="ct-date">Since 2018</span></div>
-        <div class="ct-title">TpT Store</div>
-        <p class="ct-desc">My Teachers Pay Teachers storefront, @csbaarstad, print-ready ELA chapter guides for middle &amp; high-school novels, with more educator resources on the way.</p>
-        <ul class="ct-bullets">
-          <li>Written by a working ELA teacher, designed in the classroom, sold to other teachers</li>
-          <li>Cover, annotation, vocab, comprehension, and short-response pages per chapter</li>
-          <li>Grades 4&ndash;12 novel coverage, expanding catalog</li>
-        </ul>
-        <div class="ct-foot">
-          <span class="arrow">Read →</span>
-        </div>
-      </a>
-
-      <a class="card aipd" href="ai-jnj.html">
-        <div class="ct-top"><span class="ct-num">№ 05 · DELIVERED</span><span class="ct-date">2025</span></div>
-        <div class="ct-title">AI for J&amp;J</div>
-        <p class="ct-desc">AI professional-development program delivered to Johnson &amp; Johnson staff, partnered through COAST Tactical Training.</p>
-        <ul class="ct-bullets">
-          <li>AI fundamentals &amp; practical workflows for knowledge workers</li>
-          <li>Fortune 50 audience, in-person delivery</li>
-          <li>Topics: where AI saves time, day-to-day integration</li>
-        </ul>
-        <div class="ct-foot">
-          <span class="arrow">Read →</span>
-        </div>
-      </a>
-
-      <a class="card bookpulse" href="bookpulse.html">
-        <div class="ct-top"><span class="ct-num">№ 06 · LIVE</span><span class="ct-date">Since 2025</span></div>
-        <div class="ct-title">BookPulse</div>
-        <p class="ct-desc">An interactive ELA reading platform for grades 4&ndash;12, my own EdTech IP. Live and shipping continuous updates.</p>
-        <ul class="ct-bullets">
-          <li>Join-code student auth, teacher dashboards</li>
-          <li>Chapter-gated tasks, comprehension checks, short response</li>
-          <li>7 launch novels, expanding catalog, weekly releases</li>
-        </ul>
-        <div class="ct-foot">
-          <span class="arrow">Read →</span>
-        </div>
-      </a>
-
-    </div>
-  </div>
-
-  <!-- ON THE BENCH -->
-  <div class="status-block s-bench">
-    <div class="status-head">
-      <div class="status-name">On the Bench</div>
-      <div class="status-meta">
-        <div class="count">2 projects</div>
-        <div class="label">Currently building</div>
+    <a class="work-row" href="peopleops.html">
+      <span class="wr-num">02</span>
+      <div class="wr-meta">
+        <span class="wr-cat">People &amp; HR</span>
+        <span class="wr-status">Ongoing</span>
       </div>
-    </div>
-    <div class="grid-2">
+      <div class="wr-body">
+        <span class="wr-title">People-Ops &amp; HR Services</span>
+        <span class="wr-desc">Hiring pipelines, scoring systems, terminations and a custom LMS for a multi-unit boba operator in Orange County.</span>
+      </div>
+      <span class="wr-arrow">↗</span>
+    </a>
 
-      <a class="card lastbell" href="lastbell.html">
-        <div class="ct-top"><span class="ct-num">№ 07 · IN BUILD</span><span class="ct-date">2025 →</span></div>
-        <div class="ct-title">Last Bell</div>
-        <p class="ct-desc">A 3&ndash;4 player mobile co-op horror game set in a haunted elementary school. Built in Roblox, ages 9+.</p>
-        <ul class="ct-bullets">
-          <li>School rebuilds each run, new rooms, routes, hiding spots</li>
-          <li>"Heat" mechanic: noise + speed + light invite the Listener</li>
-          <li>Currently grey-boxing the core loop, decaying-safety Generator</li>
-        </ul>
-        <div class="ct-foot">
-          <span class="arrow">Devlog →</span>
-        </div>
-      </a>
+    <a class="work-row" href="bookpulse.html">
+      <span class="wr-num">03</span>
+      <div class="wr-meta">
+        <span class="wr-cat">EdTech &middot; Product</span>
+        <span class="wr-status live">Live</span>
+      </div>
+      <div class="wr-body">
+        <span class="wr-title">BookPulse</span>
+        <span class="wr-desc">An interactive ELA reading platform for grades 4&ndash;12 &mdash; 20 texts, 14 task types. Live at readbookpulse.com.</span>
+      </div>
+      <span class="wr-arrow">↗</span>
+    </a>
 
-      <a class="card unknown" href="mudgame.html">
-        <div class="ct-top"><span class="ct-num">№ 08 · IN BUILD</span><span class="ct-date">2024 →</span></div>
-        <div class="ct-title">Thirty Nights at Blackwell</div>
-        <p class="ct-desc">A literary gothic-horror text RPG in the spirit of Disco Elysium and Roadwarden. Welsh borderlands, 1880.</p>
-        <ul class="ct-bullets">
-          <li>Single-player, Electron + xterm.js, ASCII + ANSI aesthetic</li>
-          <li>No combat. Skill-by-use, crafting, per-NPC trust, Composure variants</li>
-          <li>Eleanor Hartwell, 30 nights, a 200-year-old bargain to resolve</li>
-        </ul>
-        <div class="ct-foot">
-          <span class="arrow">Devlog →</span>
-        </div>
-      </a>
+    <a class="work-row" href="discord-bot.html">
+      <span class="wr-num">04</span>
+      <div class="wr-meta">
+        <span class="wr-cat">Product &middot; Engineering</span>
+        <span class="wr-status live">Live</span>
+      </div>
+      <div class="wr-body">
+        <span class="wr-title">Multi-Tenant Discord Bot</span>
+        <span class="wr-desc">A comprehensive multi-tenant Discord platform &mdash; tickets with AI summaries, an XP/leveling game (Legends), and a moderation toolkit.</span>
+      </div>
+      <span class="wr-arrow">↗</span>
+    </a>
 
-    </div>
+    <a class="work-row" href="ai-jnj.html">
+      <span class="wr-num">05</span>
+      <div class="wr-meta">
+        <span class="wr-cat">AI &middot; Training</span>
+        <span class="wr-status">Delivered</span>
+      </div>
+      <div class="wr-body">
+        <span class="wr-title">AI for J&amp;J</span>
+        <span class="wr-desc">An AI professional-development program delivered to Johnson &amp; Johnson staff, partnered through COAST Tactical Training.</span>
+      </div>
+      <span class="wr-arrow">↗</span>
+    </a>
+
+    <a class="work-row" href="tpt-store.html">
+      <span class="wr-num">06</span>
+      <div class="wr-meta">
+        <span class="wr-cat">Education &middot; Content</span>
+        <span class="wr-status live">Live</span>
+      </div>
+      <div class="wr-body">
+        <span class="wr-title">TpT Store &mdash; @csbaarstad</span>
+        <span class="wr-desc">Print-ready ELA annotation packets for middle and high-school novels, written by a working teacher.</span>
+      </div>
+      <span class="wr-arrow">↗</span>
+    </a>
+
+    <a class="work-row" href="lastbell.html">
+      <span class="wr-num">07</span>
+      <div class="wr-meta">
+        <span class="wr-cat">Games</span>
+        <span class="wr-status bench">Early dev</span>
+      </div>
+      <div class="wr-body">
+        <span class="wr-title">Last Bell</span>
+        <span class="wr-desc">A 3&ndash;4 player mobile co-op horror game set in a haunted elementary school. Roblox, ages 9+.</span>
+      </div>
+      <span class="wr-arrow">↗</span>
+    </a>
+
+    <a class="work-row" href="mudgame.html">
+      <span class="wr-num">08</span>
+      <div class="wr-meta">
+        <span class="wr-cat">Games &middot; Writing</span>
+        <span class="wr-status bench">Early dev</span>
+      </div>
+      <div class="wr-body">
+        <span class="wr-title">Thirty Nights at Blackwell</span>
+        <span class="wr-desc">A literary gothic-horror text RPG in the spirit of Disco Elysium and Roadwarden. Welsh borderlands, 1880.</span>
+      </div>
+      <span class="wr-arrow">↗</span>
+    </a>
   </div>
-
 </section>
 
 <!-- DEV/BUILD LOG -->
 <section class="lite wrap" id="log">
   <div class="sec-head">
     <div>
-      <div class="sec-tag">Field notes from every project</div>
-      <h2 class="sec-title">Dev / Build Log</h2>
+      <div class="sec-tag">▸ Field Notes</div>
+      <h2 class="sec-title">Dev &amp; build log.</h2>
     </div>
-    <div class="sec-meta">All lanes feed in &mdash;<br>tap a project to filter<br><b style="color:var(--ink)">Updated weekly</b></div>
+    <div class="sec-meta">Field notes across every lane &mdash;<br>updated weekly.</div>
   </div>
   <div class="log" id="devlog-target">
     <!-- Populated at runtime from /devlog/devlog.js (mirrors /devlog/*.md). -->
   </div>
 </section>
 
-<!-- ENGAGE -->
-<section class="lite wrap" id="engage">
-  <div class="engage">
-    <div class="engage-grid">
+<!-- ENGAGE — dark editorial contact -->
+<section class="engage-band" id="engage">
+  <div class="wrap">
+    <div class="engage">
       <div>
-        <div class="engage-tag">▸ Currently accepting work</div>
-        <h3>Got a project that <em>doesn't fit one lane?</em></h3>
-        <p>Baarstad Consultancy accepts engagements across the four pillars &mdash; embedded operations, product builds, advisory. Discovery calls are free, scope is fixed up front, and every engagement runs through BCS.</p>
+        <h3>Let's build <em>something</em> that runs.</h3>
+        <p>Operations, product, training, or a project that doesn't fit a category &mdash; if it needs one person who can own the whole thing, start here.</p>
         <div class="engage-cta">
           <a href="mailto:csbaarstad@gmail.com" class="btn btn-pri">Start a conversation →</a>
           <a href="https://www.linkedin.com/in/csbaarstad" class="btn btn-sec">LinkedIn</a>
         </div>
       </div>
       <div class="engage-meta">
-        <span class="k">Status</span>
-        <span class="v fired">▸ Open for engagements</span><br>
-        <span class="k">Based</span>
-        <span class="v">Yorba Linda, CA</span><br>
-        <span class="k">Engagement size</span>
-        <span class="v">Project &middot; Retainer &middot; Embed</span><br>
-        <span class="k">Reply time</span>
-        <span class="v">Within 24 hours</span>
+        <div class="em">
+          <span class="k">Email</span>
+          <span class="v"><a href="mailto:csbaarstad@gmail.com">csbaarstad@gmail.com</a></span>
+        </div>
+        <div class="em">
+          <span class="k">Based in</span>
+          <span class="v">Yorba Linda, California</span>
+        </div>
+        <div class="em">
+          <span class="k">Elsewhere</span>
+          <span class="v"><a href="https://www.teacherspayteachers.com/Store/Csbaarstad" target="_blank" rel="noopener">TeachersPayTeachers &mdash; @csbaarstad</a></span>
+        </div>
       </div>
     </div>
   </div>

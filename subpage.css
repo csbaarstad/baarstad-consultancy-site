@@ -34,7 +34,7 @@
   --sans:'Archivo',-apple-system,sans-serif;
   --body:'Inter Tight',-apple-system,sans-serif;
   --display:'Archivo Black',sans-serif;
-  --mono:'Space Mono',ui-monospace,Menlo,monospace;
+  --mono:'Archivo','Inter Tight',-apple-system,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
