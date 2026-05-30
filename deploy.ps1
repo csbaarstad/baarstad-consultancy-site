@@ -20,7 +20,7 @@ git status --short
 Write-Host "[deploy] committing..." -ForegroundColor Cyan
 # Single-line ASCII-safe commit message - PowerShell + git on Windows
 # choke on em-dashes, ellipses, arrows, smart quotes in -m strings.
-git commit -m "Editorial reskin + round 1+2 fixes: cream/ink-teal/sage/bronze palette, Fraunces serif accent, new hero with portrait (no Fig.01 overlay), numbered work index (BookPulse 03, Multi-Tenant Discord Bot 04, TpT 06), dark contact band, nav vertical alignment, stat-row column padding, BookPulse twin-panel contain-fit so no text gets cropped"
+git commit -m "Round 3: kill typewriter feel everywhere. --mono is now Inter Tight only (was Archivo first, which renders typewriter-ish at small caps+tracked). Mockup captions, footer labels, page meta, sec-tags etc. switched from caps/tracked to mixed-case body or Fraunces italic. Subpages now also load Fraunces italic. BookPulse mockup: dropped the broken twin-panel; using a single stitched image (bookpulse-combined.png) so nothing gets cropped at any width."
 
 if ($LASTEXITCODE -ne 0) {
     Write-Host "[deploy] commit failed or nothing to commit. status:" -ForegroundColor Yellow
