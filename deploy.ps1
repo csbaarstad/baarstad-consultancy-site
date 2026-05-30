@@ -20,7 +20,7 @@ git status --short
 Write-Host "[deploy] committing..." -ForegroundColor Cyan
 # Single-line ASCII-safe commit message - PowerShell + git on Windows
 # choke on em-dashes, ellipses, arrows, smart quotes in -m strings.
-git commit -m "Editorial reskin: cream/ink-teal/sage/bronze palette, Fraunces accent, new hero with portrait, numbered work index, dark contact band; renamed Discord bot to Multi-Tenant, reordered projects (BookPulse 03, TpT to bottom of active), retired On the bench"
+git commit -m "Editorial reskin + round 1+2 fixes: cream/ink-teal/sage/bronze palette, Fraunces serif accent, new hero with portrait (no Fig.01 overlay), numbered work index (BookPulse 03, Multi-Tenant Discord Bot 04, TpT 06), dark contact band, nav vertical alignment, stat-row column padding, BookPulse twin-panel contain-fit so no text gets cropped"
 
 if ($LASTEXITCODE -ne 0) {
     Write-Host "[deploy] commit failed or nothing to commit. status:" -ForegroundColor Yellow
