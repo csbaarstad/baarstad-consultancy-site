@@ -28,16 +28,19 @@ Hero rework + real screenshots + content pass + font swap
   were missing in HEAD — site was rendering broken)
 - Rework hero: intake card on right, 4-stat strip, job-stamp,
   scrolling discipline ticker; bigger registration marks
-- Replace JetBrains Mono with IBM Plex Mono (less AI-tool feel)
-- Wire real BookPulse student view (Gatsby Ch.7, Claude popup
-  cropped off the bottom right)
+- Replace JetBrains Mono with Space Mono (further off the
+  AI-tool-default beaten path; editorial/retro feel)
+- Wire real BookPulse student view as TWO side-by-side panels
+  (reading + tasks) — kills the big dark middle from the single
+  screenshot, Claude permission popup gone
 - Wire real TpT storefront + a Giver Ch.4 annotation page from
   the Updated Pagination format
 - Replace MUD page with real project 'Thirty Nights at Blackwell'
   literary gothic-horror RPG, Welsh borderlands, Eleanor Hartwell;
   refresh homepage card to match
 - Reframe events page: 3 lane tiles (Online Events / In-Person
-  Events / Partnerships & District) replace the old 4-quadrant
+  Events / Partnerships & District); calendar grid removed
+  entirely — keep just the run-of-show bar + lane tiles
 - Redesign AI for J&J slide as a single 16:9 Gamma-style sample
 "@
 

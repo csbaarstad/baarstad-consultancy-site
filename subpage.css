@@ -34,7 +34,7 @@
   --sans:'Archivo',-apple-system,sans-serif;
   --body:'Inter Tight',-apple-system,sans-serif;
   --display:'Archivo Black',sans-serif;
-  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --mono:'Space Mono',ui-monospace,Menlo,monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -157,6 +157,10 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
 .shot-row{display:grid;grid-template-columns:1.4fr 1fr;gap:18px;align-items:stretch}
 .shot-row .shot{height:100%;object-fit:cover;object-position:top}
 @media(max-width:760px){.shot-row{grid-template-columns:1fr}}
+/* BookPulse twin-panel — both shots dark-mode, aligned heights */
+.shot-row.bp-pair{grid-template-columns:1fr 1.45fr;gap:14px;align-items:stretch}
+.shot-row.bp-pair .shot{object-fit:cover;object-position:top left}
+@media(max-width:760px){.shot-row.bp-pair{grid-template-columns:1fr}}
 
 /* ------- story (left rail labels + prose) ------- */
 .story{padding:88px 0 28px}
