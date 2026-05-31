@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Baarstad Consultancy — Chris Baarstad</title>
+<title>Baarstad Consultancy — AI for schools and operators</title>
 <!-- SEO + share preview -->
-<meta name="description" content="Chris Baarstad runs national-scale esports events, ships EdTech for ELA teachers, trains Fortune 50 staff on AI, and operates the infrastructure between them. The workshop is in Yorba Linda, CA.">
+<meta name="description" content="Baarstad Consultancy brings AI into schools and small operators that don't have an internal team. AI Professional Development, AI-powered software, and bespoke automation — delivered by Chris Baarstad with real, named clients.">
 <meta property="og:url" content="https://baarstadconsultancy.com/">
-<meta property="og:title" content="Baarstad Consultancy — Multi-discipline operations & product work">
-<meta property="og:description" content="Chris Baarstad runs national-scale esports events, ships EdTech for ELA teachers, trains Fortune 50 staff on AI, and operates the infrastructure between them. The workshop is in Yorba Linda, CA.">
-<meta name="twitter:title" content="Baarstad Consultancy — Multi-discipline operations & product work">
-<meta name="twitter:description" content="Chris Baarstad runs national-scale esports events, ships EdTech for ELA teachers, trains Fortune 50 staff on AI, and operates the infrastructure between them. The workshop is in Yorba Linda, CA.">
+<meta property="og:title" content="Baarstad Consultancy — AI for schools and operators">
+<meta property="og:description" content="AI Professional Development, AI-powered software, and bespoke automation for districts and operators that don't have an in-house team. Proof: J&J, BookPulse, Valhallan Esports.">
+<meta name="twitter:title" content="Baarstad Consultancy — AI for schools and operators">
+<meta name="twitter:description" content="AI Professional Development, AI-powered software, and bespoke automation for districts and operators that don't have an in-house team. Proof: J&J, BookPulse, Valhallan Esports.">
 <meta name="author" content="Chris Baarstad">
 <meta name="theme-color" content="#16242b">
 <meta property="og:type" content="website">
@@ -168,7 +168,48 @@ nav{position:sticky;top:0;z-index:50;background:rgba(236,234,217,.88);backdrop-f
 .btn-light-sec{border:1px solid var(--line-soft);color:var(--ink);background:transparent}
 .btn-light-sec:hover{border-color:var(--ink);background:var(--ink);color:var(--paper)}
 
-/* ============ disciplines grid (editorial light) ============ */
+/* ============ The Gap manifesto band ============ */
+.gap-band{background:var(--ink);color:var(--night-ink);padding:72px 0;border-top:1px solid var(--ink-2);border-bottom:1px solid var(--ink-2);position:relative;overflow:hidden}
+.gap-band::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 20% 0%,rgba(176,141,87,.18),transparent 60%),radial-gradient(ellipse 50% 50% at 90% 100%,rgba(63,93,84,.18),transparent 60%)}
+.gap-grid{position:relative;z-index:2;max-width:880px}
+.gap-eyebrow{font-family:var(--body);font-size:12px;color:var(--bronze);letter-spacing:2px;font-weight:600;text-transform:uppercase;margin-bottom:18px}
+.gap-h{font-family:var(--display);font-size:clamp(28px,3.6vw,46px);line-height:1.08;letter-spacing:-1.2px;color:var(--night-ink);max-width:24ch}
+.gap-h em{font-family:var(--serif);font-weight:500;font-style:italic;color:var(--bronze);letter-spacing:-.5px}
+.gap-p{font-family:var(--body);font-size:17px;color:var(--night-ink-2);line-height:1.6;max-width:62ch;margin-top:24px}
+
+/* ============ Services grid (3 service lines + proof) ============ */
+.svc-grid{display:grid;grid-template-columns:1fr;gap:32px;margin-top:18px}
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:36px 0;border-top:1px solid var(--line);align-items:start}
+.svc:last-child{border-bottom:1px solid var(--line)}
+.svc-h{display:flex;align-items:baseline;gap:20px}
+.svc-n{font-family:var(--display);font-weight:400;font-size:clamp(32px,3.5vw,44px);color:var(--bronze);line-height:1;letter-spacing:-.5px}
+.svc-t{font-family:var(--display);font-size:clamp(22px,2.6vw,32px);color:var(--ink);letter-spacing:-.8px;line-height:1.05}
+.svc-p{font-family:var(--body);font-size:16px;color:var(--ink-2);line-height:1.6;max-width:50ch;grid-column:1}
+.svc-proof{display:flex;flex-direction:column;gap:6px;background:var(--paper-2);border:1px solid var(--line);border-radius:6px;padding:22px 24px;text-decoration:none;color:inherit;transition:.18s;grid-column:2;grid-row:1/3;align-self:stretch;justify-self:stretch;position:relative;overflow:hidden}
+.svc-proof::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--bronze);opacity:.8}
+.svc-proof:hover{background:var(--ink);color:var(--night-ink);border-color:var(--ink);transform:translateY(-2px)}
+.svc-proof:hover .sp-k,.svc-proof:hover .sp-d{color:var(--night-ink-2)}
+.svc-proof:hover .sp-v{color:var(--night-ink)}
+.svc-proof:hover .sp-arrow{color:var(--bronze)}
+.sp-k{font-family:var(--body);font-size:11px;color:var(--ink-3);letter-spacing:1.8px;text-transform:uppercase;font-weight:600}
+.sp-v{font-family:var(--display);font-size:22px;color:var(--ink);letter-spacing:-.4px;line-height:1.1;margin-top:4px}
+.sp-d{font-family:var(--body);font-size:14.5px;color:var(--ink-2);line-height:1.55;margin-top:8px;flex:1}
+.sp-arrow{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--bronze);margin-top:14px;align-self:flex-start}
+@media(max-width:880px){
+  .svc{grid-template-columns:1fr;gap:24px}
+  .svc-proof{grid-column:1;grid-row:auto}
+}
+
+/* ============ Also Built (demoted portfolio strip) ============ */
+.also-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px 32px;margin-top:14px}
+.also-row{display:flex;flex-direction:column;gap:6px;padding:20px 0;border-top:1px solid var(--line);text-decoration:none;color:inherit;transition:.15s}
+.also-row:hover{padding-left:8px;border-top-color:var(--bronze)}
+.also-row .ar-cat{font-family:var(--body);font-size:11px;color:var(--bronze);letter-spacing:1.8px;text-transform:uppercase;font-weight:600}
+.also-row .ar-t{font-family:var(--display);font-size:19px;color:var(--ink);letter-spacing:-.4px;line-height:1.15}
+.also-row .ar-d{font-family:var(--body);font-size:14px;color:var(--ink-2);line-height:1.55;max-width:46ch}
+@media(max-width:760px){.also-grid{grid-template-columns:1fr;gap:0}}
+
+/* ============ disciplines grid (editorial light) — legacy, kept for any subpage that uses it ============ */
 .disc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:36px 56px;margin-top:24px}
 .disc-item{display:flex;flex-direction:column;gap:10px;padding-top:22px;border-top:1px solid var(--line)}
 .disc-item:last-child{grid-column:1/-1;max-width:none}
@@ -375,10 +416,10 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
       <span class="b2">BCS</span>
     </a>
     <div class="nav-links">
-      <a href="#work">Work</a>
-      <a href="#disciplines">Disciplines</a>
+      <a href="#services">Services</a>
+      <a href="#also-built">Also built</a>
       <a href="#about">About</a>
-      <a href="#engage" class="nav-cta">Get in touch</a>
+      <a href="contact.html" class="nav-cta">Book a call</a>
     </div>
   </div>
 </nav>
@@ -387,25 +428,22 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
 <section class="hero">
   <div class="wrap">
     <div class="hero-meta">
-      <span class="hm-l"><span class="hm-dot"></span>Independent practice &mdash; currently working</span>
-      <span class="hm-r">Yorba Linda, California<span class="sub">Selected work, 2026</span></span>
+      <span class="hm-l">Baarstad Consultancy &mdash; AI for schools and operators</span>
+      <span class="hm-r">Yorba Linda, California<span class="sub">Run by Chris Baarstad</span></span>
     </div>
     <div class="hero-grid">
       <div class="hero-main">
-        <h1>Multi-discipline operations<br>&amp; <span class="accent">product work.</span></h1>
-        <p class="sub">A one-person practice run by Chris Baarstad &mdash; operations, product and training delivered end to end, across fields that rarely share a desk.</p>
-        <div class="hero-pills">
-          <a href="events.html">Esports operations</a>
-          <a href="peopleops.html">People &amp; HR</a>
-          <a href="ai-jnj.html">AI training</a>
-          <a href="bookpulse.html">EdTech &amp; product</a>
-          <a href="lastbell.html">Games</a>
+        <h1>AI brought into schools and operators<br>that <span class="accent">don&apos;t have an in-house team.</span></h1>
+        <p class="sub">Professional development, AI-powered software, and bespoke automation &mdash; the work an internal AI team would do, delivered by one operator with a fifteen-year arc through classroom teaching, district innovation, and national-scale operations.</p>
+        <div class="hero-row">
+          <a href="contact.html" class="btn btn-pri">Book a discovery call &rarr;</a>
+          <a href="#services" class="btn btn-sec">See what I do</a>
         </div>
         <div class="hero-stats">
           <div class="hs"><span class="n">15<i>y</i></span><span class="l">in education, edtech &amp; ops</span></div>
-          <div class="hs"><span class="n">5</span><span class="l">disciplines under one roof</span></div>
-          <div class="hs"><span class="n">36</span><span class="l">states reached, current role</span></div>
-          <div class="hs"><span class="n">10k+</span><span class="l">annual participants in play</span></div>
+          <div class="hs"><span class="n">3</span><span class="l">service lines, named clients</span></div>
+          <div class="hs"><span class="n">J&amp;J</span><span class="l">Fortune 50 AI PD delivered</span></div>
+          <div class="hs"><span class="n">20</span><span class="l">texts live on BookPulse</span></div>
         </div>
       </div>
       <aside class="hero-portrait">
@@ -421,53 +459,70 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
   </div>
 </section>
 
-<div class="disc-strip">
+<!-- THE GAP — manifesto -->
+<section class="gap-band">
   <div class="wrap">
-    <span class="ds-l">The practice spans</span>
-    <span>Esports</span><span class="ds-sep">●</span>
-    <span>People Ops</span><span class="ds-sep">●</span>
-    <span>AI Enablement</span><span class="ds-sep">●</span>
-    <span>EdTech</span><span class="ds-sep">●</span>
-    <span>Product</span><span class="ds-sep">●</span>
-    <span>Games</span>
+    <div class="gap-grid">
+      <div class="gap-eyebrow">▸ The gap</div>
+      <h2 class="gap-h">Most schools and small operators don&apos;t have an internal team to take AI from <em>buzzword</em> to system.</h2>
+      <p class="gap-p">The vendors selling to them are pitching tools, not building integrations. The PD they get is shrink-wrapped, not specific. The result &mdash; AI sits at the edge of the org, not in the workflow. Baarstad Consultancy is the team they didn&apos;t hire.</p>
+    </div>
   </div>
-</div>
+</section>
 
-<!-- DISCIPLINES — editorial 5-up under cream paper -->
-<section class="lite wrap" id="disciplines">
+<!-- SERVICES — 3 service lines, each anchored by named-client proof -->
+<section class="lite wrap" id="services">
   <div class="sec-head">
     <div>
-      <div class="sec-tag">▸ Practice</div>
-      <h2 class="sec-title">Five disciplines, one workshop.</h2>
+      <div class="sec-tag">▸ What I do</div>
+      <h2 class="sec-title">Three things, each with a real client behind it.</h2>
     </div>
-    <div class="sec-meta">Built across a fifteen-year arc &mdash;<br>classroom &rarr; director &rarr; operator &rarr; bench.</div>
+    <div class="sec-meta">Not capabilities slides &mdash;<br>delivered work, named partners.</div>
   </div>
-  <div class="disc-grid">
-    <div class="disc-item">
-      <span class="di-n">01</span>
-      <h3 class="di-h">Events &amp; Esports Operations</h3>
-      <p class="di-p">Live LAN events, league operations, tournament structure &mdash; from the schedule grid to the floor on game day.</p>
+  <div class="svc-grid">
+
+    <div class="svc">
+      <div class="svc-h">
+        <span class="svc-n">01</span>
+        <h3 class="svc-t">AI Professional Development</h3>
+      </div>
+      <p class="svc-p">In-person workshops that teach knowledge workers where AI saves time today, where it doesn&apos;t, and what to do on Monday morning. Audience-aware, not vendor-pitched. Built for organizations whose staff don&apos;t live in the AI space but whose workflows could change tomorrow.</p>
+      <a class="svc-proof" href="ai-jnj.html">
+        <span class="sp-k">Proof &middot; delivered 2025</span>
+        <span class="sp-v">AI for Johnson &amp; Johnson</span>
+        <span class="sp-d">Through COAST Tactical Training. Fortune 50 audience, in-person. AI Daily Life curriculum.</span>
+        <span class="sp-arrow">Read the case &rarr;</span>
+      </a>
     </div>
-    <div class="disc-item">
-      <span class="di-n">02</span>
-      <h3 class="di-h">People Ops &amp; HR</h3>
-      <p class="di-p">Multi-location hiring, scoring systems, compliance-aware terminations, employee management at SMB scale.</p>
+
+    <div class="svc">
+      <div class="svc-h">
+        <span class="svc-n">02</span>
+        <h3 class="svc-t">AI-Powered Software for Schools</h3>
+      </div>
+      <p class="svc-p">Software that meets teachers and students where the workflow actually is. Built on Claude, FERPA-aware, designed by a working ELA teacher with fifteen years in K&ndash;12 and three as a Director of Innovation. Not a vendor demo &mdash; live product, real classrooms.</p>
+      <a class="svc-proof" href="bookpulse.html">
+        <span class="sp-k">Proof &middot; live in production</span>
+        <span class="sp-v">BookPulse</span>
+        <span class="sp-d">Interactive reading platform for grades 4&ndash;12. Twenty texts in the catalog. Fourteen task types. Live at readbookpulse.com.</span>
+        <span class="sp-arrow">Read the case &rarr;</span>
+      </a>
     </div>
-    <div class="disc-item">
-      <span class="di-n">03</span>
-      <h3 class="di-h">EdTech &amp; Education</h3>
-      <p class="di-p">Classroom ELA teacher, then Director of Innovation for three years, then operator. BookPulse, TpT annotation packets, an LMS for multi-unit operators, and AI professional development delivered to enterprise teams &mdash; AI as a teaching tool, not a sales pitch.</p>
+
+    <div class="svc">
+      <div class="svc-h">
+        <span class="svc-n">03</span>
+        <h3 class="svc-t">Bespoke AI-Built Software</h3>
+      </div>
+      <p class="svc-p">Custom dashboards, internal tools, multi-tenant platforms &mdash; built fast by one operator with AI as the leverage. The thing you&apos;d ordinarily hire a small dev team to ship in six months, delivered in weeks at solo-dev cost.</p>
+      <a class="svc-proof" href="discord-bot.html">
+        <span class="sp-k">Proof &middot; live in production</span>
+        <span class="sp-v">Discord platform for Valhallan Esports</span>
+        <span class="sp-d">Multi-tenant Discord automation running across the league: AI-summarized ticketing, an XP/leveling engagement game, moderation toolkit, cross-server admin.</span>
+        <span class="sp-arrow">Read the case &rarr;</span>
+      </a>
     </div>
-    <div class="disc-item">
-      <span class="di-n">04</span>
-      <h3 class="di-h">Software &amp; Automation</h3>
-      <p class="di-p">Custom Next.js / Supabase builds, internal tools, and Discord automation that runs across multiple servers. The software side of running the practice.</p>
-    </div>
-    <div class="disc-item">
-      <span class="di-n">05</span>
-      <h3 class="di-h">Fabrication &amp; Awards</h3>
-      <p class="di-p">The literal workshop, not just the metaphor. Engraving, custom awards, and custom woodwork at the family shop &mdash; <a href="https://awardsbyrubi.com" target="_blank" rel="noopener">Awards by Rubi</a>, Yorba Linda. The bench where the brand voice came from.</p>
-    </div>
+
   </div>
 </section>
 
@@ -483,9 +538,9 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
   </div>
   <div class="bio-grid">
     <div class="bio-prose">
-      <p>Five disciplines, one workshop. Operations, people, education, software &mdash; and a literal workbench. Built across a fifteen-year arc that started in an ELA classroom and kept widening.</p>
-      <p>From teacher to Director of Innovation for three years, shipping EdTech at scale. The last six years are the headline: business development, event management, and tournament operations at the national level, closing partner deals, locking venues, and putting national LANs on the floor.</p>
-      <p>Now: ongoing engagements in parallel, plus the slower builds on the bench. National esports operations. Embedded HR and a custom LMS for a multi-unit operator in Orange County. EdTech I own and ship. And, when I&apos;m not at a screen, hours at the family awards-and-woodwork shop in Yorba Linda &mdash; engraving, custom awards, the literal workshop the brand is named after.</p>
+      <p>Fifteen years in education, edtech, and ops. ELA classroom teacher to Director of Innovation for three years, then operator. The last six years on the headline: VP of Events at Valhallan Esports, running league ops and the national championship.</p>
+      <p>BCS exists because the schools and small operators I&apos;ve worked with don&apos;t have an in-house AI team and never will &mdash; but the work that team would do is real, and someone has to do it. The combination is rare: classroom credibility, three years inside a district as innovation lead, six years of national-scale operating, and AI fluency built by shipping AI-powered software into production today (BookPulse, the Valhallan platform, the J&amp;J cohort). Not capabilities slides. Delivered work.</p>
+      <p>Yorba Linda, CA. When I&apos;m not at a screen, hours at the family engraving and woodwork shop &mdash; Awards by Rubi &mdash; which is where the brand voice came from.</p>
     </div>
     <div class="bio-meta">
       <div class="bio-fact">
@@ -507,132 +562,54 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
   </div>
 </section>
 
-<!-- SELECTED WORK -->
-<section class="lite wrap" id="work">
+<!-- ALSO BUILT — the rest of the portfolio, demoted -->
+<section class="lite wrap" id="also-built">
   <div class="sec-head">
     <div>
-      <div class="sec-tag">▸ Selected Work</div>
-      <h2 class="sec-title">Selected Work</h2>
+      <div class="sec-tag">▸ Also built</div>
+      <h2 class="sec-title">The rest of the bench.</h2>
     </div>
+    <div class="sec-meta">Not the front of the pitch &mdash;<br>but real work, all of it.</div>
   </div>
 
-  <div class="work-index">
-    <a class="work-row" href="#engage">
-      <span class="wr-num">01</span>
-      <div class="wr-meta">
-        <span class="wr-cat">EDU Sales &middot; W2</span>
-        <span class="wr-status soon">Starting soon</span>
-      </div>
-      <div class="wr-body">
-        <span class="wr-title">Edu-Gaming Program Sales</span>
-        <span class="wr-desc">A full-time sales role bringing curriculum-aligned learning games into K&ndash;12 districts. Joining the team in the coming weeks &mdash; details to follow.</span>
-      </div>
-      <span class="wr-arrow">↗</span>
+  <div class="also-grid">
+
+    <a class="also-row" href="events.html">
+      <span class="ar-cat">Operations</span>
+      <span class="ar-t">National esports operations for Valhallan Esports</span>
+      <span class="ar-d">Six years of league ops, tournament structure, and the national championship as the in-house ops lead.</span>
     </a>
 
-    <a class="work-row" href="events.html">
-      <span class="wr-num">02</span>
-      <div class="wr-meta">
-        <span class="wr-cat">Operations</span>
-        <span class="wr-status">Ongoing</span>
-      </div>
-      <div class="wr-body">
-        <span class="wr-title">National Esports Ops</span>
-        <span class="wr-desc">Operations lead for the largest youth esports org in the country &mdash; league play across 36 states and the national LAN championship.</span>
-      </div>
-      <span class="wr-arrow">↗</span>
+    <a class="also-row" href="peopleops.html">
+      <span class="ar-cat">People &amp; HR</span>
+      <span class="ar-t">Embedded People Ops + custom LMS</span>
+      <span class="ar-d">Hiring pipelines, scoring systems, comp-aware terminations, and a custom LMS for a multi-unit boba operator in Orange County.</span>
     </a>
 
-    <a class="work-row" href="peopleops.html">
-      <span class="wr-num">03</span>
-      <div class="wr-meta">
-        <span class="wr-cat">People &amp; HR</span>
-        <span class="wr-status">Ongoing</span>
-      </div>
-      <div class="wr-body">
-        <span class="wr-title">People-Ops &amp; HR Services</span>
-        <span class="wr-desc">Hiring pipelines, scoring systems, terminations and a custom LMS for a multi-unit boba operator in Orange County.</span>
-      </div>
-      <span class="wr-arrow">↗</span>
+    <a class="also-row" href="tpt-store.html">
+      <span class="ar-cat">EdTech content</span>
+      <span class="ar-t">TpT Store &mdash; @csbaarstad</span>
+      <span class="ar-d">Print-ready ELA annotation packets for middle and high-school novels. Written by a working teacher, sold to other teachers.</span>
     </a>
 
-    <a class="work-row" href="bookpulse.html">
-      <span class="wr-num">04</span>
-      <div class="wr-meta">
-        <span class="wr-cat">EdTech &middot; Product</span>
-        <span class="wr-status live">Live</span>
-      </div>
-      <div class="wr-body">
-        <span class="wr-title">BookPulse</span>
-        <span class="wr-desc">An interactive ELA reading platform for grades 4&ndash;12 &mdash; 20 texts, 14 task types. Live at readbookpulse.com.</span>
-      </div>
-      <span class="wr-arrow">↗</span>
+    <a class="also-row" href="https://awardsbyrubi.com" target="_blank" rel="noopener">
+      <span class="ar-cat">Fabrication</span>
+      <span class="ar-t">Awards by Rubi</span>
+      <span class="ar-d">The literal workshop &mdash; engraving, custom awards, custom woodwork at the family shop in Yorba Linda. Where the brand voice came from.</span>
     </a>
 
-    <a class="work-row" href="discord-bot.html">
-      <span class="wr-num">05</span>
-      <div class="wr-meta">
-        <span class="wr-cat">Product &middot; Engineering</span>
-        <span class="wr-status live">Live</span>
-      </div>
-      <div class="wr-body">
-        <span class="wr-title">Multi-Tenant Discord Bot</span>
-        <span class="wr-desc">A comprehensive multi-tenant Discord platform &mdash; tickets with AI summaries, an XP/leveling game (Legends), and a moderation toolkit.</span>
-      </div>
-      <span class="wr-arrow">↗</span>
+    <a class="also-row" href="lastbell.html">
+      <span class="ar-cat">Games &middot; early dev</span>
+      <span class="ar-t">Last Bell</span>
+      <span class="ar-d">A 3&ndash;4 player mobile co-op horror game set in a haunted elementary school. Roblox, ages 9+.</span>
     </a>
 
-    <a class="work-row" href="ai-jnj.html">
-      <span class="wr-num">06</span>
-      <div class="wr-meta">
-        <span class="wr-cat">AI &middot; Training</span>
-        <span class="wr-status">Delivered</span>
-      </div>
-      <div class="wr-body">
-        <span class="wr-title">AI for J&amp;J</span>
-        <span class="wr-desc">An AI professional-development program delivered to Johnson &amp; Johnson staff, partnered through COAST Tactical Training.</span>
-      </div>
-      <span class="wr-arrow">↗</span>
+    <a class="also-row" href="mudgame.html">
+      <span class="ar-cat">Games &middot; early dev</span>
+      <span class="ar-t">Thirty Nights at Blackwell</span>
+      <span class="ar-d">A literary gothic-horror text RPG in the spirit of Disco Elysium and Roadwarden. Welsh borderlands, 1880.</span>
     </a>
 
-    <a class="work-row" href="tpt-store.html">
-      <span class="wr-num">07</span>
-      <div class="wr-meta">
-        <span class="wr-cat">Education &middot; Content</span>
-        <span class="wr-status live">Live</span>
-      </div>
-      <div class="wr-body">
-        <span class="wr-title">TpT Store &mdash; @csbaarstad</span>
-        <span class="wr-desc">Print-ready ELA annotation packets for middle and high-school novels, written by a working teacher.</span>
-      </div>
-      <span class="wr-arrow">↗</span>
-    </a>
-
-    <a class="work-row" href="lastbell.html">
-      <span class="wr-num">08</span>
-      <div class="wr-meta">
-        <span class="wr-cat">Games</span>
-        <span class="wr-status bench">Early dev</span>
-      </div>
-      <div class="wr-body">
-        <span class="wr-title">Last Bell</span>
-        <span class="wr-desc">A 3&ndash;4 player mobile co-op horror game set in a haunted elementary school. Roblox, ages 9+.</span>
-      </div>
-      <span class="wr-arrow">↗</span>
-    </a>
-
-    <a class="work-row" href="mudgame.html">
-      <span class="wr-num">09</span>
-      <div class="wr-meta">
-        <span class="wr-cat">Games &middot; Writing</span>
-        <span class="wr-status bench">Early dev</span>
-      </div>
-      <div class="wr-body">
-        <span class="wr-title">Thirty Nights at Blackwell</span>
-        <span class="wr-desc">A literary gothic-horror text RPG in the spirit of Disco Elysium and Roadwarden. Welsh borderlands, 1880.</span>
-      </div>
-      <span class="wr-arrow">↗</span>
-    </a>
   </div>
 </section>
 
@@ -655,10 +632,10 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
   <div class="wrap">
     <div class="engage">
       <div>
-        <h3>Let's build <em>something</em> that runs.</h3>
-        <p>Operations, product, training, or a project that doesn't fit a category &mdash; if it needs one person who can own the whole thing, start here.</p>
+        <h3>Bring AI <em>into the workflow,</em> not at the edge.</h3>
+        <p>PD for the team, software for the classroom, automation that actually runs. Tell me what your district or operation is trying to solve &mdash; thirty minutes, no pitch.</p>
         <div class="engage-cta">
-          <a href="contact.html" class="btn btn-pri">Start a conversation →</a>
+          <a href="contact.html" class="btn btn-pri">Book a discovery call &rarr;</a>
           <a href="https://www.linkedin.com/in/csbaarstad" class="btn btn-sec">LinkedIn</a>
         </div>
       </div>

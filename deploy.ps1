@@ -20,7 +20,7 @@ git status --short
 Write-Host "[deploy] committing..." -ForegroundColor Cyan
 # Single-line ASCII-safe commit message - PowerShell + git on Windows
 # choke on em-dashes, ellipses, arrows, smart quotes in -m strings.
-git commit -m "Fix disciplines (5 not mismatched 4 vs 5), AI PD moves into EdTech lane (no AI-mastery claim), add Fabrication and Awards as 5th discipline acknowledging Awards by Rubi as the literal workshop. Strip all csbaarstad@gmail.com refs. Build our own /api/contact serverless function + /contact form posting to Resend; no third-party form builder."
+git commit -m "Major IA pivot: BCS is now AI-for-schools-and-operators. New hero positioning, The Gap manifesto band, three service lines (AI PD with J&J as proof, AI-powered software with BookPulse, Bespoke AI-built software with the Valhallan Esports Discord platform). Lifted Valhallan anonymity on hero+subpages (events.html + discord-bot.html). 9-row Selected Work demoted to Also Built strip. About reframed to lead with AI fluency. CTA changed to Book a discovery call."
 
 if ($LASTEXITCODE -ne 0) {
     Write-Host "[deploy] commit failed or nothing to commit. status:" -ForegroundColor Yellow
