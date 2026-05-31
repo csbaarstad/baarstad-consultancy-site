@@ -171,10 +171,14 @@ nav{position:sticky;top:0;z-index:50;background:rgba(236,234,217,.88);backdrop-f
 /* ============ disciplines grid (editorial light) ============ */
 .disc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:36px 56px;margin-top:24px}
 .disc-item{display:flex;flex-direction:column;gap:10px;padding-top:22px;border-top:1px solid var(--line)}
+.disc-item:last-child{grid-column:1/-1;max-width:none}
+.disc-item:last-child .di-p{max-width:78ch}
 .disc-item .di-n{font-family:var(--display);font-weight:400;font-size:24px;color:var(--bronze);line-height:1;letter-spacing:-.3px}
 .disc-item .di-h{font-family:var(--display);font-size:22px;color:var(--ink);letter-spacing:-.5px;line-height:1.1;margin-top:4px}
 .disc-item .di-p{font-family:var(--body);font-size:15px;color:var(--ink-2);line-height:1.55;max-width:42ch}
-@media(max-width:760px){.disc-grid{grid-template-columns:1fr;gap:26px}}
+.disc-item .di-p a{color:var(--bronze);text-decoration:none;border-bottom:1px solid var(--bronze)}
+.disc-item .di-p a:hover{color:var(--ink);border-color:var(--ink)}
+@media(max-width:760px){.disc-grid{grid-template-columns:1fr;gap:26px}.disc-item:last-child{grid-column:auto}}
 
 /* ============ sections ============ */
 section.lite{padding:96px 0 20px}
@@ -429,14 +433,14 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
   </div>
 </div>
 
-<!-- DISCIPLINES — editorial 4-up under cream paper -->
+<!-- DISCIPLINES — editorial 5-up under cream paper -->
 <section class="lite wrap" id="disciplines">
   <div class="sec-head">
     <div>
       <div class="sec-tag">▸ Practice</div>
-      <h2 class="sec-title">Four disciplines, one desk.</h2>
+      <h2 class="sec-title">Five disciplines, one workshop.</h2>
     </div>
-    <div class="sec-meta">Built across a fifteen-year arc &mdash;<br>classroom &rarr; director &rarr; operator.</div>
+    <div class="sec-meta">Built across a fifteen-year arc &mdash;<br>classroom &rarr; director &rarr; operator &rarr; bench.</div>
   </div>
   <div class="disc-grid">
     <div class="disc-item">
@@ -446,18 +450,23 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
     </div>
     <div class="disc-item">
       <span class="di-n">02</span>
-      <h3 class="di-h">People Ops</h3>
+      <h3 class="di-h">People Ops &amp; HR</h3>
       <p class="di-p">Multi-location hiring, scoring systems, compliance-aware terminations, employee management at SMB scale.</p>
     </div>
     <div class="disc-item">
       <span class="di-n">03</span>
       <h3 class="di-h">EdTech &amp; Education</h3>
-      <p class="di-p">Classroom ELA teacher, then Director of Innovation for three years, then operator. Currently shipping BookPulse, TpT annotation packets, and an LMS for multi-unit operators.</p>
+      <p class="di-p">Classroom ELA teacher, then Director of Innovation for three years, then operator. BookPulse, TpT annotation packets, an LMS for multi-unit operators, and AI professional development delivered to enterprise teams &mdash; AI as a teaching tool, not a sales pitch.</p>
     </div>
     <div class="disc-item">
       <span class="di-n">04</span>
-      <h3 class="di-h">Tools, Automation &amp; AI</h3>
-      <p class="di-p">Custom Next.js / Supabase builds, Claude-powered internal tools, Discord automation, plus AI professional development delivered to enterprise teams.</p>
+      <h3 class="di-h">Software &amp; Automation</h3>
+      <p class="di-p">Custom Next.js / Supabase builds, internal tools, and Discord automation that runs across multiple servers. The software side of running the practice.</p>
+    </div>
+    <div class="disc-item">
+      <span class="di-n">05</span>
+      <h3 class="di-h">Fabrication &amp; Awards</h3>
+      <p class="di-p">The literal workshop, not just the metaphor. Engraving, custom awards, and custom woodwork at the family shop &mdash; <a href="https://awardsbyrubi.com" target="_blank" rel="noopener">Awards by Rubi</a>, Yorba Linda. The bench where the brand voice came from.</p>
     </div>
   </div>
 </section>
@@ -474,9 +483,9 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
   </div>
   <div class="bio-grid">
     <div class="bio-prose">
-      <p>Five disciplines, one desk. Operations, business development, sales, EdTech, and AI, built across a fifteen-year arc that started in an ELA classroom and kept widening.</p>
+      <p>Five disciplines, one workshop. Operations, people, education, software &mdash; and a literal workbench. Built across a fifteen-year arc that started in an ELA classroom and kept widening.</p>
       <p>From teacher to Director of Innovation for three years, shipping EdTech at scale. The last six years are the headline: business development, event management, and tournament operations at the national level, closing partner deals, locking venues, and putting national LANs on the floor.</p>
-      <p>Now: three engagements running in parallel, plus the slower builds on the bench. National esports operations. Embedded HR and a custom LMS for a multi-unit operator in Orange County. EdTech I own and ship.</p>
+      <p>Now: ongoing engagements in parallel, plus the slower builds on the bench. National esports operations. Embedded HR and a custom LMS for a multi-unit operator in Orange County. EdTech I own and ship. And, when I&apos;m not at a screen, hours at the family awards-and-woodwork shop in Yorba Linda &mdash; engraving, custom awards, the literal workshop the brand is named after.</p>
     </div>
     <div class="bio-meta">
       <div class="bio-fact">
@@ -649,14 +658,14 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
         <h3>Let's build <em>something</em> that runs.</h3>
         <p>Operations, product, training, or a project that doesn't fit a category &mdash; if it needs one person who can own the whole thing, start here.</p>
         <div class="engage-cta">
-          <a href="mailto:csbaarstad@gmail.com" class="btn btn-pri">Start a conversation →</a>
+          <a href="contact.html" class="btn btn-pri">Start a conversation →</a>
           <a href="https://www.linkedin.com/in/csbaarstad" class="btn btn-sec">LinkedIn</a>
         </div>
       </div>
       <div class="engage-meta">
         <div class="em">
-          <span class="k">Email</span>
-          <span class="v"><a href="mailto:csbaarstad@gmail.com">csbaarstad@gmail.com</a></span>
+          <span class="k">Get in touch</span>
+          <span class="v"><a href="contact.html">The contact form &rarr;</a></span>
         </div>
         <div class="em">
           <span class="k">Based in</span>
@@ -664,7 +673,7 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
         </div>
         <div class="em">
           <span class="k">Elsewhere</span>
-          <span class="v"><a href="https://www.teacherspayteachers.com/Store/Csbaarstad" target="_blank" rel="noopener">TeachersPayTeachers &mdash; @csbaarstad</a></span>
+          <span class="v"><a href="https://awardsbyrubi.com" target="_blank" rel="noopener">Awards by Rubi</a> &middot; <a href="https://www.teacherspayteachers.com/Store/Csbaarstad" target="_blank" rel="noopener">@csbaarstad on TpT</a></span>
         </div>
       </div>
     </div>
@@ -688,13 +697,13 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
           <a href="#work">Projects</a>
           <a href="#log">Dev Log</a>
           <a href="#engage">Engage</a>
-          <a href="mailto:csbaarstad@gmail.com">Contact</a>
+          <a href="contact.html">Contact</a>
         </div>
       </div>
       <div>
         <div class="foot-h">Elsewhere</div>
         <div class="foot-list">
-          <a href="mailto:csbaarstad@gmail.com">Email</a>
+          <a href="contact.html">Email</a>
           <a href="https://www.linkedin.com/in/csbaarstad">LinkedIn</a>
           <a href="https://github.com/csbaarstad">GitHub</a>
           <a href="bookpulse.html">BookPulse</a>
