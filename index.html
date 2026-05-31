@@ -198,6 +198,8 @@ section.lite{padding:96px 0 20px}
 .wr-status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--bronze)}
 .wr-status.live::before{background:#3f8b54}
 .wr-status.bench::before{background:var(--ink-3)}
+.wr-status.soon::before{background:var(--bronze);box-shadow:0 0 10px var(--bronze)}
+.wr-status.soon{color:var(--bronze)}
 .wr-body{display:flex;flex-direction:column;gap:8px}
 .wr-title{font-family:var(--display);font-size:clamp(22px,2.4vw,30px);color:var(--ink);letter-spacing:-.6px;line-height:1.05}
 .wr-desc{font-family:var(--body);font-size:14.5px;color:var(--ink-2);line-height:1.5;max-width:62ch}
@@ -387,7 +389,7 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
     <div class="hero-grid">
       <div class="hero-main">
         <h1>Multi-discipline operations<br>&amp; <span class="accent">product work.</span></h1>
-        <p class="sub">A one-principal practice run by Chris Baarstad &mdash; operations, product and training delivered end to end, across fields that rarely share a desk.</p>
+        <p class="sub">A one-person practice run by Chris Baarstad &mdash; operations, product and training delivered end to end, across fields that rarely share a desk.</p>
         <div class="hero-pills">
           <a href="events.html">Esports operations</a>
           <a href="peopleops.html">People &amp; HR</a>
@@ -404,11 +406,11 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
       </div>
       <aside class="hero-portrait">
         <div class="pf">
-          <img src="images/chris-headshot.png" alt="Chris Baarstad, Principal" loading="eager" onerror="this.onerror=null;this.src='images/chris-headshot-placeholder.svg';">
+          <img src="images/chris-headshot.png" alt="Chris Baarstad" loading="eager" onerror="this.onerror=null;this.src='images/chris-headshot-placeholder.svg';">
         </div>
         <div class="cap">
           <span class="nm">Chris Baarstad</span>
-          <span class="rl">Principal</span>
+          <span class="rl">Yorba Linda, CA</span>
         </div>
       </aside>
     </div>
@@ -432,7 +434,7 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
   <div class="sec-head">
     <div>
       <div class="sec-tag">▸ Practice</div>
-      <h2 class="sec-title">Four disciplines, one principal.</h2>
+      <h2 class="sec-title">Four disciplines, one desk.</h2>
     </div>
     <div class="sec-meta">Built across a fifteen-year arc &mdash;<br>classroom &rarr; director &rarr; operator.</div>
   </div>
@@ -472,7 +474,7 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
   </div>
   <div class="bio-grid">
     <div class="bio-prose">
-      <p>Five disciplines, one principal. Operations, business development, sales, EdTech, and AI, built across a fifteen-year arc that started in an ELA classroom and kept widening.</p>
+      <p>Five disciplines, one desk. Operations, business development, sales, EdTech, and AI, built across a fifteen-year arc that started in an ELA classroom and kept widening.</p>
       <p>From teacher to Director of Innovation for three years, shipping EdTech at scale. The last six years are the headline: business development, event management, and tournament operations at the national level, closing partner deals, locking venues, and putting national LANs on the floor.</p>
       <p>Now: three engagements running in parallel, plus the slower builds on the bench. National esports operations. Embedded HR and a custom LMS for a multi-unit operator in Orange County. EdTech I own and ship.</p>
     </div>
@@ -506,8 +508,21 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
   </div>
 
   <div class="work-index">
-    <a class="work-row" href="events.html">
+    <a class="work-row" href="#engage">
       <span class="wr-num">01</span>
+      <div class="wr-meta">
+        <span class="wr-cat">EDU Sales &middot; W2</span>
+        <span class="wr-status soon">Starting soon</span>
+      </div>
+      <div class="wr-body">
+        <span class="wr-title">Edu-Gaming Program Sales</span>
+        <span class="wr-desc">A full-time sales role bringing curriculum-aligned learning games into K&ndash;12 districts. Joining the team in the coming weeks &mdash; details to follow.</span>
+      </div>
+      <span class="wr-arrow">↗</span>
+    </a>
+
+    <a class="work-row" href="events.html">
+      <span class="wr-num">02</span>
       <div class="wr-meta">
         <span class="wr-cat">Operations</span>
         <span class="wr-status">Ongoing</span>
@@ -520,7 +535,7 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
     </a>
 
     <a class="work-row" href="peopleops.html">
-      <span class="wr-num">02</span>
+      <span class="wr-num">03</span>
       <div class="wr-meta">
         <span class="wr-cat">People &amp; HR</span>
         <span class="wr-status">Ongoing</span>
@@ -533,7 +548,7 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
     </a>
 
     <a class="work-row" href="bookpulse.html">
-      <span class="wr-num">03</span>
+      <span class="wr-num">04</span>
       <div class="wr-meta">
         <span class="wr-cat">EdTech &middot; Product</span>
         <span class="wr-status live">Live</span>
@@ -546,7 +561,7 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
     </a>
 
     <a class="work-row" href="discord-bot.html">
-      <span class="wr-num">04</span>
+      <span class="wr-num">05</span>
       <div class="wr-meta">
         <span class="wr-cat">Product &middot; Engineering</span>
         <span class="wr-status live">Live</span>
@@ -559,7 +574,7 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
     </a>
 
     <a class="work-row" href="ai-jnj.html">
-      <span class="wr-num">05</span>
+      <span class="wr-num">06</span>
       <div class="wr-meta">
         <span class="wr-cat">AI &middot; Training</span>
         <span class="wr-status">Delivered</span>
@@ -572,7 +587,7 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
     </a>
 
     <a class="work-row" href="tpt-store.html">
-      <span class="wr-num">06</span>
+      <span class="wr-num">07</span>
       <div class="wr-meta">
         <span class="wr-cat">Education &middot; Content</span>
         <span class="wr-status live">Live</span>
@@ -585,7 +600,7 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
     </a>
 
     <a class="work-row" href="lastbell.html">
-      <span class="wr-num">07</span>
+      <span class="wr-num">08</span>
       <div class="wr-meta">
         <span class="wr-cat">Games</span>
         <span class="wr-status bench">Early dev</span>
@@ -598,7 +613,7 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
     </a>
 
     <a class="work-row" href="mudgame.html">
-      <span class="wr-num">08</span>
+      <span class="wr-num">09</span>
       <div class="wr-meta">
         <span class="wr-cat">Games &middot; Writing</span>
         <span class="wr-status bench">Early dev</span>
@@ -665,7 +680,7 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
           <span class="b1">Baarstad Consultancy</span>
           <span class="b-sep">◆</span>
         </a>
-        <p>A one-principal workshop for cross-disciplinary operations and product work &mdash; events, people, education, automation.</p>
+        <p>A one-person workshop for cross-disciplinary operations and product work &mdash; events, people, education, automation.</p>
       </div>
       <div>
         <div class="foot-h">Practice</div>

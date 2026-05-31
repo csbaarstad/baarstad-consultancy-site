@@ -20,7 +20,7 @@ git status --short
 Write-Host "[deploy] committing..." -ForegroundColor Cyan
 # Single-line ASCII-safe commit message - PowerShell + git on Windows
 # choke on em-dashes, ellipses, arrows, smart quotes in -m strings.
-git commit -m "Round 3+4: kill typewriter feel everywhere (--mono is Inter Tight only; captions and labels mixed-case Fraunces italic); BookPulse single stitched image so nothing crops; dropped duplicate headshot from About section (hero portrait stays); bio grid reflowed prose + facts."
+git commit -m "Round 3+4+5: Inter Tight only mono, mixed-case Fraunces italic labels, BookPulse single stitched image, duplicate headshot dropped, drop the Principal title everywhere (one-person not one-principal, location under name), new Starting Soon project 01: Edu-Gaming Program Sales W2 role"
 
 if ($LASTEXITCODE -ne 0) {
     Write-Host "[deploy] commit failed or nothing to commit. status:" -ForegroundColor Yellow
