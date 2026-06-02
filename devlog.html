@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build Log, Baarstad Consultancy</title>
+<meta name="description" content="Field notes from the workshop. What I'm building and shipping, updated as I go.">
+<meta property="og:url" content="https://baarstadconsultancy.com/devlog">
+<meta property="og:title" content="Build Log, Baarstad Consultancy">
+<meta property="og:description" content="Field notes from the workshop. What I'm building and shipping, updated as I go.">
+<meta name="author" content="Chris Baarstad">
+<meta name="theme-color" content="#16242b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Baarstad Consultancy">
+<meta property="og:image" content="https://baarstadconsultancy.com/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Baarstad Consultancy. Chris Baarstad.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://baarstadconsultancy.com/images/og-image.png">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=Inter+Tight:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="subpage.css">
+<style>
+.dl-wrap{max-width:1000px;margin:0 auto;padding:76px 36px 40px;position:relative}
+.dl-tag{font-family:var(--body);font-size:11.5px;color:var(--fired);letter-spacing:2px;font-weight:600;text-transform:uppercase;margin-bottom:14px}
+.dl-title{font-family:var(--display);font-size:clamp(40px,6vw,72px);line-height:.95;letter-spacing:-2px;color:var(--ink)}
+.dl-sub{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--ink-3);margin-top:14px}
+.log{margin-top:40px;border-top:1px solid var(--line)}
+.log-row{display:grid;grid-template-columns:90px 1fr auto;gap:24px;padding:20px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.log-date{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:1.2px;font-weight:600;text-transform:uppercase}
+.log-txt{font-size:16px;color:var(--ink-2);line-height:1.55}
+.log-txt b{color:var(--ink);font-weight:600}
+.log-proj{font-family:var(--mono);font-size:10.5px;color:var(--fired);letter-spacing:1.2px;text-transform:uppercase;font-weight:600;text-align:right}
+@media(max-width:600px){.log-row{grid-template-columns:1fr;gap:6px}.log-proj{text-align:left}.dl-wrap{padding:48px 22px 32px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="index.html">
+      <span class="bcs">B<i>C</i>S</span><span class="bn">Baarstad Consultancy</span>
+    </a>
+    <a href="index.html" class="nav-back">&larr; <span class="lbl-full">back to home</span></a>
+  </div>
+</nav>
+
+<section class="dl-wrap">
+  <div class="dl-tag">&#9656; Field notes</div>
+  <h1 class="dl-title">Build Log</h1>
+  <div class="dl-sub">What I'm building and shipping, updated as I go.</div>
+  <div class="log" id="devlog-target"></div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html" style="font-size:18px">
+          <span class="bcs">B<i>C</i>S</span><span class="bn">Baarstad Consultancy</span>
+        </a>
+        <p>A one-person practice. Software, staff training, and internal tools for organizations that don't have a team to build them.</p>
+      </div>
+      <div>
+        <div class="foot-h">Practice</div>
+        <div class="foot-list">
+          <a href="index.html#services">What I do</a>
+          <a href="index.html#also-built">Also built</a>
+          <a href="devlog.html">Build log</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-h">Elsewhere</div>
+        <div class="foot-list">
+          <a href="contact.html">Email</a>
+          <a href="https://www.linkedin.com/in/csbaarstad">LinkedIn</a>
+          <a href="https://github.com/csbaarstad">GitHub</a>
+          <a href="bookpulse.html">BookPulse</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-h">Also</div>
+        <div class="foot-list">
+          <a href="https://awardsbyrubi.com">Awards by Rubi</a>
+          <span style="font-family:var(--mono);font-size:11px;color:var(--night-ink-3);line-height:1.5;margin-top:6px;display:block">Separate fabrication shop</span>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-legal">Operating as Baarstad Consulting Services (BCS), a California S-Corp.<br>&copy; 2026 Chris Baarstad &middot; All work shown is real and current.</div>
+      <div class="foot-note">{ workshop &middot; v2 }</div>
+    </div>
+  </div>
+</footer>
+
+<script src="devlog/devlog.js"></script>
+<script>
+  if (window.renderDevlog) window.renderDevlog('#devlog-target', { limit: 50 });
+</script>
+
+</body>
+</html>

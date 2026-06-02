@@ -1,5 +1,5 @@
 /* ============================================================
- * subpage.css — full stylesheet for project subpages
+ * subpage.css, full stylesheet for project subpages
  * Mirrors the design system inlined in index.html, plus the
  * subpage-specific additions (hero, mockups, devlog feed,
  * prev/next, etc.). Each subpage sets --c and --c-rgb on
@@ -60,10 +60,16 @@ body{
 /* nav */
 nav{position:sticky;top:0;z-index:50;background:rgba(236,234,217,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav-in{max-width:1200px;margin:0 auto;padding:14px 36px;display:flex;align-items:center;justify-content:space-between}
-.brand{font-family:var(--display);font-size:14px;color:var(--ink);text-decoration:none;letter-spacing:.5px;text-transform:uppercase;line-height:1;display:flex;align-items:baseline;gap:10px}
+.brand{font-family:var(--display);font-size:14px;color:var(--ink);text-decoration:none;letter-spacing:.5px;text-transform:uppercase;line-height:1;display:flex;align-items:center;gap:11px}
 .brand .b1{font-size:14px}
 .brand .b-sep{color:var(--fired);font-size:8px;letter-spacing:1px}
 .brand .b2{font-size:11px;color:var(--ink-3);font-family:var(--mono);font-weight:600;letter-spacing:1px}
+.brand .bcs{font-family:var(--display);font-size:18px;color:var(--ink);letter-spacing:-1px;text-transform:none;line-height:1}
+.brand .bcs i{font-style:normal;color:var(--fired)}
+.brand .bn{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:2.5px;color:var(--ink-3);text-transform:uppercase}
+.brand .bsep{width:1.5px;height:18px;background:var(--fired);flex:none}
+.foot-brand .brand .bcs{color:var(--night-ink)}
+.foot-brand .brand .bn{color:var(--night-ink-2)}
 .nav-back{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--ink-3);text-decoration:none;letter-spacing:1px;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;transition:color .15s}
 .nav-back:hover{color:var(--c, var(--fired))}
 @media(max-width:680px){.nav-back .lbl-full{display:none}}
@@ -158,7 +164,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
 .shot-row{display:grid;grid-template-columns:1.4fr 1fr;gap:18px;align-items:stretch}
 .shot-row .shot{height:100%;object-fit:cover;object-position:top}
 @media(max-width:760px){.shot-row{grid-template-columns:1fr}}
-/* BookPulse twin-panel — both shots dark-mode, contain to avoid cropping text */
+/* BookPulse twin-panel, both shots dark-mode, contain to avoid cropping text */
 .shot-row.bp-pair{display:flex;grid-template-columns:none;gap:18px;align-items:flex-start;justify-content:center;background:var(--night-2);padding:22px;border-radius:6px;border:1px solid var(--night-line)}
 .shot-row.bp-pair .shot{height:auto;width:auto;max-width:calc(50% - 9px);max-height:520px;object-fit:contain;object-position:top center;border:none;background:transparent;flex:0 1 auto}
 @media(max-width:760px){.shot-row.bp-pair{flex-direction:column;align-items:center;padding:16px}.shot-row.bp-pair .shot{max-height:none;max-width:100%}}
@@ -205,7 +211,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
 @media(max-width:560px){.pn-grid{grid-template-columns:1fr}}
 
 /* ============================================================
- * MOCKUP STYLES — project-specific designed visuals
+ * MOCKUP STYLES, project-specific designed visuals
  * ============================================================ */
 
 /* ----- TPT packet preview ----- */

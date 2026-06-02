@@ -28,3 +28,11 @@ yarn-error.log*
 
 # Misc
 *.log
+
+# Scratch mockups / working drafts, not for deploy
+index-v2.html
+index-v3.html
+index-v4.html
+logo-options.html
+logo-r2.html
+images/bcs-seal.svg
