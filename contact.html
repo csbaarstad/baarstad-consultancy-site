@@ -57,6 +57,13 @@
 .ct-block .v a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--bronze)}
 .ct-block .v a:hover{color:var(--bronze)}
 .ct-block p{font-family:var(--body);font-size:14.5px;color:var(--ink-2);line-height:1.55;margin-top:4px}
+.cal-band{background:var(--paper);border-top:1px solid var(--line);padding:64px 0 80px}
+.cal-head{margin-bottom:30px}
+.cal-tag{font-family:var(--body);font-size:11.5px;color:var(--bronze);letter-spacing:2px;font-weight:600;text-transform:uppercase;margin-bottom:14px}
+.cal-title{font-family:var(--display);font-size:clamp(30px,4vw,46px);line-height:1.02;letter-spacing:-1.2px;color:var(--ink)}
+.cal-sub{font-family:var(--body);font-size:17px;color:var(--ink-2);line-height:1.55;max-width:52ch;margin-top:14px}
+.calendly-inline-widget{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff;min-width:320px;height:700px}
+@media(max-width:600px){.cal-band{padding:48px 0 56px}.calendly-inline-widget{height:1000px}}
 </style>
 </head>
 <body>
@@ -135,6 +142,19 @@
     </div>
   </aside>
 </section>
+
+<section class="cal-band">
+  <div class="wrap">
+    <div class="cal-head">
+      <div class="cal-tag">&#9656; Book directly</div>
+      <h2 class="cal-title">Rather just grab a time?</h2>
+      <p class="cal-sub">Thirty minutes, no pitch. Pick a slot that works and tell me what you&apos;re trying to solve. If it&apos;s not something I can help with, I&apos;ll tell you.</p>
+    </div>
+    <div class="calendly-inline-widget" data-url="https://calendly.com/csbaarstad/discovery?hide_gdpr_banner=1&amp;primary_color=b08d57"></div>
+    <noscript><p style="font-family:var(--body);font-size:15px;color:var(--ink-2)">Enable JavaScript to book inline, or schedule directly at <a href="https://calendly.com/csbaarstad/discovery" style="color:var(--ink);border-bottom:1px solid var(--bronze)">calendly.com/csbaarstad/discovery</a>.</p></noscript>
+  </div>
+</section>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
 <footer>
   <div class="wrap">
