@@ -1,9 +1,14 @@
 # deploy.ps1 - push baarstadconsultancy.com to Vercel
 # Usage from PowerShell, inside this folder:
-#   ./deploy.ps1
+#   ./deploy.ps1                 (auto timestamp commit message)
+#   ./deploy.ps1 "your message"  (custom commit message)
 
 # DO NOT use ErrorActionPreference Stop - it kills the script silently
 # on minor things like a missing lock file. Let errors surface instead.
+
+# Keep messages single-line ASCII - PowerShell + git on Windows choke on
+# em-dashes, ellipses, arrows, and smart quotes in -m strings.
+param([string]$m = "Update site $(Get-Date -Format 'yyyy-MM-dd HH:mm')")
 
 Set-Location $PSScriptRoot
 
@@ -17,10 +22,8 @@ Write-Host "[deploy] staging changes..." -ForegroundColor Cyan
 git add -A
 git status --short
 
-Write-Host "[deploy] committing..." -ForegroundColor Cyan
-# Single-line ASCII-safe commit message - PowerShell + git on Windows
-# choke on em-dashes, ellipses, arrows, smart quotes in -m strings.
-git commit -m "Major IA pivot: BCS is now AI-for-schools-and-operators. New hero positioning, The Gap manifesto band, three service lines (AI PD with J&J as proof, AI-powered software with BookPulse, Bespoke AI-built software with the Valhallan Esports Discord platform). Lifted Valhallan anonymity on hero+subpages (events.html + discord-bot.html). 9-row Selected Work demoted to Also Built strip. About reframed to lead with AI fluency. CTA changed to Book a discovery call."
+Write-Host "[deploy] committing: $m" -ForegroundColor Cyan
+git commit -m $m
 
 if ($LASTEXITCODE -ne 0) {
     Write-Host "[deploy] commit failed or nothing to commit. status:" -ForegroundColor Yellow
