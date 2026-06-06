@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How it works: you built a tool, Baarstad Consultancy</title>
+<meta name="description" content="A short animated demo of a micro-tool a teacher built once, shown as an application with its config and a running process.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#16242b">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg?v=3">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f2efe9;--paper-2:#e8e4dc;--ink:#16242b;--ink-2:#243239;--ink-3:#4a5a62;--ink-4:#7c8a90;
+  --line:#d9d3c6;--bronze:#b08d57;--bronze-deep:#8a6a3a;--bronze-soft:#c9a778;--sage:#3f5d54;
+  --night:#0f1a1f;--night-2:#16242b;--night-line:#2a3d46;--night-ink:#f2efe9;--night-ink-2:#b6b0a3;--night-ink-3:#7e7768;
+  --body:'Inter Tight',-apple-system,sans-serif;--display:'Archivo Black',sans-serif;--serif:'Fraunces',Georgia,serif;--mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:780px;margin:0 auto;padding:0 28px}
+nav{position:sticky;top:0;z-index:50;background:rgba(236,234,217,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:780px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between}
+.brand{text-decoration:none;display:flex;align-items:center;gap:11px}
+.brand .bcs{font-family:var(--display);font-size:19px;color:var(--ink);letter-spacing:-1px}
+.brand .bcs i{font-style:normal;color:var(--bronze)}
+.brand .bsep{width:1.5px;height:19px;background:var(--bronze)}
+.brand .bn{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:2.5px;color:var(--ink-3);text-transform:uppercase}
+@media(max-width:540px){.brand .bn{display:none}}
+.nav-back{font-family:var(--body);font-size:13px;font-weight:500;color:var(--ink-2);text-decoration:none}
+.hd{padding:42px 0 18px}
+.hd .tag{font-family:var(--body);font-size:12px;color:var(--sage);letter-spacing:2px;font-weight:600;text-transform:uppercase;margin-bottom:14px}
+.hd h1{font-family:var(--display);font-size:clamp(26px,3.6vw,40px);line-height:1.06;letter-spacing:-1px;color:var(--ink);max-width:16ch}
+.hd .sub{font-family:var(--body);font-size:16.5px;color:var(--ink-2);line-height:1.6;max-width:62ch;margin-top:16px}
+.demo-note{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink-3);margin-top:16px;max-width:62ch}
+
+.window{margin:8px 0 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 6px 22px rgba(22,36,43,.10)}
+.titlebar{display:flex;align-items:center;gap:10px;padding:9px 14px;background:#e6e2da;border-bottom:1px solid var(--line)}
+.dots{display:flex;gap:6px}
+.dots i{width:11px;height:11px;border-radius:50%;display:block}
+.dots .r{background:#cf8a72}.dots .y{background:#cbb070}.dots .g{background:#8faa8c}
+.titlebar .wt{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin:0 auto;letter-spacing:.2px}
+.body{display:flex;align-items:stretch}
+@media(max-width:640px){.body{flex-direction:column}}
+.side{width:198px;flex:none;background:var(--night);color:var(--night-ink);padding:16px 14px;display:flex;flex-direction:column;gap:18px}
+@media(max-width:640px){.side{width:100%}}
+.s-id{display:flex;align-items:center;gap:9px}
+.s-id .ic{width:26px;height:26px;border-radius:6px;background:var(--bronze);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:13px;color:#fff;flex:none}
+.s-id .nm{font-family:var(--display);font-size:14px;color:var(--night-ink);letter-spacing:-.3px}
+.s-id .vr{font-family:var(--mono);font-size:10px;color:var(--night-ink-3);margin-left:auto}
+.s-grp .s-lbl{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--night-ink-3);margin-bottom:9px}
+.s-item{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px 0;border-bottom:1px solid var(--night-line)}
+.s-item:last-child{border-bottom:none}
+.s-item .k{font-size:12.5px;color:var(--night-ink-2)}
+.s-item .v{font-family:var(--mono);font-size:11px;color:var(--bronze-soft)}
+.s-item.lit{background:rgba(176,141,87,.12)}
+.main{flex:1;min-width:0;padding:16px 18px;display:flex;flex-direction:column;gap:12px;background:#fff}
+.mrow{display:flex;align-items:center;gap:10px}
+.mlabel{font-family:var(--mono);font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-3)}
+.run{margin-left:auto;display:inline-flex;align-items:center;gap:7px;font-family:var(--body);font-size:13px;font-weight:600;background:var(--ink);color:var(--paper);border:none;border-radius:7px;padding:8px 16px;cursor:pointer}
+.run.busy{background:var(--bronze)}
+.input{border:1px solid var(--line);border-radius:8px;background:var(--paper);padding:11px 13px;font-size:14px;color:var(--ink-2);line-height:1.5;min-height:50px;transition:background .2s,border-color .2s}
+.input.flash{background:#fff;border-color:var(--bronze-soft)}
+.result{min-height:10px}
+.handout{opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.handout.in{opacity:1;transform:none}
+.handout .ho-h{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 12px;background:var(--paper-2);border-bottom:1px solid var(--line)}
+.handout .ho-t{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.3px}
+.handout .exp{display:flex;gap:6px}
+.handout .xb{font-size:11px;font-weight:600;color:var(--ink-3);background:#fff;border:1px solid var(--line);border-radius:5px;padding:3px 8px;cursor:default}
+.handout .lv{padding:9px 12px;border-top:1px solid var(--line);display:flex;gap:11px;align-items:baseline}
+.handout .lv:first-of-type{border-top:none}
+.handout .lg{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--bronze-deep);flex:none;width:58px}
+.handout .ls{font-size:13px;color:var(--ink-2);line-height:1.5}
+.console{display:flex;align-items:center;gap:12px;background:var(--night);border-top:1px solid var(--night-line);padding:9px 14px;font-family:var(--mono)}
+.console .c-text{font-size:11.5px;color:#bcd0c6;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.console .c-text .cur{color:var(--bronze-soft)}
+.console .pips{display:flex;gap:5px;flex:none}
+.console .pips i{width:8px;height:8px;border-radius:50%;background:var(--night-line);display:block;transition:background .2s}
+.console .pips i.done{background:var(--sage)}
+.console .c-run{font-size:10.5px;color:var(--night-ink-3);flex:none}
+.controls{display:flex;justify-content:flex-end;margin-top:16px}
+.replay{font-family:var(--body);font-size:13px;font-weight:600;color:var(--ink);background:none;border:1px solid var(--line);border-radius:999px;padding:9px 18px;cursor:pointer;transition:.15s}
+.replay:hover{border-color:var(--bronze);color:var(--bronze)}
+.explain{margin:36px 0 0;border-top:1px solid var(--line);padding-top:30px}
+.explain h2{font-family:var(--display);font-size:23px;letter-spacing:-.7px;color:var(--ink);margin-bottom:16px}
+.explain p{font-family:var(--body);font-size:16px;color:var(--ink-2);line-height:1.65;max-width:64ch;margin-bottom:15px}
+.explain p .em{font-family:var(--serif);font-style:italic;color:var(--ink)}
+.cta{display:inline-block;margin-top:30px;font-family:var(--body);font-size:14px;font-weight:600;background:var(--ink);color:var(--paper);padding:13px 26px;border-radius:999px;text-decoration:none}
+.cta:hover{background:var(--bronze)}
+footer{margin-top:54px;background:var(--ink);color:var(--night-ink-2);padding:28px 0}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+footer .bcs{font-family:var(--display);font-size:18px;color:var(--night-ink);letter-spacing:-1px}
+footer .bcs i{font-style:normal;color:var(--bronze)}
+footer .fn{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--night-ink-2)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="index.html"><span class="bcs">B<i>C</i>S</span><span class="bsep"></span><span class="bn">Baarstad Consultancy</span></a>
+    <a class="nav-back" href="schools-pd.html#ladder">&larr; back to AI for schools</a>
+  </div>
+</nav>
+
+<header class="hd">
+  <div class="wrap">
+    <div class="tag">&#9656; How it works</div>
+    <h1>You built a tool.</h1>
+    <p class="sub">This is the next step: a teacher's setup turned into a small application they built. Its rules live in the sidebar, its work runs in the console, and any passage becomes a print-ready handout in seconds. Software, not a chat.</p>
+    <p class="demo-note">A micro-example, built to show the idea. The Leveler is an illustration, not a live product or a real recording.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="window">
+    <div class="titlebar">
+      <span class="dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+      <span class="wt">the-leveler &mdash; micro-tool</span>
+    </div>
+    <div class="body">
+      <aside class="side">
+        <div class="s-id"><span class="ic">L</span><span class="nm">The Leveler</span><span class="vr">v3</span></div>
+        <div class="s-grp">
+          <div class="s-lbl">Config</div>
+          <div class="s-item" id="cfg0"><span class="k">Reading bands</span><span class="v">5</span></div>
+          <div class="s-item" id="cfg1"><span class="k">Vocabulary</span><span class="v">keep</span></div>
+          <div class="s-item" id="cfg2"><span class="k">Handout format</span><span class="v">custom</span></div>
+        </div>
+        <div class="s-grp">
+          <div class="s-lbl">Runs</div>
+          <div class="s-item"><span class="k">This term</span><span class="v" id="count">39</span></div>
+        </div>
+      </aside>
+      <section class="main">
+        <div class="mrow">
+          <span class="mlabel">Passage in</span>
+          <button class="run" id="run" type="button"><span id="run-label">Run</span></button>
+        </div>
+        <div class="input" id="input">&nbsp;</div>
+        <div class="result" id="result"></div>
+      </section>
+    </div>
+    <div class="console">
+      <span class="c-text" id="ctext">idle</span>
+      <span class="pips"><i></i><i></i><i></i><i></i><i></i></span>
+      <span class="c-run" id="crun">ready</span>
+    </div>
+  </div>
+
+  <div class="controls"><button class="replay" id="replay" type="button">&#8635; Replay</button></div>
+
+  <section class="explain">
+    <h2>What's actually happening</h2>
+    <p>This is not a chat. It is a small application the teacher built, the move from using AI as an input-and-output box to becoming a creator who builds with it. The rules sit in the sidebar, the same bands, vocabulary rule, and format on every run. The console along the bottom is the process, the same steps in the same order, the way a tool works and a conversation does not.</p>
+    <p>That is the leverage. The setup happened once. After that, any passage, in any subject, becomes a print-ready handout in <span class="em">one paste and four seconds.</span> The pain is solved, not re-fought.</p>
+    <p>And when a tool like this should serve a whole department instead of one teacher, that is where it becomes real software, and where we build it with you.</p>
+  </section>
+
+  <a class="cta" href="contact.html#book">Find out where your staff is &rarr;</a>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="bcs">B<i>C</i>S</span>
+    <span class="fn">A micro-example, for illustration.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var run=document.getElementById('run'), runLabel=document.getElementById('run-label');
+  var input=document.getElementById('input'), result=document.getElementById('result');
+  var ctext=document.getElementById('ctext'), crun=document.getElementById('crun'), countEl=document.getElementById('count');
+  var pips=document.querySelectorAll('.console .pips i');
+  var replay=document.getElementById('replay');
+  var cfg=[document.getElementById('cfg0'),document.getElementById('cfg1'),document.getElementById('cfg2')];
+  var running=false, count=39;
+
+  var steps=['reading your 5 bands','re-leveling the text','holding vocabulary in place','applying your format','writing one question per level'];
+
+  var jobs=[
+    {p:'An octopus is a sea animal. It changes color to hide from animals that want to eat it.',
+     l:[['Gr 2-3','An octopus is a sea animal. When a predator comes near, it uses camouflage to hide.'],
+        ['Gr 4','To avoid a predator, the octopus changes its color and texture in under a second.'],
+        ['Gr 5-6','As an invertebrate, it flows into cracks, then uses camouflage to hide in plain sight.'],
+        ['Gr 7-8','This invertebrate reshapes its body and repaints its skin to vanish from a predator.'],
+        ['Gr 9-10','Few creatures use camouflage so ingeniously, vanishing rather than fleeing a predator.']]},
+    {p:'In 1773, colonists in Boston were angry about a tax on tea and threw it into the harbor.',
+     l:[['Gr 2-3','People in Boston were angry about a tax on tea. One night they threw the tea into the water.'],
+        ['Gr 4','Colonists in Boston were furious about a tea tax, so they dumped 342 chests into the harbor.'],
+        ['Gr 5-6','Frustrated by taxes they had no say in, Boston colonists threw the tea overboard at night.'],
+        ['Gr 7-8','Denied any voice in their taxes, Boston colonists hurled 342 chests of tea into the harbor.'],
+        ['Gr 9-10','Incensed by taxation without representation, Boston answered with calculated defiance.']]}
+  ];
+
+  function sleep(ms){return new Promise(function(r){setTimeout(r,ms)});}
+  function el(cls){var d=document.createElement('div');d.className=cls;return d;}
+
+  function resetPips(){pips.forEach(function(p){p.classList.remove('done');});}
+
+  async function loadConfig(){
+    for(var i=0;i<cfg.length;i++){cfg[i].classList.add('lit');await sleep(220);cfg[i].classList.remove('lit');}
+  }
+
+  async function pipeline(){
+    resetPips();
+    for(var i=0;i<steps.length;i++){
+      ctext.innerHTML='&gt; '+steps[i]+'<span class="cur">_</span>';
+      await sleep(300);
+      pips[i].classList.add('done');
+      await sleep(90);
+    }
+    ctext.textContent='> done in 4.0s';
+  }
+
+  function renderResult(job){
+    result.innerHTML='';
+    var h=el('handout');
+    var hh=el('ho-h');
+    var t=document.createElement('span'); t.className='ho-t'; t.textContent='leveled-handout.docx';
+    var ex=el('exp');
+    ['Print','Download','Copy'].forEach(function(x){var b=document.createElement('span');b.className='xb';b.textContent=x;ex.appendChild(b);});
+    hh.appendChild(t); hh.appendChild(ex); h.appendChild(hh);
+    job.l.forEach(function(row){
+      var r=el('lv');
+      var g=document.createElement('span'); g.className='lg'; g.textContent=row[0];
+      var s=document.createElement('span'); s.className='ls'; s.textContent=row[1];
+      r.appendChild(g); r.appendChild(s); h.appendChild(r);
+    });
+    result.appendChild(h);
+    requestAnimationFrame(function(){h.classList.add('in');});
+  }
+
+  async function runJob(job, first){
+    result.innerHTML=''; resetPips();
+    input.classList.add('flash'); input.textContent=job.p;
+    await sleep(first?650:480);
+    run.classList.add('busy'); runLabel.textContent='Running';
+    crun.textContent='run #'+(count+1);
+    await pipeline();
+    run.classList.remove('busy'); runLabel.textContent='Run';
+    renderResult(job);
+    count++; countEl.textContent=count;
+    input.classList.remove('flash');
+  }
+
+  async function start(){
+    if(running) return; running=true;
+    count=39; countEl.textContent=count; crun.textContent='ready'; ctext.textContent='idle';
+    result.innerHTML=''; resetPips(); input.textContent=' ';
+    await sleep(500);
+    ctext.textContent='> loading config';
+    await loadConfig();
+    await runJob(jobs[0], true);
+    await sleep(1500);
+    await runJob(jobs[1], false);
+    ctext.textContent='> idle';
+    running=false;
+  }
+
+  replay.addEventListener('click', start);
+  start();
+})();
+</script>
+
+</body>
+</html>

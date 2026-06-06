@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How it works: directed, not generated, Baarstad Consultancy</title>
+<meta name="description" content="A short animated demo of directed AI: a teacher loading context, steering an assistant to re-level a passage, then editing the result.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#16242b">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg?v=3">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter+Tight:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f2efe9;--paper-2:#e8e4dc;--ink:#16242b;--ink-2:#243239;--ink-3:#4a5a62;--ink-4:#7c8a90;
+  --line:#d9d3c6;--bronze:#b08d57;--bronze-deep:#8a6a3a;--bronze-soft:#c9a778;--sage:#3f5d54;--night-ink:#f2efe9;--night-ink-2:#b6b0a3;
+  --body:'Inter Tight',-apple-system,sans-serif;--display:'Archivo Black',sans-serif;--serif:'Fraunces',Georgia,serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:0 28px}
+nav{position:sticky;top:0;z-index:50;background:rgba(236,234,217,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:760px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between}
+.brand{text-decoration:none;display:flex;align-items:center;gap:11px}
+.brand .bcs{font-family:var(--display);font-size:19px;color:var(--ink);letter-spacing:-1px}
+.brand .bcs i{font-style:normal;color:var(--bronze)}
+.brand .bsep{width:1.5px;height:19px;background:var(--bronze)}
+.brand .bn{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:2.5px;color:var(--ink-3);text-transform:uppercase}
+@media(max-width:540px){.brand .bn{display:none}}
+.nav-back{font-family:var(--body);font-size:13px;font-weight:500;color:var(--ink-2);text-decoration:none}
+.hd{padding:42px 0 18px}
+.hd .tag{font-family:var(--body);font-size:12px;color:var(--sage);letter-spacing:2px;font-weight:600;text-transform:uppercase;margin-bottom:14px}
+.hd h1{font-family:var(--display);font-size:clamp(26px,3.6vw,40px);line-height:1.06;letter-spacing:-1px;color:var(--ink);max-width:16ch}
+.hd .sub{font-family:var(--body);font-size:16.5px;color:var(--ink-2);line-height:1.6;max-width:58ch;margin-top:16px}
+.panel{margin:8px 0 0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.panel-head{display:flex;align-items:center;gap:10px;padding:13px 18px;background:var(--paper-2);border-bottom:1px solid var(--line)}
+.panel-head .dot{width:9px;height:9px;border-radius:50%;background:var(--sage)}
+.panel-head .ph-t{font-family:var(--body);font-size:13px;font-weight:600;color:var(--ink-2)}
+.stream{height:470px;overflow-y:auto;padding:20px 18px;display:flex;flex-direction:column;gap:14px;scroll-behavior:smooth}
+.ctx-card{opacity:0;transition:opacity .4s ease;align-self:stretch;background:var(--paper-2);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.ctx-card.in{opacity:1}
+.ctx-card .cc-h{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--sage);margin-bottom:10px}
+.ctx-card ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.ctx-card li{font-size:13.5px;color:var(--ink-2);line-height:1.45;display:flex;gap:9px;align-items:flex-start}
+.ctx-card li .ck{color:var(--bronze);font-weight:700;flex:none}
+.msg{max-width:84%;font-size:15px;line-height:1.55}
+.msg.user{align-self:flex-end;background:var(--ink);color:var(--paper);padding:11px 15px;border-radius:14px 14px 4px 14px}
+.msg.ai{align-self:flex-start;background:var(--paper);border:1px solid var(--line);color:var(--ink-2);padding:13px 16px;border-radius:14px 14px 14px 4px;width:84%}
+.msg.ai .ai-h{font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--sage);margin-bottom:10px}
+.lvl-row{opacity:0;transform:translateY(6px);transition:opacity .35s ease,transform .35s ease;padding:10px 0;border-top:1px solid var(--line)}
+.lvl-row.in{opacity:1;transform:none}
+.lvl-row:first-of-type{border-top:none;padding-top:2px}
+.lvl-row .lr-top{display:flex;align-items:baseline;gap:10px;margin-bottom:4px}
+.lvl-row .lr-name{font-family:var(--body);font-size:13.5px;font-weight:700;color:var(--ink)}
+.lvl-row .lr-grade{font-family:var(--serif);font-style:italic;font-size:12.5px;color:var(--ink-3)}
+.lvl-row .lr-snip{font-size:13.5px;color:var(--ink-2);line-height:1.5}
+.lvl-row .lr-q{margin-top:7px;display:flex;gap:8px}
+.lvl-row .lr-q .ql{font-family:var(--body);font-weight:600;color:var(--sage);font-size:10.5px;letter-spacing:.6px;text-transform:uppercase;flex:none;padding-top:2px}
+.lvl-row .lr-q .qt{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--ink-3);line-height:1.45}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.chip{font-size:11px;font-weight:600;color:var(--bronze-deep);background:rgba(176,141,87,.14);border:1px solid var(--bronze-soft);border-radius:999px;padding:2px 9px}
+.tag-edit{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--sage);margin-top:9px}
+.typing{align-self:flex-start;display:flex;gap:5px;padding:13px 16px;background:var(--paper);border:1px solid var(--line);border-radius:14px}
+.typing span{width:7px;height:7px;border-radius:50%;background:var(--ink-4);animation:bl 1.2s infinite}
+.typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}
+@keyframes bl{0%,60%,100%{opacity:.3}30%{opacity:1}}
+.caret{display:inline-block;width:7px;height:15px;background:var(--paper);vertical-align:-2px;margin-left:1px;animation:ck .8s step-end infinite}
+@keyframes ck{50%{opacity:0}}
+.controls{display:flex;justify-content:flex-end;margin-top:16px}
+.replay{font-family:var(--body);font-size:13px;font-weight:600;color:var(--ink);background:none;border:1px solid var(--line);border-radius:999px;padding:9px 18px;cursor:pointer;transition:.15s}
+.replay:hover{border-color:var(--bronze);color:var(--bronze)}
+.explain{margin:36px 0 0;border-top:1px solid var(--line);padding-top:30px}
+.explain h2{font-family:var(--display);font-size:23px;letter-spacing:-.7px;color:var(--ink);margin-bottom:16px}
+.explain p{font-family:var(--body);font-size:16px;color:var(--ink-2);line-height:1.65;max-width:64ch;margin-bottom:15px}
+.explain p .em{font-family:var(--serif);font-style:italic;color:var(--ink)}
+.more{margin:28px 0 0;background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+.more .mh{font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--sage);margin-bottom:14px}
+.more ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.more li{font-size:15px;color:var(--ink-2);display:flex;gap:11px;line-height:1.5}
+.more li .n{font-family:var(--display);font-size:13px;color:var(--bronze);flex:none;padding-top:1px}
+.more .mn{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink-3);margin-top:14px}
+.cta{display:inline-block;margin-top:30px;font-family:var(--body);font-size:14px;font-weight:600;background:var(--ink);color:var(--paper);padding:13px 26px;border-radius:999px;text-decoration:none}
+.cta:hover{background:var(--bronze)}
+footer{margin-top:54px;background:var(--ink);color:var(--night-ink-2);padding:28px 0}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+footer .bcs{font-family:var(--display);font-size:18px;color:var(--night-ink);letter-spacing:-1px}
+footer .bcs i{font-style:normal;color:var(--bronze)}
+footer .fn{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--night-ink-2)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="index.html"><span class="bcs">B<i>C</i>S</span><span class="bsep"></span><span class="bn">Baarstad Consultancy</span></a>
+    <a class="nav-back" href="schools-pd.html#ladder">&larr; back to AI for schools</a>
+  </div>
+</nav>
+
+<header class="hd">
+  <div class="wrap">
+    <div class="tag">&#9656; How it works</div>
+    <h1>Directed, not generated.</h1>
+    <p class="sub">This is rung three in motion. The teacher loads real context first, directs the work, then reads the draft and pushes it further. The assistant never gets the last word.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="panel">
+    <div class="panel-head">
+      <span class="dot"></span>
+      <span class="ph-t">AI assistant</span>
+    </div>
+    <div class="stream" id="stream" aria-live="polite"></div>
+  </div>
+
+  <div class="controls"><button class="replay" id="replay" type="button">&#8635; Replay</button></div>
+
+  <section class="explain">
+    <h2>What's actually happening</h2>
+    <p>Rung three is not a lucky prompt. It is <span class="em">prework.</span> Before the assistant writes a word, the teacher has loaded the real context: the standard being taught, a clear definition of what each reading band means, an exemplar of the handout so the output matches the room, and the target words with a rule to scaffold them in place instead of simplifying them away.</p>
+    <p>The ask is precise because the setup is precise. Then comes the part only a teacher can do, which is reading the draft critically and pushing back. In the demo that is catching a level-three question that only tests recall and pushing it to inference. The first draft is never the final one. The directing and the editing are where your expertise lives, and they are what make the result usable instead of generic.</p>
+    <p>That is the line between the rungs. Rung two takes the first draft. Rung three runs the setup, directs the work, and owns the edit.</p>
+
+    <div class="more">
+      <div class="mh">A few more rung-three moves</div>
+      <ul>
+        <li><span class="n">01</span><span>A rubric built from a dense standard, in the language you actually grade with.</span></li>
+        <li><span class="n">02</span><span>A unit assessment with leveled questions and a clean answer key, aligned to what you taught.</span></li>
+        <li><span class="n">03</span><span>A bank of feedback drafts tied to your rubric that you curate, cut, and rewrite.</span></li>
+      </ul>
+      <p class="mn">Different task, same method: load the context, direct the work, own the edit.</p>
+    </div>
+  </section>
+
+  <a class="cta" href="contact.html#book">Find out where your staff is &rarr;</a>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="bcs">B<i>C</i>S</span>
+    <span class="fn">A worked sample. All work shown is real.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var stream = document.getElementById('stream');
+  var replay = document.getElementById('replay');
+  var running = false;
+
+  var levels = [
+    {name:'Level 1', grade:'Grades 2-3', snip:'An octopus is a sea animal with eight arms. When a predator comes near, it uses camouflage to hide.', q:'How does the octopus use camouflage to stay safe?'},
+    {name:'Level 2', grade:'Grade 4', snip:'The octopus is a clever escape artist. To avoid a predator, it changes color and texture in under a second.', q:'What two things can the octopus change about its skin?'},
+    {name:'Level 3', grade:'Grades 5-6', snip:'Few animals disappear as completely. As an invertebrate, it flows into cracks, then hides in plain sight.', q:'What does the octopus do when a predator comes near?'},
+    {name:'Level 4', grade:'Grades 7-8', snip:'A master of disappearing: this invertebrate reshapes its body and repaints its skin to match the reef.', q:'Which two abilities make it a master of disappearing, and how does each work?'},
+    {name:'Level 5', grade:'Grades 9-10', snip:'Few creatures exploit their environment so ingeniously, vanishing rather than fleeing from a predator.', q:'Analyze how the passage frames the defense as intelligence, not instinct.'}
+  ];
+  var kw = ['invertebrate','predator','camouflage'];
+
+  function sleep(ms){return new Promise(function(r){setTimeout(r,ms)});}
+  function scroll(){stream.scrollTop = stream.scrollHeight;}
+  function el(cls){var d=document.createElement('div');d.className=cls;return d;}
+  function chips(){var c=el('chips');kw.forEach(function(w){var s=el('chip');s.textContent=w;c.appendChild(s);});return c;}
+
+  function qline(text){
+    var q=el('lr-q');
+    var l=document.createElement('span'); l.className='ql'; l.textContent='Q';
+    var t=document.createElement('span'); t.className='qt'; t.textContent=text;
+    q.appendChild(l); q.appendChild(t); return q;
+  }
+
+  async function contextCard(){
+    var c = el('ctx-card');
+    var h = el('cc-h'); h.textContent='Before the ask, the context the teacher loaded';
+    var ul = document.createElement('ul');
+    var items = [
+      'The 6th grade standard being taught, pasted in full',
+      'Five reading bands, each defined by what a student at that level can read',
+      'An exemplar of my own handout, so the format matches my room',
+      'Three target words, with a rule to scaffold them in context, not swap them out'
+    ];
+    items.forEach(function(it){var li=document.createElement('li');var ck=document.createElement('span');ck.className='ck';ck.textContent='+';var sp=document.createElement('span');sp.textContent=it;li.appendChild(ck);li.appendChild(sp);ul.appendChild(li);});
+    c.appendChild(h); c.appendChild(ul);
+    stream.appendChild(c); scroll();
+    await sleep(60); c.classList.add('in');
+    await sleep(1400);
+  }
+
+  async function typeUser(text){
+    var m = el('msg user');
+    var span = document.createElement('span');
+    var caret = el('caret');
+    m.appendChild(span); m.appendChild(caret);
+    stream.appendChild(m); scroll();
+    for(var i=0;i<text.length;i++){span.textContent += text[i]; if(i%2===0)scroll(); await sleep(16);}
+    m.removeChild(caret);
+    await sleep(380);
+  }
+
+  async function thinking(ms){
+    var t = el('typing'); t.innerHTML='<span></span><span></span><span></span>';
+    stream.appendChild(t); scroll(); await sleep(ms); stream.removeChild(t);
+  }
+
+  async function aiLevels(){
+    var m = el('msg ai');
+    var h = el('ai-h'); h.textContent='Five levels, vocabulary kept, questions that climb';
+    m.appendChild(h);
+    stream.appendChild(m); scroll();
+    for(var i=0;i<levels.length;i++){
+      var r = el('lvl-row');
+      var top = el('lr-top');
+      var nm = el('lr-name'); nm.textContent=levels[i].name;
+      var gr = el('lr-grade'); gr.textContent=levels[i].grade;
+      top.appendChild(nm); top.appendChild(gr);
+      var sn = el('lr-snip'); sn.textContent=levels[i].snip;
+      r.appendChild(top); r.appendChild(sn); r.appendChild(qline(levels[i].q)); r.appendChild(chips());
+      m.appendChild(r); scroll();
+      await sleep(120); r.classList.add('in'); await sleep(480);
+    }
+  }
+
+  async function aiEdit(){
+    var m = el('msg ai');
+    var h = el('ai-h'); h.textContent='Updated, level 3';
+    m.appendChild(h);
+    var r = el('lvl-row in');
+    var top = el('lr-top');
+    var nm = el('lr-name'); nm.textContent='Level 3';
+    var gr = el('lr-grade'); gr.textContent='Grades 5-6';
+    top.appendChild(nm); top.appendChild(gr);
+    r.appendChild(top);
+    r.appendChild(qline('Why is camouflage a better defense for the octopus than swimming away? Use the text.'));
+    var tag = el('tag-edit'); tag.innerHTML='&#10003; recall to inference';
+    r.appendChild(tag);
+    m.appendChild(r);
+    stream.appendChild(m); scroll();
+  }
+
+  async function run(){
+    if(running) return; running = true;
+    stream.innerHTML='';
+    await sleep(400);
+    await contextCard();
+    await typeUser("Re-level this passage across my five reading bands. Hold the three target words in every version and scaffold them, do not swap them out. End each level with one question, climbing from recall to analysis. Match the exemplar format.");
+    await thinking(1100);
+    await aiLevels();
+    await sleep(800);
+    await typeUser("Level 3's question is just recall. Push it to inference and tie it to camouflage.");
+    await thinking(950);
+    await aiEdit();
+    await sleep(400); scroll();
+    running = false;
+  }
+
+  replay.addEventListener('click', run);
+  run();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample: One Passage, Five Reading Levels, Baarstad Consultancy</title>
+<meta name="description" content="A worked sample of directed AI for teachers: one passage re-leveled for a mixed-ability class, target vocabulary kept in every version, a comprehension question per level.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#16242b">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg?v=3">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png?v=3">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter+Tight:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f2efe9;--paper-2:#e8e4dc;--ink:#16242b;--ink-2:#243239;--ink-3:#4a5a62;--ink-4:#7c8a90;
+  --line:#d9d3c6;--bronze:#b08d57;--bronze-soft:#c9a778;--sage:#3f5d54;--night-ink:#f2efe9;--night-ink-2:#b6b0a3;
+  --body:'Inter Tight',-apple-system,sans-serif;--display:'Archivo Black',sans-serif;--serif:'Fraunces',Georgia,serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 36px}
+@media(max-width:640px){.wrap{padding:0 22px}}
+nav{position:sticky;top:0;z-index:50;background:rgba(236,234,217,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:920px;margin:0 auto;padding:14px 36px;display:flex;align-items:center;justify-content:space-between}
+.brand{text-decoration:none;display:flex;align-items:center;gap:11px}
+.brand .bcs{font-family:var(--display);font-size:19px;color:var(--ink);letter-spacing:-1px;line-height:1}
+.brand .bcs i{font-style:normal;color:var(--bronze)}
+.brand .bsep{width:1.5px;height:19px;background:var(--bronze)}
+.brand .bn{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:2.5px;color:var(--ink-3);text-transform:uppercase}
+@media(max-width:540px){.brand .bn{display:none}}
+.nav-back{font-family:var(--body);font-size:13px;font-weight:500;color:var(--ink-2);text-decoration:none}
+.nav-back:hover{color:var(--sage)}
+.hd{padding:48px 0 8px}
+.hd .tag{font-family:var(--body);font-size:12px;color:var(--sage);letter-spacing:2px;font-weight:600;text-transform:uppercase;margin-bottom:16px}
+.hd h1{font-family:var(--display);font-size:clamp(28px,4vw,46px);line-height:1.05;letter-spacing:-1.2px;color:var(--ink);max-width:18ch}
+.hd .sub{font-family:var(--body);font-size:17px;color:var(--ink-2);line-height:1.6;max-width:60ch;margin-top:20px}
+.demo-note{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink-3);margin-top:18px;max-width:60ch}
+.vocab{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:26px}
+.vocab .vl{font-family:var(--body);font-size:12px;color:var(--ink-3);letter-spacing:1.5px;text-transform:uppercase;font-weight:600}
+.chip{font-family:var(--body);font-size:13.5px;font-weight:600;color:var(--ink);background:rgba(176,141,87,.12);border:1px solid var(--bronze-soft);border-radius:999px;padding:5px 14px}
+.levels{margin:40px 0 8px;display:flex;flex-direction:column;gap:16px}
+.lvl{border:1px solid var(--line);border-radius:12px;background:#fff;padding:24px 26px}
+.lvl-top{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:14px;border-bottom:1px solid var(--line-soft,#e3ddcf);padding-bottom:12px}
+.lvl-name{font-family:var(--display);font-size:16px;letter-spacing:-.4px;color:var(--ink)}
+.lvl-grade{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink-3)}
+.passage{font-family:var(--body);font-size:16.5px;line-height:1.7;color:var(--ink-2)}
+.passage .kw{color:var(--bronze);font-weight:700;border-bottom:1px solid var(--bronze-soft)}
+.q{margin-top:16px;padding:13px 16px;background:var(--paper-2);border-left:3px solid var(--sage);border-radius:0 8px 8px 0}
+.q .ql{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--sage);display:block;margin-bottom:4px}
+.q p{font-family:var(--serif);font-style:italic;font-size:15.5px;color:var(--ink-2);line-height:1.5}
+.note{margin:36px 0 0;padding:26px 0 0;border-top:1px solid var(--line)}
+.note p{font-family:var(--body);font-size:16px;color:var(--ink-2);line-height:1.65;max-width:62ch}
+.note .em{font-family:var(--serif);font-style:italic;color:var(--ink)}
+.cta-row{margin:28px 0 0}
+.btn{font-family:var(--body);font-size:14px;font-weight:600;text-decoration:none;background:var(--ink);color:var(--paper);padding:13px 26px;border-radius:999px;display:inline-block;transition:.18s}
+.btn:hover{background:var(--bronze)}
+footer{margin-top:56px;background:var(--ink);color:var(--night-ink-2);padding:30px 0}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+footer .fb .bcs{font-family:var(--display);font-size:18px;color:var(--night-ink);letter-spacing:-1px}
+footer .fb .bcs i{font-style:normal;color:var(--bronze)}
+footer .fn{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--night-ink-2)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="index.html">
+      <span class="bcs">B<i>C</i>S</span><span class="bsep"></span><span class="bn">Baarstad Consultancy</span>
+    </a>
+    <a class="nav-back" href="schools-pd.html#ladder">&larr; back to AI for schools</a>
+  </div>
+</nav>
+
+<header class="hd">
+  <div class="wrap">
+    <div class="tag">&#9656; Sample &middot; rungs three and four</div>
+    <h1>One passage, five reading levels.</h1>
+    <p class="sub">The same short text on an octopus, re-leveled for a mixed-ability class. The three target words stay in every version, each level ends with a question that climbs in difficulty, and the whole set was directed and edited in about ten minutes.</p>
+    <div class="vocab">
+      <span class="vl">Vocabulary kept in every level</span>
+      <span class="chip">invertebrate</span>
+      <span class="chip">predator</span>
+      <span class="chip">camouflage</span>
+    </div>
+    <p class="demo-note">A micro-example, built to show the idea. An illustration of the approach, not client work.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="levels">
+
+    <div class="lvl">
+      <div class="lvl-top"><span class="lvl-name">Level 1</span><span class="lvl-grade">Grades 2&ndash;3</span></div>
+      <p class="passage">An octopus is a sea animal with eight arms. It has no bones inside its body, so it is an <span class="kw">invertebrate</span>. When a hungry <span class="kw">predator</span> swims close, the octopus can hide. It uses <span class="kw">camouflage</span> to change its color and match the rocks and sand. Then the <span class="kw">predator</span> swims right past.</p>
+      <div class="q"><span class="ql">Check</span><p>How does an octopus use camouflage to stay safe?</p></div>
+    </div>
+
+    <div class="lvl">
+      <div class="lvl-top"><span class="lvl-name">Level 2</span><span class="lvl-grade">Grade 4</span></div>
+      <p class="passage">The octopus is one of the ocean's cleverest escape artists. Because it has no backbone, it is an <span class="kw">invertebrate</span>, and its soft body can squeeze into tiny spaces. To avoid a <span class="kw">predator</span>, the octopus uses <span class="kw">camouflage</span>, changing the color and even the texture of its skin in less than a second to blend into rock, coral, or sand.</p>
+      <div class="q"><span class="ql">Check</span><p>What two things can an octopus change about its skin to hide from a predator?</p></div>
+    </div>
+
+    <div class="lvl">
+      <div class="lvl-top"><span class="lvl-name">Level 3</span><span class="lvl-grade">Grades 5&ndash;6</span></div>
+      <p class="passage">Few animals disappear as completely as the octopus. As an <span class="kw">invertebrate</span>, it has no bones to limit its shape, so it can flatten and flow into narrow cracks in the reef. Its real defense, though, is <span class="kw">camouflage</span>. Special cells in its skin let it shift color and texture almost instantly, so a passing <span class="kw">predator</span> sees nothing but rock and shadow.</p>
+      <div class="q"><span class="ql">Check</span><p>Why does being an invertebrate help the octopus escape a predator, and how does camouflage add to that defense?</p></div>
+    </div>
+
+    <div class="lvl">
+      <div class="lvl-top"><span class="lvl-name">Level 4</span><span class="lvl-grade">Grades 7&ndash;8</span></div>
+      <p class="passage">The octopus is a master of disappearing. Lacking the skeleton of most animals, this <span class="kw">invertebrate</span> can reshape its boneless body to pour through openings barely wider than its eye. Its most striking ability, however, is <span class="kw">camouflage</span>: layered cells beneath the skin expand and contract to repaint the animal in under a second, matching not only the color but the texture of nearby rock, coral, or sand. To a circling <span class="kw">predator</span>, the octopus simply ceases to exist.</p>
+      <div class="q"><span class="ql">Check</span><p>The passage calls the octopus a &ldquo;master of disappearing.&rdquo; Which two abilities support that claim, and how does each one work?</p></div>
+    </div>
+
+    <div class="lvl">
+      <div class="lvl-top"><span class="lvl-name">Level 5</span><span class="lvl-grade">Grades 9&ndash;10</span></div>
+      <p class="passage">Few creatures exploit their environment as ingeniously as the octopus. As an <span class="kw">invertebrate</span>, it is unconstrained by a rigid skeleton, allowing it to compress its entire body through gaps scarcely larger than its eye. Yet its most remarkable adaptation is <span class="kw">camouflage</span>. Specialized pigment cells, controlled directly by the nervous system, expand and contract to alter both color and surface texture in a fraction of a second, rendering the animal nearly indistinguishable from rock, coral, or sand. For a hunting <span class="kw">predator</span>, the octopus does not flee so much as vanish.</p>
+      <div class="q"><span class="ql">Check</span><p>Analyze how the passage frames the octopus's defenses as a kind of intelligence rather than simple instinct. Cite specific language.</p></div>
+    </div>
+
+  </div>
+
+  <div class="note">
+    <p>This was <span class="em">directed, not generated.</span> The standard, the five levels, the three words to keep, and the question style were all specified, then the output was read and edited. That is rung three: you steer it and you stay the author. The rung four version is a reusable assistant that holds those rules, so the next passage is a single paste away.</p>
+    <div class="cta-row"><a class="btn" href="contact.html#book">Find out where your staff is &rarr;</a></div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="fb"><span class="bcs">B<i>C</i>S</span></span>
+    <span class="fn">A micro-example, for illustration.</span>
+  </div>
+</footer>
+
+</body>
+</html>

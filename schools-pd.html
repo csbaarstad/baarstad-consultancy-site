@@ -218,7 +218,14 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
 .ladder-eyebrow{font-family:var(--body);font-size:12px;color:var(--sage);letter-spacing:2px;font-weight:600;text-transform:uppercase;margin-bottom:16px}
 .ladder-h{font-family:var(--display);font-size:clamp(24px,3vw,40px);line-height:1.08;letter-spacing:-1px;color:var(--ink);max-width:20ch}
 .ladder-intro{font-family:var(--body);font-size:16.5px;color:var(--ink-2);line-height:1.6;max-width:60ch;margin-top:20px}
-.rungs{margin-top:38px;display:flex;flex-direction:column;gap:10px;max-width:860px}
+.rungs{margin-top:38px;display:flex;flex-direction:column;gap:24px;max-width:860px}
+.ladder-group .lg-label{font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.ladder-group .lg-label::before{content:"";width:22px;height:2px;background:currentColor}
+.ladder-group.base .lg-label{color:var(--ink-4)}
+.ladder-group.next .lg-label{color:var(--bronze-deep)}
+.lg-rungs{display:flex;flex-direction:column;gap:10px;border-left:3px solid var(--line);padding-left:18px}
+.ladder-group.next .lg-rungs{border-left-color:var(--bronze)}
+.ladder-group.next .rung .rnum{background:var(--bronze)}
 .rung{display:flex;gap:18px;align-items:flex-start;padding:16px 20px;border-radius:10px;background:#fff;border:1px solid var(--line)}
 .rung .rnum{flex:none;width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:15px;line-height:1;color:#fff;background:var(--ink-4)}
 .rung .rbody{flex:1}
@@ -279,14 +286,23 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
     <h2 class="ladder-h">Most AI training stops at the bottom of the ladder.</h2>
     <p class="ladder-intro">Teachers can already ask a chatbot for a worksheet. That helps for a week. The teachers who get real time back are the ones who climb higher, directing AI to fit their own classroom and building tools they reuse all year. Here is the climb, and where the work actually pays off.</p>
     <div class="rungs">
-      <div class="rung r-common"><div class="rnum">1</div><div class="rbody"><div class="rname">Search Replacement</div><div class="rdesc">Using AI like a faster Google. A quick answer, a quick explanation. Almost everyone starts here.</div></div></div>
-      <div class="rung r-common"><div class="rnum">2</div><div class="rbody"><div class="rname">Generator</div><div class="rdesc">Asking for a finished thing and taking the draft. A rubric, a quiz, an email. Useful, but generic, and you start over next week.</div></div></div>
-      <div class="focus-flag">Where we focus</div>
-      <div class="rung r-focus"><div class="rnum">3</div><div class="rbody"><div class="rname">Director</div><div class="rdesc">Steering AI with your standards, your students, and your voice, then editing until it fits. You stay the author. The first rung that saves real time, and where most teachers need a hand.</div></div></div>
-      <div class="rung r-focus"><div class="rnum">4</div><div class="rbody"><div class="rname">Super-User</div><div class="rdesc">Building a reusable assistant that does your recurring work, in your format, once, for the whole year. You leave a session with one already built.</div></div></div>
-      <div class="rung r-top"><div class="rnum">5</div><div class="rbody"><div class="rname">Builder</div><div class="rdesc">Turning a recurring pain into a tool your whole team uses. For most teachers, this is the rung we build with you.</div></div></div>
+      <div class="ladder-group base">
+        <div class="lg-label">Where most people are today</div>
+        <div class="lg-rungs">
+          <div class="rung"><div class="rnum">1</div><div class="rbody"><div class="rname">Search Replacement</div><div class="rdesc">Using AI like a faster Google. A quick answer, a quick explanation. Almost everyone starts here.</div></div></div>
+          <div class="rung"><div class="rnum">2</div><div class="rbody"><div class="rname">Generator</div><div class="rdesc">Asking for a finished thing and taking the draft. A rubric, a quiz, an email. Useful, but generic, and you start over next week.</div></div></div>
+        </div>
+      </div>
+      <div class="ladder-group next">
+        <div class="lg-label">Where we can take you next</div>
+        <div class="lg-rungs">
+          <div class="rung"><div class="rnum">3</div><div class="rbody"><div class="rname">Director</div><div class="rdesc">Steering AI with your standards, your students, and your voice, then editing until it fits. You stay the author.</div></div></div>
+          <div class="rung"><div class="rnum">4</div><div class="rbody"><div class="rname">Super-User</div><div class="rdesc">Building a reusable assistant that does your recurring work, in your format, once, for the whole year.</div></div></div>
+          <div class="rung"><div class="rnum">5</div><div class="rbody"><div class="rname">Builder</div><div class="rdesc">Turning a recurring pain into a tool your whole team uses. For most teachers, this is the one we build with you.</div></div></div>
+        </div>
+      </div>
     </div>
-    <p class="ladder-focus-line">Our work lives on rungs three and four. The difference between using AI and putting it to work.</p>
+    <p class="ladder-focus-line">Most people never leave the bottom two. Everything that gives you real time back is in the climb above them.</p>
     <div class="ladder-cta"><a href="contact.html#book" class="btn btn-pri">Find out where your staff is &rarr;</a></div>
   </div>
 </section>
