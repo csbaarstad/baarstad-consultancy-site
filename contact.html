@@ -58,13 +58,6 @@
 .ct-block .v a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--bronze)}
 .ct-block .v a:hover{color:var(--bronze)}
 .ct-block p{font-family:var(--body);font-size:14.5px;color:var(--ink-2);line-height:1.55;margin-top:4px}
-.cal-band{background:var(--paper);border-top:1px solid var(--line);padding:64px 0 80px}
-.cal-head{margin-bottom:30px}
-.cal-tag{font-family:var(--body);font-size:11.5px;color:var(--bronze);letter-spacing:2px;font-weight:600;text-transform:uppercase;margin-bottom:14px}
-.cal-title{font-family:var(--display);font-size:clamp(30px,4vw,46px);line-height:1.02;letter-spacing:-1.2px;color:var(--ink)}
-.cal-sub{font-family:var(--body);font-size:17px;color:var(--ink-2);line-height:1.55;max-width:52ch;margin-top:14px}
-.calendly-inline-widget{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff;min-width:320px;height:700px}
-@media(max-width:600px){.cal-band{padding:48px 0 56px}.calendly-inline-widget{height:1000px}}
 </style>
 </head>
 <body>
@@ -81,25 +74,11 @@
 <section class="ct-hero">
   <div class="wrap">
     <h1>Let&apos;s build <em>something</em> that runs.</h1>
-    <p class="lede">Operations, product, training, fabrication, or a project that doesn&apos;t fit a category, tell me what you need. Discovery calls are free. Replies within 24 hours.</p>
+    <p class="lede">AI professional development for your staff, a question about BookPulse, or something you&apos;re trying to figure out, tell me what you need and a few times that work. Discovery calls are free, and I reply within 24 hours.</p>
   </div>
 </section>
 
-<section class="cal-band" id="book">
-  <div class="wrap">
-    <div class="cal-head">
-      <div class="cal-tag">&#9656; Book a discovery call</div>
-      <h2 class="cal-title">Pick a time that works.</h2>
-      <p class="cal-sub">Thirty minutes, no pitch. Pick a slot that works and tell me what you&apos;re trying to solve. If it&apos;s not something I can help with, I&apos;ll tell you.</p>
-    </div>
-    <div class="calendly-inline-widget" data-url="https://calendly.com/csbaarstad/discovery?hide_gdpr_banner=1&amp;primary_color=b08d57"></div>
-    <noscript><p style="font-family:var(--body);font-size:15px;color:var(--ink-2)">Enable JavaScript to book inline, or schedule directly at <a href="https://calendly.com/csbaarstad/discovery" style="color:var(--ink);border-bottom:1px solid var(--bronze)">calendly.com/csbaarstad/discovery</a>.</p></noscript>
-  </div>
-</section>
-<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
-<section class="wrap ct-body" style="padding-top:48px">
-  <p style="grid-column:1/-1;font-family:var(--serif);font-style:italic;font-size:19px;color:var(--ink-3);letter-spacing:-.2px;margin:-8px 0 -4px">Prefer to write first? Send a note and I&apos;ll reply within 24 hours.</p>
+<section class="wrap ct-body">
   <form class="ct-form" id="contact-form" action="/api/contact" method="POST" novalidate>
     <!-- Honeypot for spam, humans don't see it, bots fill it in -->
     <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
@@ -113,22 +92,28 @@
       </label>
     </div>
 
+    <div class="row">
+      <label>Organization / school
+        <input type="text" name="organization" autocomplete="organization">
+      </label>
+      <label>Your role
+        <input type="text" name="role" autocomplete="organization-title">
+      </label>
+    </div>
+
     <label>What&apos;s this about?
       <select name="topic" required>
         <option value="" disabled selected>Pick one</option>
-        <option value="Operations / events">Operations or events work</option>
-        <option value="People Ops / HR">People Ops / HR</option>
-        <option value="EdTech / AI training">EdTech or AI professional development</option>
+        <option value="AI PD for faculty">AI professional development for our faculty</option>
+        <option value="AI with students">Bringing AI into student work</option>
+        <option value="Leadership / policy">Leadership and policy support</option>
         <option value="BookPulse">BookPulse (the reading platform)</option>
-        <option value="Discord / software">Discord / software / automation</option>
-        <option value="Awards by Rubi">Awards by Rubi (engraving, awards, woodwork)</option>
-        <option value="Just saying hi">Just saying hi</option>
-        <option value="Other">Other</option>
+        <option value="Other">Something else</option>
       </select>
     </label>
 
-    <label>Tell me a little
-      <textarea name="message" required placeholder="Scope, timeline, anything I should know."></textarea>
+    <label>What are you trying to solve, and a few times that work for a call?
+      <textarea name="message" required placeholder="A sentence on what you're after, plus two or three windows that work for a 30-minute call. I'll confirm one."></textarea>
     </label>
 
     <div class="ct-status" id="ct-status"></div>
@@ -141,9 +126,9 @@
 
   <aside class="ct-aside">
     <div class="ct-block">
-      <div class="k">Based</div>
-      <div class="v">Remote-first</div>
-      <p>In-person within a reasonable drive, remote everywhere else.</p>
+      <div class="k">Where</div>
+      <div class="v">Remote or on-site</div>
+      <p>Most of it runs remote. For the right engagement, I'll travel to you.</p>
     </div>
     <div class="ct-block">
       <div class="k">Reply window</div>
