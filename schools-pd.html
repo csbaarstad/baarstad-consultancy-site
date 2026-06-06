@@ -213,6 +213,28 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
 .foot-note{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--night-ink-3)}
 @media(max-width:760px){.foot-grid{grid-template-columns:1fr 1fr;gap:32px 24px}.foot-brand{grid-column:1/-1}}
 
+/* ============ the AI skill ladder ============ */
+.ladder-band{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:60px 0 70px}
+.ladder-eyebrow{font-family:var(--body);font-size:12px;color:var(--sage);letter-spacing:2px;font-weight:600;text-transform:uppercase;margin-bottom:16px}
+.ladder-h{font-family:var(--display);font-size:clamp(24px,3vw,40px);line-height:1.08;letter-spacing:-1px;color:var(--ink);max-width:20ch}
+.ladder-intro{font-family:var(--body);font-size:16.5px;color:var(--ink-2);line-height:1.6;max-width:60ch;margin-top:20px}
+.rungs{margin-top:38px;display:flex;flex-direction:column;gap:10px;max-width:860px}
+.rung{display:flex;gap:18px;align-items:flex-start;padding:16px 20px;border-radius:10px;background:#fff;border:1px solid var(--line)}
+.rung .rnum{flex:none;width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:15px;line-height:1;color:#fff;background:var(--ink-4)}
+.rung .rbody{flex:1}
+.rung .rname{font-family:var(--body);font-size:17px;font-weight:700;color:var(--ink);letter-spacing:-.2px}
+.rung .rdesc{font-family:var(--body);font-size:14.5px;color:var(--ink-3);line-height:1.5;margin-top:3px}
+.rung.r-focus{background:rgba(176,141,87,.08);border-color:var(--bronze-soft)}
+.rung.r-focus .rnum{background:var(--bronze)}
+.rung.r-top{background:var(--ink);border-color:var(--ink)}
+.rung.r-top .rname{color:var(--night-ink)}
+.rung.r-top .rdesc{color:var(--night-ink-2)}
+.rung.r-top .rnum{background:var(--bronze)}
+.focus-flag{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--bronze);margin:8px 0 2px 2px;display:flex;align-items:center;gap:8px}
+.focus-flag::before{content:"";width:18px;height:2px;background:var(--bronze)}
+.ladder-focus-line{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--ink-2);margin-top:30px;max-width:56ch;line-height:1.5}
+.ladder-cta{margin-top:26px}
+
 </style>
 </head>
 <body>
@@ -247,6 +269,25 @@ footer{margin-top:0;background:var(--night);color:var(--night-ink-2);padding:36p
       <div class="hs"><span class="n">10 <i>yrs</i></span><span class="l">in the classroom</span></div>
       <div class="hs"><span class="n">3</span><span class="l">tracks, one practice</span></div>
     </div>
+  </div>
+</section>
+
+<!-- THE AI SKILL LADDER -->
+<section class="ladder-band" id="ladder">
+  <div class="wrap">
+    <div class="ladder-eyebrow">&#9656; How we think about it</div>
+    <h2 class="ladder-h">Most AI training stops at the bottom of the ladder.</h2>
+    <p class="ladder-intro">Teachers can already ask a chatbot for a worksheet. That helps for a week. The teachers who get real time back are the ones who climb higher, directing AI to fit their own classroom and building tools they reuse all year. Here is the climb, and where the work actually pays off.</p>
+    <div class="rungs">
+      <div class="rung r-common"><div class="rnum">1</div><div class="rbody"><div class="rname">Search Replacement</div><div class="rdesc">Using AI like a faster Google. A quick answer, a quick explanation. Almost everyone starts here.</div></div></div>
+      <div class="rung r-common"><div class="rnum">2</div><div class="rbody"><div class="rname">Generator</div><div class="rdesc">Asking for a finished thing and taking the draft. A rubric, a quiz, an email. Useful, but generic, and you start over next week.</div></div></div>
+      <div class="focus-flag">Where we focus</div>
+      <div class="rung r-focus"><div class="rnum">3</div><div class="rbody"><div class="rname">Director</div><div class="rdesc">Steering AI with your standards, your students, and your voice, then editing until it fits. You stay the author. The first rung that saves real time, and where most teachers need a hand.</div></div></div>
+      <div class="rung r-focus"><div class="rnum">4</div><div class="rbody"><div class="rname">Super-User</div><div class="rdesc">Building a reusable assistant that does your recurring work, in your format, once, for the whole year. You leave a session with one already built.</div></div></div>
+      <div class="rung r-top"><div class="rnum">5</div><div class="rbody"><div class="rname">Builder</div><div class="rdesc">Turning a recurring pain into a tool your whole team uses. For most teachers, this is the rung we build with you.</div></div></div>
+    </div>
+    <p class="ladder-focus-line">Our work lives on rungs three and four. The difference between using AI and putting it to work.</p>
+    <div class="ladder-cta"><a href="contact.html#book" class="btn btn-pri">Find out where your staff is &rarr;</a></div>
   </div>
 </section>
 
